@@ -37,3 +37,19 @@ body{
 
 }
 
+.boton{
+	background:#e27a3f;
+	padding: 1em;
+	border: 1.2em;
+	border-radius: .3em;
+	cursor: pointer;
+	transition: .5s;
+
+}
+
+.boton:hover{
+		box-shadow: .1em .1em 1em white;
+		transition: .5s;
+		padding: 2em;
+}
+
