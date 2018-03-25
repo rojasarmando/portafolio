@@ -6,17 +6,26 @@
 
 }
 
+.rojo{
+	background: #ff5f5d;
+}
+
+.azul{
+	background:#027aa4;
+}
+
 body{
 	
 
 	width: 100%;
 	margin: auto;
+	overflow-scrolling: none;
 }
 
 .presentacion {
 	
 	margin: auto;
-	background:#027aa4;
+	
 	color: white;
 	font-family: dominebold;
 
@@ -26,14 +35,21 @@ body{
 
 	box-shadow: .1em .1em 1em black;
 	margin-bottom: 1em;
-	height:  100%;
+	min-height:  100%;
+
+
+	background-attachment: fixed;
+
+	
+	overflow: hidden;
+
 	
 }
 
 .presentacion .nombre{
 	background: #22282f;
-	padding: .3em;
-	padding: 2em;
+	padding: .5em;
+	
 
 }
 
@@ -51,5 +67,13 @@ body{
 		box-shadow: .1em .1em 1em white;
 		transition: .5s;
 		padding: 2em;
+}
+
+img{
+
+	border: .2em solid#323a46;
+	border-radius: 1em;
+	box-shadow: .3em .3em 1em black;
+	height: 20em;
 }
 

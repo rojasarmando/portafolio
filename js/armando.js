@@ -15,13 +15,13 @@ $(document).ready(function() {
 		},
 		{
 			'id' : '#head2',
-			'es' : "Soy Estudiante de Ingenieria de Sistemas",
-			'en' : "I'm Student  Enginner of System"
+			'es' : "Soy un estudiante de Ingenieria de Sistemas",
+			'en' : "I'm a student of systems engineering"
 		},
 		{
 			'id' : '#botonIdioma',
 			'es' : "Change to English",
-			'en' : "Cambiar a Españo"
+			'en' : "Cambiar a Español"
 		}
 	
 	]
