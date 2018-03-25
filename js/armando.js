@@ -11,13 +11,19 @@ $(document).ready(function() {
 		{
 			'id' : '#head',
 			'es' : "¡Hola! mi nombre es Armando Rojas",
-			'en' : "¡Hi! mi name is Armando Rojas"
+			'en' : "Hi! mi name is Armando Rojas"
 		},
 		{
 			'id' : '#head2',
-			'es' : "¡Hola! mi nombre es Armando Rojas",
-			'en' : "¡Hi! mi name is Armando Rojas"
+			'es' : "Soy Estudiante de Ingenieria de Sistemas",
+			'en' : "I'm Student  Enginner of System"
+		},
+		{
+			'id' : '#botonIdioma',
+			'es' : "Change to English",
+			'en' : "Cambiar a Españo"
 		}
+	
 	]
 
 
@@ -32,6 +38,10 @@ $(document).ready(function() {
 
 
 	$("#botonIdioma").idiomas(texto)
+
+
+
+
 	
 
 	
@@ -71,7 +81,7 @@ $(document).ready(function() {
 	   					$(texto[i].id).fadeOut('slow', () => {
 
 							$(texto[i].id)
-								.html(texto[0][localStorage.idioma])
+								.html(texto[i][localStorage.idioma])
 								.fadeIn('slow', () => {})
 						})
 
