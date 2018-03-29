@@ -14,6 +14,9 @@
 	background:#027aa4;
 }
 
+.amarillo{
+	background: #1fc2b4;
+}
 body{
 	
 
@@ -59,13 +62,13 @@ body{
 	border: 1.2em;
 	border-radius: .3em;
 	cursor: pointer;
-	transition: .5s;
+	transition: .2s;
 
 }
 
 .boton:hover{
 		box-shadow: .1em .1em 1em white;
-		transition: .5s;
+		transition: .2s;
 		padding: 2em;
 }
 
@@ -74,6 +77,52 @@ img{
 	border: .2em solid#323a46;
 	border-radius: 1em;
 	box-shadow: .3em .3em 1em black;
-	height: 20em;
+	height: 15em;
+}
+
+.datos-basicos{
+
+	width: 40%;
+	background: #22282f;
+	margin-top: 1em;
+	margin-left: 1em;
+	display: inline-block;
+	padding: 1em;
+	border-radius: .3em;
+	box-shadow: .5em .5em 1em black;
+}
+
+.titulo{
+
+	width: 90%;
+	background: #22282f;
+	margin-top: 1em;
+	margin-left: 1em;
+	display: inline-block;
+	padding: 1em;
+	border-radius: .3em;
+	box-shadow: .5em .5em 1em black;
+	text-align: center;
+}
+
+.texto{
+	
+	margin: auto;
+	width: 85%;
+	opacity: .9;
+	background: #22282f;
+	margin-top: 1em;
+	margin-left: 1em;
+	display: inline-block;
+	padding: 1em;
+	border-radius: .3em;
+	box-shadow: .5em .5em 1em black;
+	text-align: justify;
+}
+
+.texto p{
+		text-align: justify;
+		width: 93%;
+		margin: auto;
 }
 

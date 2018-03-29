@@ -22,9 +22,32 @@ $(document).ready(function() {
 			'id' : '#botonIdioma',
 			'es' : "Change to English",
 			'en' : "Cambiar a Español"
+		},
+		{
+			'id' : '#textoAyuda',
+			'es' : "Click aquí para cambiar de idioma",
+			'en' : "Click here to change the language"
+		}
+		,
+		{
+			'id' : '#datosBasicos',
+			'es' : "Información básica",
+			'en' : "Basic informatione"
+		}
+		,
+		{
+			'id' : '#pais',
+			'es' : "Pais",
+			'en' : "Country"
+		},
+		{
+			'id' : '#nombre',
+			'es' : "Nombre",
+			'en' : "Name"
 		}
 	
 	]
+
 
 
 
