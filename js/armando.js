@@ -87,7 +87,32 @@ $(document).ready(function() {
 
 
 
-	
+	$(document).scroll(function(event) {
+
+		let posicion = $(document).scrollTop();
+
+		if ($(document).scrollTop() == 0 ){
+
+			$("#menu2").fadeOut('slow', function() {
+
+				$("#menu").fadeIn('slow', function() {
+					$(document).scrollTop(posicion)
+					$("img[src='img/armando_jose_rojas_querales.jpg']").css('margin-top', '0em');
+
+				});
+			});
+		}
+		else if ($(document).scrollTop() > 0 ){
+
+			$("#menu").fadeOut('slow', function() {
+				$("#menu2").fadeIn('slow', function() {
+					$("img[src='img/armando_jose_rojas_querales.jpg']").css('margin-top', '10em');
+					$(document).scrollTop(posicion)
+				});
+			});
+
+		} 
+	});
 
 	
 
