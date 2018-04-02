@@ -10,13 +10,13 @@ $(document).ready(function() {
 
 		{
 			'id' : '#unPocoSobreMi',
-			'es' : 'Mi nombre es Armando Rojas, tengo 20 años de edad, soy Venezolano viviendo actualmente en un pueblito llamada Turén ubicado en el estado Portuguesa, estudio ingenieria de sistemas donde actualmente curso el 7mo semestre de la carrera, a lo largo de mis 4 años en la universidad he aprendido diversos lenguajes de programacion y tecnologias para el desarrollo de aplicaciones tanto entorno web como para dispositivos moviles, donde puedo mencionar.',
+			'es' : 'Mi nombre es Armando Rojas, tengo 20 años de edad, soy venezolano viviendo actualmente en un pueblito llamada Turén ubicado en el estado Portuguesa, estudio ingeniería de sistemas donde actualmente curso el 7mo semestre de la carrera, a lo largo de mis 4 años en la universidad he aprendido diversos lenguajes de programación y tecnologías para el desarrollo de aplicaciones tanto entorno web como para dispositivos móviles, donde puedo mencionar',
 			'en' : 'My name is Armando Rojas, I am 20 years old, I am Venezuelan currently living in a small town called Turén located in the Portuguese state, I study systems engineering where I am currently studying the 7th semester of the career, during my 4 years in the university I have learned different programming languages ​​and technologies for the development of applications both web environment and mobile devices, where I can mention. '
 
 		},
 		{
 			'id' : '#unPocoSobreMi2',
-			'es' : 'Tengo conocimientos avanzados en Base de Datos, Redes, Mantenimiento y Reparacion de equipos, Seguridad Informatica y organizacion de un equipo de trabajo, las cuales las adquiri durante mis 4 años en la universidad.',
+			'es' : 'Tengo conocimientos avanzados en Base de Datos, Redes, Mantenimiento y Reparación de equipos, Seguridad Informática y organización de un equipo de trabajo, las cuales  adquirí durante mis 4 años en la universidad.',
 			'en' : 'I have advanced knowledge in Database, Networks, Maintenance and Repair of equipment, Computer Security and organization of a work team, which I acquired during my 4 years in the university.'
 		},
 		{
@@ -93,23 +93,12 @@ $(document).ready(function() {
 
 		if ($(document).scrollTop() == 0 ){
 
-			$("#menu2").fadeOut('slow', function() {
-
-				$("#menu").fadeIn('slow', function() {
-					$(document).scrollTop(posicion)
-					$("img[src='img/armando_jose_rojas_querales.jpg']").css('margin-top', '0em');
-
-				});
-			});
+			
+			$("#menu").removeClass('menu2')
 		}
 		else if ($(document).scrollTop() > 0 ){
 
-			$("#menu").fadeOut('slow', function() {
-				$("#menu2").fadeIn('slow', function() {
-					$("img[src='img/armando_jose_rojas_querales.jpg']").css('margin-top', '10em');
-					$(document).scrollTop(posicion)
-				});
-			});
+			$("#menu").addClass('menu2')
 
 		} 
 	});
