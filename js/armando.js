@@ -94,11 +94,14 @@ $(document).ready(function() {
 		if ($(document).scrollTop() == 0 ){
 
 			
-			$("#menu").removeClass('menu2')
-		}
-		else if ($(document).scrollTop() > 0 ){
+			$("#menu2").addClass('invisible')
+			$("#menu").removeClass('invisible')
 
-			$("#menu").addClass('menu2')
+		}
+		else if ($(document).scrollTop() > 100 ){
+
+			$("#menu").addClass('invisible')
+			$("#menu2").removeClass('invisible')
 
 		} 
 	});
