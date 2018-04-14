@@ -175,6 +175,24 @@ $(document).ready(function() {
 		}
 		,
 		{
+			'id' : '#curso14',
+			'es' : 'Escuela Basica Ciudad de Merida (6to grado)',
+			'en' : 'Basic School City of Merida (6th grade)'
+		}
+		,
+		{
+			'id' : '#curso15',
+			'es' : ' U.E Colegio Jose Antonio Paez (Bachiller en Ciencias)',
+			'en' : 'U.E Colegio Jose Antonio Paez (Bachelor of Science)'
+		}
+		,
+		{
+			'id' : '#curso16',
+			'es' : 'UNEFA, Nucleo Portuguesa - Extension Turen, Ingenieria de Sistemas (7mo Semestre)',
+			'en' : 'UNEFA, Nucleo Portuguesa - Extension Turen, Systems Engineering (7th Semester)'
+		}
+		,
+		{
 			'id' : '#notaFinal',
 			'es' : 'Aún no he subido el resto de mis proyectos a Github',
 			'en' : 'I have not yet uploaded the rest of my projects to Github'
@@ -202,6 +220,11 @@ $(document).ready(function() {
 			'id' : '#proyecto4',
 			'es' : 'Inventario Kajataca ',
 			'en' : 'Kajataca Inventory'
+		},
+		{
+			'id' : '#direccion',
+			'es':   'Direccion : Av 3 entre calles 13 y 14, casa nº13-64 sector centro, Turen - Estado Portuguesa.',
+			'en' : 'Address: Av 3 between streets 13 and 14, house nº13-64 sector center, Turen - Portuguesa State.'
 		}
 	
 	
