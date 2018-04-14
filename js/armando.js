@@ -41,7 +41,7 @@ $(document).ready(function() {
 			'en' : "I'm a student of systems engineering"
 		},
 		{
-			'id' : '#botonIdioma',
+			'id' : '.botonIdioma',
 			'es' : "Change to English",
 			'en' : "Cambiar a Español"
 		},
