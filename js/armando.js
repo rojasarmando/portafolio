@@ -173,6 +173,36 @@ $(document).ready(function() {
 			'es' : 'Curso Básico de Programación',
 			'en' : 'Basic Python Course'
 		}
+		,
+		{
+			'id' : '#notaFinal',
+			'es' : 'Aún no he subido el resto de mis proyectos a Github',
+			'en' : 'I have not yet uploaded the rest of my projects to Github'
+		}
+		,
+		{
+			'id' : '#proyecto1',
+			'es' : 'Conversión de Números naturales a Números Romanos en Lenguaje C',
+			'en' : 'Conversion of natural numbers to Roman numerals in C language'
+		}
+		,
+		{
+			'id' : '#proyecto2',
+			'es' : ' Galeria de Fotos de sitios turistico en Venezuela, elaborado para la materia de Catedra Bolivariana',
+			'en' : 'Photo gallery of tourist sites in Venezuela, prepared for the subject of Catedra Bolivariana'
+		}
+		,
+		{
+			'id' : '#proyecto3',
+			'es' : 'Ejercicios Prácticos en Turbo Pascal',
+			'en' : 'Practical Exercises in Turbo Pascal'
+		}
+		,
+		{
+			'id' : '#proyecto4',
+			'es' : 'Inventario Kajataca ',
+			'en' : 'Kajataca Inventory'
+		}
 	
 	
 	]
