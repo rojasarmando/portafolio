@@ -83,13 +83,13 @@ $(document).ready(function() {
 			'en' : 'Phone'
 		},
 		{
-			'id' : '#datosBasicos',
+			'id' : '.btn3',
 			'es' : 'Información básica',
 			'en' : 'Basic information'
 		}
 		,
 		{
-			'id' : '#acercaDemi',
+			'id' : '.btn2',
 			'es' : 'Acerca de mi',
 			'en' : 'About me'
 		},
@@ -97,6 +97,81 @@ $(document).ready(function() {
 			'id' : '.btn1',
 			'es' : 'Presentación',
 			'en' : 'Presentation'
+		},
+		{
+			'id' : '.btn4',
+			'es' : 'Mis Estudios',
+			'en' : 'My studies'
+		},
+		{
+			'id' : '.btn5',
+			'es' : 'Mis Proyectos',
+			'en' : 'My projects'
+		},
+		{
+			'id' : '#curso1',
+			'es' : 'Curso Básico de Programación',
+			'en' : 'Basic Programming Course'
+		}
+		,
+		{
+			'id' : '#curso2',
+			'es' : 'Curso de Fundamentos de Ingeniería de Software',
+			'en' : 'Software Engineering Fundamentals Course'
+		}
+		,
+		{
+			'id' : '#curso3',
+			'es' : ' Curso de Algoritmos en Lenguaje C',
+			'en' : 'Language Algorithms Course C'
+		}
+		,
+		{
+			'id' : '#curso4',
+			'es' : 'Curso de Git & Github',
+			'en' : 'Git & Github course'
+		}
+		,
+		{
+			'id' : '#curso5',
+			'es' : ' Curso de Desarrollo Web ',
+			'en' : 'Web Development Course'
+		}
+		,
+		{
+			'id' : '#curso6',
+			'es' : 'Curso de Programacion para Padres y Niños',
+			'en' : 'Programming Course for Parents and Children'
+		}
+		,
+		{
+			'id' : '#curso7',
+			'es' : 'Curso  Definitivo de Javascript ',
+			'en' : 'Definitive course of Javascript'
+		}
+		,
+		{
+			'id' : '#curso8',
+			'es' : 'Curso Básico de PHP',
+			'en' : 'Basic PHP Course'
+		}
+		,
+		{
+			'id' : '#curso9',
+			'es' : 'Curso Profesional de Laravel',
+			'en' : 'Professional Course of Laravel'
+		}
+		,
+		{
+			'id' : '#curso10',
+			'es' : 'Curso Básico de Programación',
+			'en' : 'Basic Java Course'
+		}
+		,
+		{
+			'id' : '#curso11',
+			'es' : 'Curso Básico de Programación',
+			'en' : 'Basic Python Course'
 		}
 	
 	
@@ -114,7 +189,7 @@ $(document).ready(function() {
 	/*Cambair el head*/
 
 
-	$("#botonIdioma").idiomas(texto)
+	$(".botonIdioma").idiomas(texto)
 
 
 
