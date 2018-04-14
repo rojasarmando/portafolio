@@ -109,6 +109,11 @@ $(document).ready(function() {
 			'en' : 'My projects'
 		},
 		{
+			'id' : '.btn6',
+			'es' : 'Experiencia Laboral',
+			'en' : 'Work experience'
+		},
+		{
 			'id' : '#curso1',
 			'es' : 'Curso Básico de Programación',
 			'en' : 'Basic Programming Course'
@@ -225,6 +230,24 @@ $(document).ready(function() {
 			'id' : '#direccion',
 			'es':   'Direccion : Av 3 entre calles 13 y 14, casa nº13-64 sector centro, Turen - Estado Portuguesa.',
 			'en' : 'Address: Av 3 between streets 13 and 14, house nº13-64 sector center, Turen - Portuguesa State.'
+		}
+		,
+		{
+			'id' : '#trabajo1',
+			'es':   ' Tunal C.A, Asistente Administrativo 2016 (1 año).',
+			'en' : 'Tunal C.A, Administrative Assistant 2016 (1 year).'
+		}
+		,
+		{
+			'id' : '#trabajo2',
+			'es':   'Mundo de Diversiones C.A, recreador 2017 (1 año).',
+			'en' : 'Mundo de Diversiones C.A, recreator 2017 (1 year).'
+		}
+		,
+		{
+			'id' : '#trabajo3',
+			'es':   'Servicio Tecnico Independiente, 2017 - actual.',
+			'en' : 'Independent Technical Service, 2017 - current.'
 		}
 	
 	
