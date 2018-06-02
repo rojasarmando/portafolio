@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 		{
 			'id' : '#unPocoSobreMi',
-			'es' : 'Mi nombre es Armando Rojas, tengo 20 años de edad, soy venezolano, estudio ingeniería de sistemas donde actualmente curso el 7mo semestre de la carrera, tengo conocimiento acerca de Turbo Pascal',
-			'en' : 'My name is Armando Rojas, I am 20 years old, I am Venezuelan, I study systems engineering where I am currently studying the 7th semester of the race, I have knowledge about '
+			'es' : 'Mi nombre es Armando Rojas, tengo 20 años de edad, soy venezolano, estudio ingeniería de sistemas donde actualmente curso el 8vo semestre de la carrera, tengo conocimiento acerca de',
+			'en' : 'My name is Armando Rojas, I am 20 years old, I am Venezuelan, I study systems engineering where I am currently studying the 8th semester of the race, I have knowledge about '
 		},
 		{
 			'id' : '#unPocoSobreMi2',
@@ -231,6 +231,11 @@ $(document).ready(function() {
 			'id' : '#proyecto4',
 			'es' : 'Inventario Kajataca ',
 			'en' : 'Kajataca Inventory'
+		},
+		{
+			'id' : '#proyecto5',
+			'es' : 'Heladeria, Practica de conexion a base de datos en Java ',
+			'en' : 'Ice cream, Java Database Connection Practice'
 		},
 		{
 			'id' : '#direccion',
