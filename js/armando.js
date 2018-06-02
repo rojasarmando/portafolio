@@ -186,6 +186,12 @@ $(document).ready(function() {
 		}
 		,
 		{
+			'id' : '#curso17',
+			'es' : 'Curso de Ruby',
+			'en' : 'Ruby Course'
+		}
+		,
+		{
 			'id' : '#curso15',
 			'es' : ' U.E Colegio Jose Antonio Paez (Bachiller en Ciencias)',
 			'en' : 'U.E Colegio Jose Antonio Paez (Bachelor of Science)'
@@ -232,6 +238,13 @@ $(document).ready(function() {
 			'en' : 'Address: Av 3 between streets 13 and 14, house nº13-64 sector center, Turen - Portuguesa State.'
 		}
 		,
+
+		{
+			'id' : '#direccion2',
+			'es':   'Opción de cambio de residencia : Portal de las Brisas conjunto 5, casa nº 10 , Acarigua - Estado Portuguesa.',
+			'en' : 'Change of residence option: Portal de las Brisas joint 5, house nº 10, Acarigua - Portuguesa State.'
+		}
+		,
 		{
 			'id' : '#trabajo1',
 			'es':   ' Tunal C.A, Asistente Administrativo 2016 (1 año).',
@@ -248,6 +261,12 @@ $(document).ready(function() {
 			'id' : '#trabajo3',
 			'es':   'Servicio Tecnico Independiente, 2017 - actual.',
 			'en' : 'Independent Technical Service, 2017 - current.'
+		}
+		,
+		{
+			'id' : '#trabajo6',
+			'es':   'Descarga Mi Currículo',
+			'en' : 'Download My Curriculum'
 		}
 	
 	
