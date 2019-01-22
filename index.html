@@ -25,8 +25,7 @@
 
   </head>
 
-  <body id="page-top">
-
+  <body id="page-top" ng-app="portafolio" >
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -60,8 +59,8 @@
             <hr>
           </div>
           <div class="col-lg-10 mx-auto">
-            <h2 class=" mb-6">
-              Mi Nombre es Armando Rojas, Soy Ingeniero de Sistemas,
+            <h2 class=" mb-6" ng-controller="principal">
+              Mi Nombre es Armando Rojas, Soy Ingeniero de Sistemas, {{titulo}}
             </h2>
             <h2 class=" mb-6">
                 y Desarrollador Backend.
@@ -74,8 +73,8 @@
     </header>
 
 
-    <section id="services">
- 
+    <section id="services" ng-controller="principal" >
+        <ng-include src="  './views/conocimiento.html' " ></ng-include>
     </section>
 
     <section class="p-0" id="portfolio">
@@ -208,10 +207,12 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/js/vendor.js"></script>
- 
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.js"></script>
+
+    <!-- Angular -->
+    <script src="js/app.js" >  </script>
 
   </body>
 

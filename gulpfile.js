@@ -18,7 +18,8 @@ gulp.task('vendor', function() {
       './node_modules/jquery.easing/jquery.easing.min.js', 
       './node_modules/scrollreveal/dist/scrollreveal.min.js' ,
       './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js' ,
-      './node_modules/angular/angular.min.js'
+      './node_modules/angular/angular.min.js',
+      
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./vendor/js'))
