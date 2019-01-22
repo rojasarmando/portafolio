@@ -1,66 +1,54 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
-var browserSync = require('browser-sync').create();
-
-// Set the banner content
-var banner = ['/*!\n',
-  ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-  ' */\n',
-  ''
-].join('');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+     header = require('gulp-header'),
+     cleanCSS = require('gulp-clean-css'),
+     rename = require("gulp-rename"),
+     uglify = require('gulp-uglify'),
+     pkg = require('./package.json'),
+     concat = require('gulp-concat'),
+     browserSync = require('browser-sync').create();
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
 
-  // Bootstrap
+  // Cargador de Dependencias Js
   gulp.src([
-      './node_modules/bootstrap/dist/**/*',
-      '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
-      '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
+      './node_modules/jquery/dist/jquery.min.js',
+      './node_modules/bootstrap/dist/**/bootstrap.bundle.min.js',
+      './node_modules/jquery.easing/jquery.easing.min.js', 
+      './node_modules/scrollreveal/dist/scrollreveal.min.js' ,
+      './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js' ,
+      './node_modules/angular/angular.min.js'
     ])
-    .pipe(gulp.dest('./vendor/bootstrap'))
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('./vendor/js'))
 
   // Font Awesome
   gulp.src([
-      './node_modules/font-awesome/**/*',
-      '!./node_modules/font-awesome/{less,less/*}',
-      '!./node_modules/font-awesome/{scss,scss/*}',
-      '!./node_modules/font-awesome/.*',
-      '!./node_modules/font-awesome/*.{txt,json,md}'
+      './node_modules/font-awesome/css/*'
     ])
-    .pipe(gulp.dest('./vendor/font-awesome'))
+    .pipe(gulp.dest('./vendor/font-awesome/css'))
 
-  // jQuery
-  gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
+    gulp.src([
+      './node_modules/font-awesome/fonts/*',
     ])
-    .pipe(gulp.dest('./vendor/jquery'))
+    .pipe(gulp.dest('./vendor/font-awesome/fonts'))
 
-  // jQuery Easing
+  // Cargador de Dependencias CSS
   gulp.src([
-      './node_modules/jquery.easing/*.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery-easing'))
+    './node_modules/bootstrap/dist/**/bootstrap.min.css',
+    './node_modules/magnific-popup/dist/magnific-popup.css' ,
+  ])
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest('./vendor/css'))
+
 
   // Magnific Popup
   gulp.src([
-      './node_modules/magnific-popup/dist/*'
+     
     ])
     .pipe(gulp.dest('./vendor/magnific-popup'))
 
-  // Scrollreveal
-  gulp.src([
-      './node_modules/scrollreveal/dist/*.js'
-    ])
-    .pipe(gulp.dest('./vendor/scrollreveal'))
 
 });
 
