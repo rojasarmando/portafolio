@@ -42,15 +42,6 @@ gulp.task('vendor', function() {
   ])
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./vendor/css'))
-
-
-  // Magnific Popup
-  gulp.src([
-     
-    ])
-    .pipe(gulp.dest('./vendor/magnific-popup'))
-
-
 });
 
 // Compile SCSS
@@ -79,25 +70,8 @@ gulp.task('css:minify', ['css:compile'], function() {
 // CSS
 gulp.task('css', ['css:compile', 'css:minify']);
 
-// Minify JavaScript
-gulp.task('js:minify', function() {
-  return gulp.src([
-      './js/*.js',
-      '!./js/*.min.js'
-    ])
-    .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./js'))
-    .pipe(browserSync.stream());
-});
-
-// JS
-gulp.task('js', ['js:minify']);
-
 // Default task
-gulp.task('default', ['css', 'js', 'vendor']);
+gulp.task('default', ['css', 'vendor']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -109,8 +83,8 @@ gulp.task('browserSync', function() {
 });
 
 // Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function() {
+gulp.task('dev', ['css', 'browserSync'], function() {
   gulp.watch('./scss/*.scss', ['css']);
-  gulp.watch('./js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('./js/app.js', browserSync.reload);
 });

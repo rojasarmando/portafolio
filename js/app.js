@@ -1,18 +1,13 @@
 var app = angular.module('portafolio',[])
 
-app.controller('principal', ( $scope )=>{
-
- 
-    $scope.titulo = 'ejemplo'
+app.controller('principal', ( $scope , $rootScope  )=>{
+     // Por Defecto Español
+    $rootScope.idioma = 'es'
 })
 
-
-app.controller('menu', ($scope) =>{
-
-
-
+app.controller('menu', ($scope, $rootScope) =>{
+   
     $scope.home = "Armando Rojas"; 
-
     // Botonera 
     $scope.botonera = [
         {'titulo' : 'Conocimiento' , ref : '#services'   }, 
@@ -20,4 +15,21 @@ app.controller('menu', ($scope) =>{
         {'titulo' : 'Curriculum' , ref : '#services'   }, 
         {'titulo' : 'Change to English'   }, 
     ]
+
+    $scope.cambiarIdioma = () =>{
+        if($rootScope.idioma == 'es') $rootScope.idioma = 'in'
+        else $rootScope.idioma = 'es'
+    }
+})
+
+
+app.controller('home', ($scope, $rootScope) =>{
+
+    // Por Defecto Español
+   $scope.titulo = {
+       'es' : '¡Hola!' ,
+       'in' : 'Hi!'
+   }
+
+
 })

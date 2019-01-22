@@ -21,7 +21,7 @@
     
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/creative.min.css" rel="stylesheet">
 
   </head>
 
@@ -46,20 +46,19 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Curriculum</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" >Change to English</a>
+              <a class="nav-link js-scroll-trigger" ng-click="cambiarIdioma()" >Change to English</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-
-    <header class="masthead text-center text-white d-flex">
+    <header class="masthead text-center text-white d-flex" ng-controller="home" >
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong class="sr-contact" >¡Hola!</strong>
+              <strong class="sr-contact" > {{titulo[idioma]}} </strong>
             </h1>
             <hr>
           </div>
@@ -77,7 +76,6 @@
       </div>
     </header>
 
-
     <section id="services" ng-controller="principal" >
         <ng-include src="  './views/conocimiento.html' " ></ng-include>
     </section>
@@ -90,17 +88,15 @@
       <ng-include src="  './views/Curriculum.html' " ></ng-include>
     </section>
 
+
+    
   
 </div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/js/vendor.js"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/creative.js"></script>
-
     <!-- Angular -->
     <script src="js/app.js" >  </script>
-
   </body>
-
 </html>
