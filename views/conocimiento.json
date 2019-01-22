@@ -1,7 +1,27 @@
 [
-    { 
-        "titulo" : "ruby" ,
-        "icono"  : "diamond"
-        
-    }
+    {  "titulo" : "Ruby on Rails" ,"icono"  : "diamond" } ,
+    { "titulo" : "Laravel"       , "icono"  : "youtube" } ,
+    { "titulo" : "Angular Js"       , "icono"  : "youtube" } ,
+    { "titulo" : "JQuery"       , "icono"  : "youtube" } ,
+    { "titulo" : "Angular 4"       , "icono"  : "youtube" } ,
+    { "titulo" : "Gulp"       , "icono"  : "youtube" } ,
+    { "titulo" : "Oracle"       , "icono"  : "youtube" } ,
+    { "titulo" : "NodeJs"       , "icono"  : "youtube" } ,
+    { "titulo" : "Angular 6"       , "icono"  : "youtube" } ,
+    { "titulo" : "Python"       , "icono"  : "youtube" } ,
+    { "titulo" : "MySQL"       , "icono"  : "youtube" } ,
+    { "titulo" : "Java"       , "icono"  : "youtube" } ,
+    { "titulo" : "WordPress"       , "icono"  : "wordpress" } ,
+    { "titulo" : "PHP"       , "icono"  : "youtube" } ,
+    { "titulo" : "Postgrest"       , "icono"  : "youtube" } ,
+    { "titulo" : "Bootstrap 4 y 3"       , "icono"  : "twitter" } ,
+    { "titulo" : "Webpack"       , "icono"  : "user" } ,
+    { "titulo" : "Javascript"       , "icono"  : "jsfiddle" } ,
+    { "titulo" : "Git"       , "icono"  : "github" } ,
+    { "titulo" : "PostCSS"       , "icono"  : "user" } ,
+    { "titulo" : "SASS"       , "icono"  : "user" } ,
+    { "titulo" : "Pascal"       , "icono"  : "superpowers" } ,
+    { "titulo" : "HTML5"       , "icono"  : "user" } ,
+    { "titulo" : "C++"       , "icono"  : "free-code-camp" } 
+    
 ]

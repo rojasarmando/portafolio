@@ -64,7 +64,7 @@
           </div>
           <div class="col-lg-10 mx-auto">
             <h2 class=" mb-6" ng-controller="principal">
-              Mi Nombre es Armando Rojas, Soy Ingeniero de Sistemas,
+              {{subTitulo[idioma]}}
             </h2>
             <h2 class=" mb-6">
                 y Desarrollador Backend.
@@ -76,7 +76,7 @@
       </div>
     </header>
 
-    <section id="services" ng-controller="principal" >
+    <section id="services" ng-controller="conocimiento" ng-controller="conocimiento" >
         <ng-include src="  './views/conocimiento.html' " ></ng-include>
     </section>
 
