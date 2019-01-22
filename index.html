@@ -25,42 +25,47 @@
 
   </head>
 
-  <body id="page-top" ng-app="portafolio" >
+  <body id="page-top" ng-app="portafolio"  >
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div ng-controller="principal" >
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" ng-controller="menu" >
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Armando Rojas </a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"> {{home}} </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Conocimiento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">Curriculum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" >Change to English</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>¡Hola!</strong>
+              <strong class="sr-contact" >¡Hola!</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-10 mx-auto">
             <h2 class=" mb-6" ng-controller="principal">
-              Mi Nombre es Armando Rojas, Soy Ingeniero de Sistemas, {{titulo}}
+              Mi Nombre es Armando Rojas, Soy Ingeniero de Sistemas,
             </h2>
             <h2 class=" mb-6">
                 y Desarrollador Backend.
@@ -174,14 +179,14 @@
       </div>
     </section>
 
-    <section class="bg-dark text-white">
+    <section id="contact" class="bg-dark text-white">
       <div class="container text-center">
         <h2 class="mb-4">Descarga Mi Curriculum</h2>
         <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Haz Click Aqui</a>
       </div>
     </section>
 
-    <section id="contact">
+    <section >
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -204,7 +209,7 @@
         </div>
       </div>
     </section>
-
+</div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/js/vendor.js"></script>
 
