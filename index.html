@@ -28,13 +28,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Conocimiento</a>
+              <a class="nav-link js-scroll-trigger" href="#services">{{botonera[0].titulo[idioma]}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio"> {{botonera[1].titulo[idioma]}} </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Curriculum</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">{{botonera[2].titulo[idioma]}}</a> 
             </li>
             <li class="nav-item">
               <a style="cursor: pointer;"  class="nav-link js-scroll-trigger" ng-click="cambiarIdioma()" > {{btnCambiarIdioma[idioma]}} </a>
@@ -53,13 +53,10 @@
             </h1>
             <hr>
           </div>
-          <div class="col-lg-10 mx-auto">
-            <h2 class=" mb-6" ng-controller="principal">
-              {{subTitulo[idioma]}}
+          <div class="col-lg-10 mx-auto" ng-controller="principal"  >
+            <h2 class=" mb-6" ng-repeat="sub in subTitulo[idioma]" >
+              {{sub}}
             </h2>
-            <h2 class=" mb-6">
-                y Desarrollador Backend.
-              </h2>
             <br>
       
           </div>

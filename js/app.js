@@ -10,12 +10,17 @@ app.controller('principal', ( $rootScope  )=>{
 app.controller('menu', ($scope, $rootScope) =>{
    
     $scope.home = "Armando Rojas"; 
-    // Botonera 
-
+    
     $scope.btnCambiarIdioma = {
         'es' : "Change to English" , 
         'in' : "Cambiar a Español"
     }
+
+    $scope.botonera = [
+        { "titulo" : { 'es' : 'Conocimiento' , 'in' : 'Ni puta Idea' }   }, 
+        { "titulo" : { 'es' : 'Portfolio   ' , 'in' : 'Ni puta Idea' }   }, 
+        { "titulo" : { 'es' : 'Curriculum'   , 'in' : 'Ni puta Idea' }   }
+    ]
 
     $scope.cambiarIdioma = () =>{
         if($rootScope.idioma == 'es') $rootScope.idioma = 'in'
@@ -32,7 +37,10 @@ app.controller('home', ($scope ) =>{
        'in' : 'Hi!'
    };
    $scope.subTitulo = {
-    'es' : ' Mi nombre es Armando Rojas, Soy Ingeniero de Sistemas,' ,
+    'es' : [
+        ' Mi nombre es Armando Rojas', 
+        'y Soy Desarrollador Backend'
+    ] ,
     'in' : ' My name is Armando Rojas, I am Ingeniero de Sistemas,'
    };
 })
