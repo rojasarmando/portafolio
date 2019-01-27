@@ -1,0 +1,25 @@
+ [
+        {
+        
+            "imgMiniatura"  : "img/portfolio/fullsize/1.jpg",
+            "img"           : "img/portfolio/thumbnails/1.jpg",
+            "es": {
+                "titulo"        : "Proyecto" ,
+                "subTitulo"     : "El Arroz con Caraotas",
+                "descripcion"   : "Elaboracion de Arroz con Caraotas Carupaneras"
+            }
+            
+        },
+
+        {
+        
+            "imgMiniatura"  : "img/portfolio/fullsize/1.jpg",
+            "img"           : "img/portfolio/thumbnails/1.jpg",
+            "es": {
+                "titulo"        : "Proyecto" ,
+                "subTitulo"     : "El Arroz con Caraotas",
+                "descripcion"   : "Elaboracion de Arroz con Caraotas Carupaneras"
+            }
+            
+        }
+    ]
