@@ -41,7 +41,10 @@ app.controller('home', ($scope ) =>{
         ' Mi nombre es Armando Rojas', 
         'y Soy Desarrollador Backend'
     ] ,
-    'in' : ' My name is Armando Rojas, I am Ingeniero de Sistemas,'
+    'in' : [
+        ' My name is Armando Rojas', 
+        'and I am Developer'
+    ] ,
    };
 })
 
