@@ -1,9 +1,9 @@
-<div class="container text-center">
-    <h2 class="mb-4">Descarga Mi Curriculum</h2>
+<div class="container text-center" ng-controller="descarga" >
+    <h2 class="mb-4">{{titulo[idioma]}}</h2>
     <br>
-    <a class="mt-2  btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > Curriculum Corto</a>
-    <a class="mt-2 offset-2  btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > Curriculum Full</a>
-    <a class="mt-2 offset-2 btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > Imprimir Curriculum</a>
+    <a class="mt-2  btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > {{botonera[0][idioma]}} </a>
+    <a class="mt-2 offset-2  btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > {{botonera[1][idioma]}}  </a>
+    <a class="mt-2 offset-2 btn btn-dark   text-capitalize btn-lg sr-button  btn-custom-blue " > {{botonera[2][idioma]}} </a>
   </div>
 
 

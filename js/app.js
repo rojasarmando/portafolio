@@ -79,6 +79,24 @@ app.controller('portafolio', ( $scope , $http )=>{
 })
 
 
+app.controller('descarga', $scope  =>{
+    // Por Defecto Español
+    $scope.titulo = {
+        'es' : 'Descarga Mi Curriculum' ,
+        'in' : 'Download My Curriculum '
+    };
+
+    // Service
+    $scope.botonera = [
+        { es: "Version Corta"    , in: "No Se"  },
+        { es: "Version Completa" , in: "No Se"  },
+        { es: "Imprimir"         , in: "No Se"  }
+        ]
+
+    
+})
+
+
 
 
 
