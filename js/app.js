@@ -3,6 +3,15 @@ var app = angular.module('portafolio',[])
 app.controller('principal', ( $rootScope  )=>{
      // Por Defecto Español
     $rootScope.idioma = 'es'
+    $rootScope.principal = "Armando Rojas - 2019"
+
+    // fecha 
+    let date = new Date(); 
+  
+    if( parseInt(date.getFullYear()) > 2018 )  
+        $rootScope.inicio = "Armando Rojas - "  + date.getFullYear()
+
+      
 
 
 })
