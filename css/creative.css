@@ -305,6 +305,14 @@ header.masthead p {
   }
 }
 
+.btn-custom-blue:hover {
+  color: white !important;
+  background-color: #0062cc;
+  background-image: none;
+  border-color: #0062cc;
+  font-size: arial !important;
+}
+
 .text-primary {
   color: #0062cc !important;
 }
@@ -313,7 +321,6 @@ header.masthead p {
   font-weight: 700;
   text-transform: uppercase;
   border: none;
-  border-radius: 300px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 

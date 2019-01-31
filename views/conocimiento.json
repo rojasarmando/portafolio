@@ -1,18 +1,18 @@
 [
     {  "titulo" : "Ruby on Rails" ,"icono"  : "diamond" } ,
     { "titulo" : "Laravel"       , "icono"  : "youtube" } ,
-    { "titulo" : "Angular Js"       , "icono"  : "youtube" } ,
-    { "titulo" : "JQuery"       , "icono"  : "youtube" } ,
-    { "titulo" : "Angular 4"       , "icono"  : "youtube" } ,
+    { "titulo" : "Angular Js"       , "icono"  : "angular" , "type" : "icon"   } ,
+    { "titulo" : "jQuery"       , "icono"  : "jquery" , "type" : "icon"} ,
+    { "titulo" : "Angular 4"       , "icono"  : "angular"  , "type" : "icon"   } ,
     { "titulo" : "Gulp"       , "icono"  : "youtube" } ,
     { "titulo" : "Oracle"       , "icono"  : "youtube" } ,
     { "titulo" : "NodeJs"       , "icono"  : "youtube" } ,
     { "titulo" : "Angular 6"       , "icono"  : "youtube" } ,
-    { "titulo" : "Python"       , "icono"  : "youtube" } ,
+    { "titulo" : "Python"       , "icono"  : "python", "type" : "icon"   } ,
     { "titulo" : "MySQL"       , "icono"  : "youtube" } ,
     { "titulo" : "Java"       , "icono"  : "youtube" } ,
     { "titulo" : "WordPress"       , "icono"  : "wordpress" } ,
-    { "titulo" : "PHP"       , "icono"  : "youtube" } ,
+    { "titulo" : "PHP"       , "icono"  : "php" , "type" : "icon" } ,
     { "titulo" : "Postgrest"       , "icono"  : "youtube" } ,
     { "titulo" : "Bootstrap 4 y 3"       , "icono"  : "twitter" } ,
     { "titulo" : "Webpack"       , "icono"  : "user" } ,
@@ -21,7 +21,7 @@
     { "titulo" : "PostCSS"       , "icono"  : "user" } ,
     { "titulo" : "SASS"       , "icono"  : "user" } ,
     { "titulo" : "Pascal"       , "icono"  : "superpowers" } ,
-    { "titulo" : "HTML5"       , "icono"  : "user" } ,
-    { "titulo" : "C++"       , "icono"  : "free-code-camp" } 
+    { "titulo" : "HTML5"       , "icono"  : "html" , "type" : "icon"} ,
+    { "titulo" : "C++"       , "icono"  : "c-plus-plus" , "type" : "icon"} 
     
 ]
