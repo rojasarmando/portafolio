@@ -22,6 +22,11 @@
     { "titulo" : "SASS"       , "icono"  : "sass" ,  "type": "icon" } ,
     { "titulo" : "Pascal"       , "icono"  : "superpowers" } ,
     { "titulo" : "HTML5"       , "icono"  : "html" , "type" : "icon"} ,
-    { "titulo" : "C++"       , "icono"  : "c-plus-plus" , "type" : "icon"} 
+    { "titulo" : "C++"       , "icono"  : "c-plus-plus" , "type" : "icon"} ,
+
+    { "titulo" : "Github"       , "icono"  : "github" ,  "type": "icon" } ,
+    { "titulo" : "Gitlab"       , "icono"  : "gitlab" ,  "type": "icon" } ,
+    { "titulo" : "Bitbucket"       , "icono"  : "bitbucket" } ,
+    { "titulo" : "Trello"       , "icono"  : "trello" , "type" : "icon"} 
     
 ]
