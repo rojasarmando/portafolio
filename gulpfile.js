@@ -18,9 +18,9 @@ gulp.task('vendor', function() {
       './node_modules/jquery.easing/jquery.easing.min.js', 
       './node_modules/scrollreveal/dist/scrollreveal.min.js' ,
       './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js' ,
-      './node_modules/angular/angular.min.js',
-      
-    ])
+      './node_modules/wow.js/dist/wow.min.js' ,
+      './node_modules/angular/angular.min.js'
+      ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./vendor/js'))
 
@@ -39,6 +39,7 @@ gulp.task('vendor', function() {
   gulp.src([
     './node_modules/bootstrap/dist/**/bootstrap.min.css',
     './node_modules/magnific-popup/dist/magnific-popup.css' ,
+    './node_modules/wow.js/css/libs/animate.css' ,
   ])
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./vendor/css'))

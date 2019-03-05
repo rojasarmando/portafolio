@@ -10,6 +10,7 @@
         $('html, body').animate({
           scrollTop: (target.offset().top - 56)
         }, 1000, "easeInOutExpo");
+        new WOW().init();
         return false;
       }
     }
@@ -30,9 +31,14 @@
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
+  
     } else {
+      new WOW().init();
       $("#mainNav").removeClass("navbar-shrink");
+  
     }
+
+   
   };
   // Collapse now if page is not at top
   navbarCollapse();
@@ -55,5 +61,7 @@
     scale: 0.3,
     distance: '0px'
   }, 300);
+
+  new WOW().init();
 
 })(jQuery); // End of use strict
