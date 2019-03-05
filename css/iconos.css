@@ -160,3 +160,39 @@
             background-size: 100%;
         }
 
+
+        .icon-github {
+            display: inline-block;
+            width: 5em;
+            height: 5em;
+            background: url('../img/icono/github.png');
+            background-size: 100%;
+        }
+
+
+        .icon-gitlab {
+            display: inline-block;
+            width: 5em;
+            height: 5em;
+            background: url('../img/icono/gitlab.png');
+            background-size: 100%;
+        }
+
+
+        .icon-trello {
+            display: inline-block;
+            width: 5em;
+            height: 5em;
+            background: url('../img/icono/trello.jpg');
+            background-size: 100%;
+        }
+
+
+        .icon-bitbucket {
+            display: inline-block;
+            width: 5em;
+            height: 5em;
+            background: url('../img/icono/bitbucket.jpg');
+            background-size: 100%;
+        }
+
