@@ -26,9 +26,9 @@ app.controller('menu', ($scope, $rootScope) =>{
     }
 
     $scope.botonera = [
-        { "titulo" : { 'es' : 'Conocimiento' , 'in' : 'Ni puta Idea' }   }, 
-        { "titulo" : { 'es' : 'Portfolio   ' , 'in' : 'Ni puta Idea' }   }, 
-        { "titulo" : { 'es' : 'Curriculum'   , 'in' : 'Ni puta Idea' }   }
+        { "titulo" : { 'es' : 'Conocimiento' , 'in' : 'Knowledge' }   }, 
+        { "titulo" : { 'es' : 'Portafolio   ' , 'in' : 'Portfolio' }   }, 
+        { "titulo" : { 'es' : 'Curriculum'   , 'in' : 'Curriculum' }   }
     ]
 
     $scope.cambiarIdioma = () =>{
@@ -62,7 +62,7 @@ app.controller('conocimiento', ( $scope , $http )=>{
     // Por Defecto Español
     $scope.titulo = {
         'es' : 'Mi Conocimiento' ,
-        'in' : 'My ... '
+        'in' : 'My Knowledge'
     };
 
     // Service
@@ -100,9 +100,9 @@ app.controller('descarga', $scope  =>{
 
     // Service
     $scope.botonera = [
-        { es: "Version Corta"    , in: "No Se"  },
-        { es: "Version Completa" , in: "No Se"  },
-        { es: "Imprimir"         , in: "No Se"  }
+        { es: "Version Corta"    , in: "Short version"  },
+        { es: "Version Completa" , in: "Complete Version"  },
+        { es: "Imprimir"         , in:  "Print it"  }
         ]
 
     

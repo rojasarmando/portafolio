@@ -51,13 +51,13 @@
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong class="wow slideInLeft" > {{titulo[idioma]}} </strong>
+            <h1 class="text-uppercase wow tada">
+              <strong > {{titulo[idioma]}} </strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-10 mx-auto" ng-controller="principal"  >
-            <h2 class=" mb-6" ng-repeat="sub in subTitulo[idioma]" >
+            <h2 data-wow-delay=".2s"  class="mb-6 wow slideInDown" ng-repeat="sub in subTitulo[idioma]" >
               {{sub}}
             </h2>
             <br>
