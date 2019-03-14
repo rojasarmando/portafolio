@@ -196,3 +196,10 @@
             background-size: 100%;
         }
 
+a{
+    color: white;
+}
+
+.galeria{
+    min-height: 100%;
+}

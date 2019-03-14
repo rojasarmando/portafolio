@@ -100,9 +100,9 @@ app.controller('descarga', $scope  =>{
 
     // Service
     $scope.botonera = [
-        { es: "Version Corta"    , in: "Short version"  },
-        { es: "Version Completa" , in: "Complete Version"  },
-        { es: "Imprimir"         , in:  "Print it"  }
+        { es: "Version Corta"    , in: "Short version"  , link: "#test" },
+        { es: "Version Completa" , in: "Complete Version" , link: "#test" },
+        { es: "Imprimir"         , in:  "Print it" , link: "#test" }
         ]
 
     
