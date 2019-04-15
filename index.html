@@ -82,7 +82,16 @@
     </section>
 
     <section id="contact" class="bg-dark text-white">
-      <ng-include src="  './views/Curriculum.html' " ></ng-include>
+      <div class="container text-center" ng-controller="descarga" >
+        <h2 class="mb-4 wow slideInDown"  >{{titulo[idioma]}}</h2>
+        <br>
+        <a href="{{botonera[0]['link']}}" class="mt-2  btn btn-dark   text-capitalize btn-lg   btn-custom-blue wow pulse"  data-wow-iteration="infinite"> 
+          {{botonera[0][idioma]}} 
+        </a>
+    
+      </div>
+    
+    
     </section>
 
 
