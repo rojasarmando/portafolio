@@ -28,7 +28,8 @@ app.controller('menu', ($scope, $rootScope) =>{
     $scope.botonera = [
         { "titulo" : { 'es' : 'Conocimiento' , 'in' : 'Knowledge' }   }, 
         { "titulo" : { 'es' : 'Portafolio   ' , 'in' : 'Portfolio' }   }, 
-        { "titulo" : { 'es' : 'Curriculum'   , 'in' : 'Curriculum' }   }
+        { "titulo" : { 'es' : 'Curriculum'   , 'in' : 'Curriculum' }   },
+        { "titulo" : { 'es' : 'Cursos'   , 'in' : 'Courses' }   }
     ]
 
     $scope.cambiarIdioma = () =>{
@@ -59,15 +60,22 @@ app.controller('home', ($scope ) =>{
 
 
 app.controller('conocimiento', ( $scope , $http )=>{
-    // Por Defecto Español
-    $scope.titulo = {
-        'es' : 'Mi Conocimiento' ,
-        'in' : 'My Knowledge'
-    };
-
+ 
     // Service
     $http.get('./views/conocimiento.json').then(function(res){ 
         $scope.arrayConocimiento = angular.fromJson(res.data)
+    });
+
+
+    
+})
+
+app.controller('cursos', ( $scope , $http )=>{
+  
+
+    // Service
+    $http.get('./views/portafolio.json').then(function(res){ 
+        $scope.arrayPortafolio = angular.fromJson(res.data)
     });
 
 
@@ -100,9 +108,7 @@ app.controller('descarga', $scope  =>{
 
     // Service
     $scope.botonera = [
-        { es: "Version Corta"    , in: "Short version"  , link: "#test" },
-        { es: "Version Completa" , in: "Complete Version" , link: "#test" },
-        { es: "Imprimir"         , in:  "Print it" , link: "#test" }
+        { es: "Descargar"         , in:  "Download" , link: "img/cv2019.pdf" }
         ]
 
     
