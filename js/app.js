@@ -108,7 +108,7 @@ app.controller('descarga', $scope  =>{
 
     // Service
     $scope.botonera = [
-        { es: "Descargar"         , in:  "Download" , link: "img/cv2019.pdf" }
+        { es: "Descargar"         , in:  "Download" , link: "img/CV2019.pdf" }
         ]
 
     
