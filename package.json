@@ -24,15 +24,15 @@
         "angular": "^1.7.6",
         "bootstrap": "4.3.1",
         "font-awesome": "4.7.0",
-        "jquery": "3.3.1",
+        "jquery": "^3.5.1",
         "jquery.easing": "^1.4.1",
         "magnific-popup": "^1.1.0",
         "scrollreveal": "3.4.0",
         "wow.js": "^1.2.2"
     },
     "devDependencies": {
-        "browser-sync": "2.24.5",
-        "gulp": "^3.9.1",
+        "browser-sync": "^2.26.12",
+        "gulp": "^4.0.2",
         "gulp-clean-css": "3.9.4",
         "gulp-concat": "^2.6.1",
         "gulp-header": "2.0.5",
