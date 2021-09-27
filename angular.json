@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/main.css",
+              "src/styles.css",
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,9 +90,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/main.css",
+              "src/styles.css",
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts.js"
+            ]
           }
         },
         "lint": {
