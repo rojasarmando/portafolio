@@ -3,11 +3,17 @@
 :root {
   --color-blue: #0062cc;
   --color-white: #e9ecef;
+  --color-black: #212529;
+  --color-linkedln: #0e76a8;
 }
 
 .btn-primary{
   background: var(--color-blue) !important;
   border-color: var(--color-blue) !important;
+}
+
+.text-primary{
+  color: var(--color-blue) !important;
 }
 
 .btn-primary:hover {
@@ -39,4 +45,29 @@ div.masthead .masthead-heading {
   line-height: 3.25rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.btn-primary:hover {
+  background-color: var(--color-linkedln);
+  border-color: var(--color-linkedln);
+}
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+  color: #fff;
+  background-color: var(--color-linkedln);
+  border-color: var(--color-linkedln);
+  box-shadow: 0 0 0 0.25rem var(--color-linkedln);
+}
+.btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: var(--color-linkedln);
+  border-color: var(--color-linkedln);
+}
+.btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem var(--color-linkedln);
+}
+.btn-primary:disabled, .btn-primary.disabled {
+  color: #fff;
+  background-color: var(--color-linkedln);
+  border-color: var(--color-linkedln);
 }
