@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component'
 import { AboutComponent } from './about/about.component'
 import { WorkComponent } from './work/work.component'
 import { SkillsComponent } from './skills/skills.component'
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   declarations: [
@@ -27,6 +28,11 @@ import { SkillsComponent } from './skills/skills.component'
     WorkComponent,
     SkillsComponent
   ],
-  imports: [CommonModule, LandingRoutingModule, NgParticlesModule]
+  imports: [
+    CommonModule,
+    LandingRoutingModule,
+    NgParticlesModule,
+    TranslateModule
+  ]
 })
 export class LandingModule {}
