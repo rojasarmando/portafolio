@@ -19,7 +19,7 @@ export class ParticlesComponent implements OnInit {
         },
         onHover: {
           enable: true,
-          mode: 'push'
+          mode: 'repulse'
         },
         resize: true
       },
@@ -34,8 +34,8 @@ export class ParticlesComponent implements OnInit {
           quantity: 4
         },
         repulse: {
-          distance: 200,
-          duration: 0.4
+          distance: 60,
+          duration: 0.3
         }
       }
     },
@@ -66,7 +66,7 @@ export class ParticlesComponent implements OnInit {
           enable: true,
           value_area: 800
         },
-        value: 80
+        value: 280
       },
       opacity: {
         value: 0.1

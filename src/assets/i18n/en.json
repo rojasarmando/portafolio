@@ -1,5 +1,16 @@
 {
+  "navbar" : {
+    "about" : "About me",
+    "skills" : "Skills",
+    "cv" : "My CV",
+    "portafolio" : "Portafolio",
+    "contact" : "Contact me",
+    "menu" : "Menu"
+  },
   "header" : {
-    "welcome" : "Welcome To my portafolio!"
+    "welcome" : "Welcome To my portafolio!",
+    "btn_translate" : "Cambiar al Español",
+    "my_name" : "My name is ",
+    "i_am": "I'm Full Stack Developer"
   }
 }
