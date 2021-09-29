@@ -1,11 +1,14 @@
 <header class="masthead">
   <div class="masthead-subheading">{{ 'header.welcome' | translate }}</div>
-  <div class="masthead-heading">My name is Armando Rojas</div>
-  <div class="masthead-subheading">I'm Full Stack Developer</div>
+  <div class="masthead-heading">
+    {{ 'header.my_name' | translate }} Armando Rojas
+  </div>
+  <div class="masthead-subheading">{{ 'header.i_am' | translate }}</div>
   <a
     class="btn btn-primary btn-lg mb-3"
     style="margin-left: 25px"
     href="#services"
-    >Cambiar al Español</a
+    (click)="toggleLanguage()"
+    >{{ 'header.btn_translate' | translate }}</a
   >
 </header>
