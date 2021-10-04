@@ -3,113 +3,60 @@
     <div class="text-center">
       <h2 class="section-heading">
         {{ 'navbar.about' | translate }}
-      </h2>
-      <h3 class="section-subheading text-muted">
-        Lorem ipsum dolor sit amet consectetur.
-      </h3>
+      </h2>        
+          <h3 class="section-subheading text-muted text-justify mt-4"   >
+            {{ 'about.message' | translate  }}
+            {{ 'about.message2' | translate  }}
+            {{ 'about.message3' | translate  }}
+          </h3>
     </div>
     <ul class="timeline">
-      <li>
+      <li *ngFor="let workExperience of workExperienceTimeline; let odd = odd" [ngClass]="{ 'timeline-inverted' : odd    }"   >
         <div class="timeline-image">
           <img
             class="rounded-circle img-fluid"
-            src="assets/img/about/1.jpg"
-            alt="..."
+            src="{{ workExperience.img }}"
+            alt="img company"
           />
         </div>
         <div class="timeline-panel">
           <div class="timeline-heading">
-            <h4>2009-2011</h4>
-            <h4 class="subheading">Our Humble Beginnings</h4>
+            <h4 class="subheading"> {{ workExperience.job_title | translate  }}   </h4>
+            <h6> {{workExperience.company}}, {{workExperience.country}}  </h6>
+            <h6> {{workExperience.init}}  -  {{workExperience.end}}</h6>
           </div>
           <div class="timeline-body">
+            
             <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-              voluptatum eius sapiente, totam reiciendis temporibus qui
-              quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-              dolore laudantium consectetur!
+              {{workExperience.description | translate}} 
             </p>
+           
+            <h6> {{ 'about.way_of_working' | translate }}:</h6>
+            <h6 class="text-muted" >  
+              <span *ngIf="workExperience.remote; else elseRemote">
+                {{ 'about.remote' | translate  }} 
+              </span>
+              <ng-template #elseRemote>
+                {{ 'about.on_site' | translate  }} 
+              </ng-template>
+              -
+              <span *ngIf="workExperience.full_time; else elsePartTime">
+                {{ 'about.full_time' | translate  }} 
+              </span>
+              <ng-template #elsePartTime>
+                {{ 'about.part_time' | translate  }} 
+              </ng-template>
+            </h6>
           </div>
         </div>
       </li>
       <li class="timeline-inverted">
         <div class="timeline-image">
           <img
-            class="rounded-circle img-fluid"
-            src="assets/img/about/2.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4>March 2011</h4>
-            <h4 class="subheading">An Agency is Born</h4>
-          </div>
-          <div class="timeline-body">
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-              voluptatum eius sapiente, totam reiciendis temporibus qui
-              quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-              dolore laudantium consectetur!
-            </p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-image">
-          <img
-            class="rounded-circle img-fluid"
-            src="assets/img/about/3.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4>December 2015</h4>
-            <h4 class="subheading">Transition to Full Service</h4>
-          </div>
-          <div class="timeline-body">
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-              voluptatum eius sapiente, totam reiciendis temporibus qui
-              quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-              dolore laudantium consectetur!
-            </p>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-inverted">
-        <div class="timeline-image">
-          <img
-            class="rounded-circle img-fluid"
-            src="assets/img/about/4.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4>July 2020</h4>
-            <h4 class="subheading">Phase Two Expansion</h4>
-          </div>
-          <div class="timeline-body">
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-              voluptatum eius sapiente, totam reiciendis temporibus qui
-              quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-              dolore laudantium consectetur!
-            </p>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-inverted">
-        <div class="timeline-image">
-          <h4>
-            Be Part
-            <br />
-            Of Our
-            <br />
-            Story!
-          </h4>
+          class="rounded-circle img-fluid"
+          src="assets/armando.gif"
+          alt="gif"
+        />
         </div>
       </li>
     </ul>
