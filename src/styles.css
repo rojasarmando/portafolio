@@ -71,3 +71,8 @@ div.masthead .masthead-heading {
   background-color: var(--color-linkedln);
   border-color: var(--color-linkedln);
 }
+
+.text-justify{
+  text-align: justify;
+  text-justify: inter-word;
+}

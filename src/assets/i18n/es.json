@@ -5,12 +5,25 @@
     "cv" : "Mi CV",
     "portafolio" : "Portafolio",
     "contact" : "Contáctame",
-    "menu" : "Menú"
+    "menu" : "Menú",
+    "logo" : "<Armando Rojas/>"
   },
   "header" : {
     "welcome" : "¡Bienvenido a mi portafolio!",
     "btn_translate" : "Change to English",
     "my_name" : "Mi nombre es ",
     "i_am": "Soy desarrollador Full Stack"
+  },
+  "about": {
+    "message" : "Soy ingeniero de Sistemas, tengo experiencia laboral en Laravel, Vue, Angular, Node y Ionic.",
+    "message2" : "Mis principales habilidades son el rápido aprendizaje y ser autodidacta, soy proactivo y me gusta el trabajo en equipo, me gusta investigar sobre herramientas que faciliten el desarrollo.",
+    "message3" : "Soy Apasionado por la tecnología y el querer aprender cada día más. He trabajado con diferentes herramientas y lenguajes, tengo conocimiento sobre  Laravel (PHP), CodeIgniter 3 (PHP), Ionic, Angular, NodeJs, Ruby on Rails, Python, Vue, MongoDB, JQuery, MySQL, PostgreSQL y Oracle.",
+    "junior_system_analyst": "Analista de sistemas Junior",
+    "description_1" : "una descripcion",
+    "way_of_working": "Modalidad de trabajo",
+    "full_time" : "Tiempo completo",
+    "part_time" : "Medio tiempo",
+    "remote": "Remoto",
+    "on_site": "Presencial"
   }
 }
