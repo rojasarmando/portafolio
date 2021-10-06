@@ -19,11 +19,19 @@
     "message2" : "Mis principales habilidades son el rápido aprendizaje y ser autodidacta, soy proactivo y me gusta el trabajo en equipo, me gusta investigar sobre herramientas que faciliten el desarrollo.",
     "message3" : "Soy Apasionado por la tecnología y el querer aprender cada día más. He trabajado con diferentes herramientas y lenguajes, tengo conocimiento sobre  Laravel (PHP), CodeIgniter 3 (PHP), Ionic, Angular, NodeJs, Ruby on Rails, Python, Vue, MongoDB, JQuery, MySQL, PostgreSQL y Oracle.",
     "junior_system_analyst": "Analista de sistemas Junior",
+    "senior_programmer_analyst" : "Analista Programador Senior",
+    "full_stack_laravel_developer": "Full Stack Laravel Developer",
+    "full_stack_mean_ionic_developer": "Full Stack MEAN/Ionic Developer",
+    "laravel_backend_developer": "Laravel Backend Developer",
+    "teach_lead": "Teach Lead",
     "description_1" : "una descripcion",
     "way_of_working": "Way of working",
     "full_time" : "full time",
     "part_time" : "part-time",
     "remote": "remote",
     "on_site": "on-site"
+  },
+  "cv":{
+    "download_cv" : "Download CV"
   }
 }

@@ -25,54 +25,68 @@ export class AboutComponent implements OnInit {
         company: 'COPOSA',
         country: "Venezuela",
         job_title: "about.junior_system_analyst",
-        description: "about.description_1",
         full_time: true,
       },
       {
         img : 'assets/img/about/coposa.jpg',
         init: '11/2018',
-        end: '02/2020',
+        end: '02/2022',
         company: 'COPOSA',
         country: "Venezuela",
-        job_title: "about.junior_system_analyst",
-        description: "about.description_1"
+        job_title: "about.senior_programmer_analyst",
+        full_time: true,
       },
       {
-        img : 'assets/img/about/1.jpg',
-        init: '06/2018',
-        end: '02/2020',
-        company: 'COPOSA',
+        img : 'assets/img/about/789.jpg',
+        init: '06/2020',
+        end: '09/2020',
+        company: '789.mx',
+        country: "Mexico",
+        job_title: "about.full_stack_laravel_developer",
+        full_time: true,
+        remote: true
+      },
+      {
+        img : 'assets/img/about/sapviremoto.png',
+        init: '08/2020',
+        end: '12/2020',
+        company: 'Sapvi Remoto',
         country: "Venezuela",
-        job_title: "about.junior_system_analyst",
-        description: "about.description_1"
+        job_title: "about.full_stack_mean_ionic_developer",
+        full_time: true,
+        remote: true
+      },
+      {
+        img : 'assets/img/about/hellomundo.jpg',
+        init: '11/2020',
+        end: '03/2021',
+        company: 'Hello Mundo Chile',
+        country: "Chile",
+        job_title: "about.full_stack_mean_ionic_developer",
+        full_time: true,
+        remote: true
+      },
+      {
+        img : 'assets/img/about/cronapis.png',
+        init: '03/2021',
+        end: '06/2021',
+        company: 'Cronapis',
+        country: "Panamá",
+        job_title: "about.laravel_backend_developer",
+        full_time: true,
+        remote: true
+      },
+      {
+        img : 'assets/img/about/cronapis.png',
+        init: '06/2021',
+        end: '09/2021',
+        company: 'Cronapis',
+        country: "Panamá",
+        job_title: "about.teach_lead",
+        full_time: true,
+        remote: true
       }
     ];
   }
-
-  /*
-   <li>
-        <div class="timeline-image">
-          <img
-            class="rounded-circle img-fluid"
-            src="assets/img/about/1.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4>2009-2011</h4>
-            <h4 class="subheading">Our Humble Beginnings</h4>
-          </div>
-          <div class="timeline-body">
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-              voluptatum eius sapiente, totam reiciendis temporibus qui
-              quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-              dolore laudantium consectetur!
-            </p>
-          </div>
-        </div>
-      </li> */
-
 
 }
