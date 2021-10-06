@@ -18,10 +18,13 @@
   >
     <div class="masthead-subheading typing"></div>
   </ngx-typed-js>
-
   <a
-    class="btn btn-primary btn-lg mt-5"
     href="#services"
+    [ngClass]="{
+      'btn btn-primary btn-lg mt-5': true,
+      'animate__animated animate__pulse': animateBtn
+    }"
+    (mouseover)="removeAnimation()"
     (click)="toggleLanguage()"
     >{{ 'header.btn_translate' | translate }}</a
   >
