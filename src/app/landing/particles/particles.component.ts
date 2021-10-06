@@ -25,7 +25,7 @@ export class ParticlesComponent implements OnInit {
       },
       modes: {
         bubble: {
-          distance: 400,
+          distance: 100,
           duration: 6,
           opacity: 0.5,
           size: 40
@@ -64,9 +64,9 @@ export class ParticlesComponent implements OnInit {
       number: {
         density: {
           enable: true,
-          value_area: 400
+          value_area: 100
         },
-        value: 80
+        value: 10
       },
       opacity: {
         value: 0.1
