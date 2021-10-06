@@ -64,9 +64,9 @@ export class ParticlesComponent implements OnInit {
       number: {
         density: {
           enable: true,
-          value_area: 800
+          value_area: 400
         },
-        value: 280
+        value: 80
       },
       opacity: {
         value: 0.1
