@@ -25,12 +25,7 @@
             <h6> {{workExperience.company}}, {{workExperience.country}}  </h6>
             <h6> {{workExperience.init}}  -  {{workExperience.end}}</h6>
           </div>
-          <div class="timeline-body">
-            
-            <p class="text-muted">
-              {{workExperience.description | translate}} 
-            </p>
-           
+          <div class="timeline-body">         
             <h6> {{ 'about.way_of_working' | translate }}:</h6>
             <h6 class="text-muted" >  
               <span *ngIf="workExperience.remote; else elseRemote">
