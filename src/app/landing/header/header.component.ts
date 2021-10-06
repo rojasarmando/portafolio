@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core'
-import { LangService } from 'src/app/services/lang.service'
+import { Component, OnInit } from '@angular/core';
+import { LangService } from 'src/app/services/lang.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   constructor(private langService: LangService) {}
@@ -11,6 +11,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   public toggleLanguage() {
-    this.langService.toggleTranslate()
+    this.langService.toggleTranslate();
   }
 }

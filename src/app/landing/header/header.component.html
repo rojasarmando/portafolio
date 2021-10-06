@@ -1,12 +1,26 @@
 <header class="masthead">
   <div class="masthead-subheading">{{ 'header.welcome' | translate }}</div>
-  <div class="masthead-heading">
+  <div class="masthead-heading wow slideInLeft">
     {{ 'header.my_name' | translate }} Armando Rojas
   </div>
-  <div class="masthead-subheading">{{ 'header.i_am' | translate }}</div>
+
+  <ngx-typed-js
+    [strings]="[
+      'header.i_am' | translate,
+      'Y tambien soy Ingeniero de sistemas',
+      'Tengo experiencia laboral en...',
+      'Laravel, Nodejs, Vue, Ionic y Angular'
+    ]"
+    [loop]="true"
+    [backSpeed]="70"
+    [typeSpeed]="50"
+    [backDelay]="1000"
+  >
+    <div class="masthead-subheading typing"></div>
+  </ngx-typed-js>
+
   <a
-    class="btn btn-primary btn-lg mb-3"
-    style="margin-left: 25px"
+    class="btn btn-primary btn-lg mt-5"
     href="#services"
     (click)="toggleLanguage()"
     >{{ 'header.btn_translate' | translate }}</a
