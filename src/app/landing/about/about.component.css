@@ -1,11 +1,15 @@
-.img-ar{
-    float: left;
-    margin-right: 65px;
-    border-radius: 20px;
+.img-ar {
+  float: left;
+  margin-right: 65px;
+  border-radius: 20px;
 }
 
-@media (min-width: 1200px){
-    .timeline>li .timeline-panel {
-        padding: 0 !important;
-    }
+@media (min-width: 1200px) {
+  .timeline > li .timeline-panel {
+    padding: 0 !important;
+  }
+}
+
+.timeline > li .timeline-image {
+  background-color: transparent !important;
 }
