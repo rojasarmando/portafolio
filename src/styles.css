@@ -101,3 +101,7 @@ div.masthead .masthead-heading {
     padding: 4rem 0;
   }
 }
+
+.page-section {
+  padding: 2rem 0 !important;
+}
