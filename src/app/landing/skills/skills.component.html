@@ -4,17 +4,17 @@
       <h2 class="section-heading">Skills</h2>
     </div>
     <div class="row text-center">
-      <div class="col-md-4 mt-3" *ngFor="let skill of skills">
+      <div class="col-md-4 mt-3 mb-5" *ngFor="let skill of skills">
         <span class="fa-stack fa-4x">
           <img
             src="{{ skill.img }}"
-            alt="img {{ skill.title }}"
+            alt="img {{ skill.title | translate }}"
             class="skill-icon"
           />
         </span>
         <h4 class="my-3">{{ skill.title }}</h4>
         <h6 *ngIf="skill.description" class="text-mute">
-          {{ skill.description }}
+          {{ skill.description | translate }}
         </h6>
       </div>
     </div>

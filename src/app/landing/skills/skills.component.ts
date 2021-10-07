@@ -13,24 +13,50 @@ export class SkillsComponent implements OnInit {
     this.initSkills();
   }
   private initSkills() {
-    this.skills = [
-      {
-        title: 'Laravel',
-        img: 'assets/img/laravel.svg',
-        description: 'verciones 5.3, 5.8, 7 y 8'
-      },
-      {
-        title: 'Laravel',
-        img: 'assets/img/laravel.svg'
-      },
-      {
-        title: 'Laravel',
-        img: 'assets/img/laravel.svg'
-      },
-      {
-        title: 'Laravel',
-        img: 'assets/img/laravel.svg'
-      }
+    const arrayTitleSkills: Array<string> = [
+      'laravel',
+      'angular',
+      'ionic',
+      'nodejs',
+      'vue',
+      'html',
+      'css',
+      'responsive',
+      'jquery',
+      'mongodb',
+      'mysql',
+      'postgresql',
+      'python',
+      'oracle',
+      'Ruby on Rails',
+      'Api Rest',
+      'ms',
+      'jira',
+      'trello'
     ];
+    this.skills = [];
+
+    arrayTitleSkills.forEach((titleSkill) =>
+      this.skills.push(this.setSkill(titleSkill))
+    );
+  }
+
+  private setSkill(titleSkill: string): SkillInterface {
+    let title: string =
+      titleSkill.charAt(0).toUpperCase() + titleSkill.slice(1);
+    const index: string = titleSkill.toLowerCase().split(' ').join('_');
+
+    const exceptions = {
+      Jquery: 'jQuery',
+      Postgresql: 'PostgreSQL'
+    };
+
+    if (exceptions[title]) title = exceptions[title];
+
+    return {
+      title,
+      img: `assets/img/skills/${index}.svg`,
+      description: `skills.info_${index}`
+    };
   }
 }
