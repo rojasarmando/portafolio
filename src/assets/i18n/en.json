@@ -12,7 +12,10 @@
     "welcome": "Welcome To my portafolio!",
     "btn_translate": "Cambiar al Español",
     "my_name": "My name is ",
-    "i_am": "I'm Full Stack Developer"
+    "i_am": "I'm Full Stack Developer",
+    "i_am_2": "I am also a systems engineer",
+    "work_exp": "I have work experience in...",
+    "work_exp_2": "Laravel, Nodejs, Vue, Ionic and Angular"
   },
   "about": {
     "message": "I am a systems engineer, I have work experience in Laravel, Vue, Angular, Node and Ionic.",

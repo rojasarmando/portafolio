@@ -1,36 +1,39 @@
 {
-  "navbar" : {
-    "about" : "Acerca de mi",
-    "skills" : "Habilidades",
-    "cv" : "Mi CV",
-    "portafolio" : "Portafolio",
-    "contact" : "Contáctame",
-    "menu" : "Menú",
-    "logo" : "<Armando Rojas/>"
+  "navbar": {
+    "about": "Acerca de mi",
+    "skills": "Habilidades",
+    "cv": "Mi CV",
+    "portafolio": "Portafolio",
+    "contact": "Contáctame",
+    "menu": "Menú",
+    "logo": "<Armando Rojas/>"
   },
-  "header" : {
-    "welcome" : "¡Bienvenido a mi portafolio!",
-    "btn_translate" : "Change to English",
-    "my_name" : "Mi nombre es ",
-    "i_am": "Soy desarrollador Full Stack"
+  "header": {
+    "welcome": "¡Bienvenido a mi portafolio!",
+    "btn_translate": "Change to English",
+    "my_name": "Mi nombre es ",
+    "i_am": "Soy desarrollador Full Stack",
+    "i_am_2": "También soy Ingeniero de Sistemas",
+    "work_exp": "Tengo experiencia laboral en...",
+    "work_exp_2": "Laravel, Nodejs, Vue, Ionic y Angular"
   },
   "about": {
-    "message" : "Soy ingeniero de Sistemas, tengo experiencia laboral en Laravel, Vue, Angular, Node y Ionic.",
-    "message2" : "Mis principales habilidades son el rápido aprendizaje y ser autodidacta, soy proactivo y me gusta el trabajo en equipo, me gusta investigar sobre herramientas que faciliten el desarrollo.",
-    "message3" : "Soy Apasionado por la tecnología y el querer aprender cada día más. He trabajado con diferentes herramientas y lenguajes, tengo conocimiento sobre  Laravel (PHP), CodeIgniter 3 (PHP), Ionic, Angular, NodeJs, Ruby on Rails, Python, Vue, MongoDB, JQuery, MySQL, PostgreSQL y Oracle.",
+    "message": "Soy ingeniero de Sistemas, tengo experiencia laboral en Laravel, Vue, Angular, Node y Ionic.",
+    "message2": "Mis principales habilidades son el rápido aprendizaje y ser autodidacta, soy proactivo y me gusta el trabajo en equipo, me gusta investigar sobre herramientas que faciliten el desarrollo.",
+    "message3": "Soy Apasionado por la tecnología y el querer aprender cada día más. He trabajado con diferentes herramientas y lenguajes, tengo conocimiento sobre  Laravel (PHP), CodeIgniter 3 (PHP), Ionic, Angular, NodeJs, Ruby on Rails, Python, Vue, MongoDB, JQuery, MySQL, PostgreSQL y Oracle.",
     "junior_system_analyst": "Analista de sistemas Junior",
-    "senior_programmer_analyst" : "Analista Programador Senior",
+    "senior_programmer_analyst": "Analista Programador Senior",
     "full_stack_laravel_developer": "Desarrollador web Full Stack Laravel",
     "full_stack_mean_ionic_developer": "Desarrollador Full Stack MEAN/Ionic",
     "laravel_backend_developer": "Desarrollador Backend Laravel",
     "teach_lead": "Líder Técnico",
     "way_of_working": "Modalidad de trabajo",
-    "full_time" : "Tiempo completo",
-    "part_time" : "Medio tiempo",
+    "full_time": "Tiempo completo",
+    "part_time": "Medio tiempo",
     "remote": "Remoto",
     "on_site": "Presencial"
-  }, 
-  "cv" : {
-    "download_cv" : "Descargar CV"
+  },
+  "cv": {
+    "download_cv": "Descargar CV"
   }
 }
