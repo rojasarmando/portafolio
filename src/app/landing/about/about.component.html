@@ -5,7 +5,7 @@
         {{ 'navbar.about' | translate }}
       </h2>
       <h3
-        class="section-subheading text-muted text-justify mt-4 wow tada"
+        class="section-subheading text-muted text-justify mt-4"
         data-wow-delay="1s"
       >
         {{ 'about.message' | translate }}
@@ -15,8 +15,17 @@
     </div>
     <ul class="timeline">
       <li
-        *ngFor="let workExperience of workExperienceTimeline; let odd = odd"
-        [ngClass]="{ 'timeline-inverted': odd }"
+        *ngFor="
+          let workExperience of workExperienceTimeline;
+          let odd = odd;
+          let even = even
+        "
+        [ngClass]="{
+          'timeline-inverted': odd,
+          ' wow': true,
+          ' slideInLeft': even,
+          ' slideInRight': odd
+        }"
       >
         <div class="timeline-image">
           <img
@@ -28,7 +37,7 @@
         <div class="timeline-panel">
           <div class="timeline-heading">
             <h4 class="subheading">
-              {{ workExperience.job_title | translate }}
+              {{ workExperience.job_title | translate }} {{ even }} {{ odd }}
             </h4>
             <h6>{{ workExperience.company }}, {{ workExperience.country }}</h6>
             <h6>{{ workExperience.init }} - {{ workExperience.end }}</h6>
