@@ -41,10 +41,8 @@
     "info_ionic": "versiones 3, 4, 5, y 6",
     "info_nodejs": "Framework Express y Nestjs",
     "info_vue": "versiones 2 y 3, framework vuex",
-
     "info_apirest": "Utilizando Laravel y Nodejs",
-    "info_ms": "Utilizando Nodejs",
-
+    "info_microservicio": "Utilizando Nodejs",
     "info_mysql": "Aplicaciones web en php (laravel) y nodejs, instalacion y configuracion en servidores",
     "info_mongodb": "Aplicaciones web con el stack MEAN",
     "info_postgresql": "Aplicaciones web en php (laravel) y nodejs, instalacion y configuracion en servidores",

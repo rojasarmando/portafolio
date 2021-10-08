@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-particles',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./particles.component.css']
 })
 export class ParticlesComponent implements OnInit {
-  public id = 'tsparticles'
+  public id = 'tsparticles';
   public particlesOptions = {
     background: {},
     fpsLimit: 60,
@@ -80,17 +80,13 @@ export class ParticlesComponent implements OnInit {
       }
     },
     detectRetina: true
-  }
+  };
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  particlesLoaded(container: any): void {
-    console.log(container)
-  }
+  particlesLoaded(container: any): void {}
 
-  particlesInit(main: any): void {
-    console.log(main)
-  }
+  particlesInit(main: any): void {}
 }
