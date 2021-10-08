@@ -43,7 +43,7 @@
     "info_nodejs": "Framework Express y Nestjs",
     "info_vue": "versiones 2 y 3, vuex framework",
     "info_api_rest": "Usando Laravel y Nodejs",
-    "info_ms": "Usando Nodejs",
+    "info_microservicio": "Usando Nodejs",
     "info_mysql": "Aplicaciones web en php (laravel) y nodejs, instalación y configuración en servidores",
     "info_mongodb": "Aplicaciones web con la pila MEAN",
     "info_postgres": "Aplicaciones web en php (laravel) y nodejs, instalación y configuración en servidores",
