@@ -5,7 +5,7 @@ import { LandingRoutingModule } from './landing-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from './landing.component';
 import { HeaderComponent } from './header/header.component';
-import { PortafolioComponent } from './portafolio/portafolio.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NgParticlesModule } from 'ng-particles';
 import { ParticlesComponent } from './particles/particles.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,20 +21,20 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     NavbarComponent,
     LandingComponent,
     HeaderComponent,
-    PortafolioComponent,
+    PortfolioComponent,
     ParticlesComponent,
     FooterComponent,
     ContactComponent,
     AboutComponent,
     WorkComponent,
-    SkillsComponent,
+    SkillsComponent
   ],
   imports: [
     CommonModule,
     LandingRoutingModule,
     NgParticlesModule,
     TranslateModule,
-    NgxTypedJsModule,
-  ],
+    NgxTypedJsModule
+  ]
 })
 export class LandingModule {}
