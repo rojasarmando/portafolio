@@ -4,7 +4,7 @@ import { workExperienceTimelineInterface } from './about.interface';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
+  styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
   public workExperienceTimeline: Array<workExperienceTimelineInterface>;
@@ -23,7 +23,7 @@ export class AboutComponent implements OnInit {
         company: 'Consorcio Oleaginoso Portuguesa, S.A. COPOSA',
         country: 'Venezuela',
         job_title: 'about.junior_system_analyst',
-        full_time: true,
+        full_time: true
       },
       {
         img: 'assets/img/about/coposa.jpg',
@@ -32,7 +32,7 @@ export class AboutComponent implements OnInit {
         company: 'Consorcio Oleaginoso Portuguesa, S.A. COPOSA',
         country: 'Venezuela',
         job_title: 'about.senior_programmer_analyst',
-        full_time: true,
+        full_time: true
       },
       {
         img: 'assets/img/about/789.jpg',
@@ -42,7 +42,7 @@ export class AboutComponent implements OnInit {
         country: 'Mexico',
         job_title: 'about.full_stack_laravel_developer',
         full_time: true,
-        remote: true,
+        remote: true
       },
       {
         img: 'assets/img/about/sapviremoto.png',
@@ -52,7 +52,7 @@ export class AboutComponent implements OnInit {
         country: 'Venezuela',
         job_title: 'about.full_stack_mean_ionic_developer',
         full_time: true,
-        remote: true,
+        remote: true
       },
       {
         img: 'assets/img/about/hellomundo.jpg',
@@ -62,7 +62,7 @@ export class AboutComponent implements OnInit {
         country: 'Chile',
         job_title: 'about.full_stack_mean_ionic_developer',
         full_time: true,
-        remote: true,
+        remote: true
       },
       {
         img: 'assets/img/about/cronapis.png',
@@ -72,7 +72,7 @@ export class AboutComponent implements OnInit {
         country: 'Panamá',
         job_title: 'about.laravel_backend_developer',
         full_time: true,
-        remote: true,
+        remote: true
       },
       {
         img: 'assets/img/about/cronapis.png',
@@ -82,8 +82,8 @@ export class AboutComponent implements OnInit {
         country: 'Panamá',
         job_title: 'about.teach_lead',
         full_time: true,
-        remote: true,
-      },
+        remote: true
+      }
     ];
   }
 }
