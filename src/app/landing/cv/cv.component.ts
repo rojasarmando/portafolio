@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-particles',
-  templateUrl: './particles.component.html',
-  styleUrls: ['./particles.component.css']
+  selector: 'app-cv',
+  templateUrl: './cv.component.html',
+  styleUrls: ['./cv.component.css']
 })
-export class ParticlesComponent implements OnInit {
+export class CVComponent implements OnInit {
   public animateBtn: Boolean = false;
   public id = 'tsparticles';
   public particlesOptions = {

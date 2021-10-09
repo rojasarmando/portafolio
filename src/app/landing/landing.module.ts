@@ -7,7 +7,7 @@ import { LandingComponent } from './landing.component';
 import { HeaderComponent } from './header/header.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NgParticlesModule } from 'ng-particles';
-import { ParticlesComponent } from './particles/particles.component';
+import { CVComponent } from './cv/cv.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
@@ -22,7 +22,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     LandingComponent,
     HeaderComponent,
     PortfolioComponent,
-    ParticlesComponent,
+    CVComponent,
     FooterComponent,
     ContactComponent,
     AboutComponent,
