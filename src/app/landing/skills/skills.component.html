@@ -5,7 +5,7 @@
     </div>
     <div class="row text-center">
       <div
-        class="col-md-4 mt-3 mb-5 wow slideInUp"
+        class="col-md-4 mt-3 mb-5 wow bounceInUp"
         *ngFor="let skill of skills"
       >
         <span class="fa-stack fa-4x">
@@ -15,7 +15,7 @@
             class="skill-icon"
           />
         </span>
-        <h4 class="my-3">{{ skill.title }}</h4>
+        <h4 class="my-3">{{ skill.title | translate }}</h4>
         <h6 *ngIf="skill.description" class="text-mute">
           {{ skill.description | translate }}
         </h6>
