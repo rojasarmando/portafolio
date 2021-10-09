@@ -3,7 +3,7 @@
     "about": "Acerca de mi",
     "skills": "Habilidades",
     "cv": "Mi CV",
-    "portafolio": "Portafolio",
+    "portfolio": "Portafolio",
     "contact": "Contáctame",
     "menu": "Menú",
     "logo": "<Armando Rojas/>"
@@ -75,7 +75,8 @@
     "info_docker": "Para proyectos con laravel",
     "info_centos": "Para el despliegue de aplicaciones web",
     "info_ubuntu": "Versión 16, 18 y 20 para el despliegue de aplicaciones",
-    "info_digitalocean": "Configuración de dominios, droplets y despliegue de aplicaciones"
+    "info_digitalocean": "Configuración de dominios, droplets y despliegue de aplicaciones",
+    "microservice": "Microservicio"
   },
   "cv": {
     "download_cv": "Descargar CV"

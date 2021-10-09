@@ -1,5 +1,7 @@
 <header class="masthead">
-  <div class="masthead-subheading">{{ 'header.welcome' | translate }}</div>
+  <div class="masthead-subheading wow slideInRight">
+    {{ 'header.welcome' | translate }}
+  </div>
   <div class="masthead-heading wow slideInLeft">
     {{ 'header.my_name' | translate }} Armando Rojas
   </div>
@@ -21,7 +23,7 @@
   <a
     href="#services"
     [ngClass]="{
-      'btn btn-primary btn-lg mt-5': true,
+      'btn btn-primary btn-lg mt-5 wow bounceInUp': true,
       'animate__animated animate__pulse': animateBtn
     }"
     (mouseover)="removeAnimation()"
