@@ -72,7 +72,7 @@
     "info_apache2": "Instalación y configuración para el desarrollo y despliegue de aplicaciones web",
     "info_moodle": "Instalación y configuración de Moodle",
     "info_slack": "Para la comunicación con el equipo y las notificaciones de despliegue automatizado",
-    "info_docker": "Para el desarrollo de laravel",
+    "info_docker": "Para proyectos con laravel",
     "info_centos": "Para el despliegue de aplicaciones web",
     "info_ubuntu": "Versión 16, 18 y 20 para el despliegue de aplicaciones",
     "info_digitalocean": "Configuración de dominios, droplets y despliegue de aplicaciones"
