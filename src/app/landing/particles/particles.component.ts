@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./particles.component.css']
 })
 export class ParticlesComponent implements OnInit {
+  public animateBtn: Boolean = false;
   public id = 'tsparticles';
   public particlesOptions = {
     background: {},
@@ -89,4 +90,12 @@ export class ParticlesComponent implements OnInit {
   particlesLoaded(container: any): void {}
 
   particlesInit(main: any): void {}
+
+  public addAnimation() {
+    this.animateBtn = true;
+  }
+
+  public removeAnimation() {
+    this.animateBtn = false;
+  }
 }

@@ -5,8 +5,13 @@
         type="button"
         href="assets/cv2021.pdf"
         target="_blank"
-        class="btn btn-primary"
         id="download_cv"
+        [ngClass]="{
+          'btn btn-primary': true,
+          'animate__animated animate__pulse': animateBtn
+        }"
+        (mouseover)="removeAnimation()"
+        (click)="addAnimation()"
       >
         {{ 'cv.download_cv' | translate }}
       </a>
