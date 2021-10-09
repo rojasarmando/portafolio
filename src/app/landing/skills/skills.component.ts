@@ -42,7 +42,7 @@ export class SkillsComponent implements OnInit {
       'trello',
       'slack',
       'Api Rest',
-      'microservicio',
+      'microservice',
       'moodle',
       'ospos',
       'apache2',
@@ -68,7 +68,8 @@ export class SkillsComponent implements OnInit {
 
     const exceptions = {
       Jquery: 'jQuery',
-      Postgresql: 'PostgreSQL'
+      Postgresql: 'PostgreSQL',
+      Microservice: 'skills.microservice'
     };
 
     if (exceptions[title]) title = exceptions[title];
