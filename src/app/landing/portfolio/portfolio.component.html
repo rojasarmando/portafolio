@@ -1,139 +1,40 @@
 <section class="page-section bg-light" id="portfolio">
   <div class="container">
     <div class="text-center">
-      <h2 class="mt-5 mb-5 section-heading text-uppercase">Portafolio</h2>
+      <h2 class="mt-5 mb-5 section-heading">
+        {{ 'navbar.portfolio' | translate }}
+      </h2>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <!-- Portfolio item 1-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-bs-toggle="modal"
-            href="#portfolioModal1"
-          >
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Threads</div>
-            <div class="portfolio-caption-subheading text-muted">
-              Illustration
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <!-- Portfolio item 2-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-bs-toggle="modal"
-            href="#portfolioModal2"
-          >
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Explore</div>
-            <div class="portfolio-caption-subheading text-muted">
-              Graphic Design
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <!-- Portfolio item 3-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-bs-toggle="modal"
-            href="#portfolioModal3"
-          >
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Finish</div>
-            <div class="portfolio-caption-subheading text-muted">Identity</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <!-- Portfolio item 4-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-bs-toggle="modal"
-            href="#portfolioModal4"
-          >
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Lines</div>
-            <div class="portfolio-caption-subheading text-muted">Branding</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-        <!-- Portfolio item 5-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-bs-toggle="modal"
-            href="#portfolioModal5"
-          >
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Southwest</div>
-            <div class="portfolio-caption-subheading text-muted">
-              Website Design
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
+      <div
+        class="col-lg-4 col-sm-6"
+        *ngFor="let portfolio of portfolios; let i = index"
+      >
         <!-- Portfolio item 6-->
         <div class="portfolio-item">
           <a
             class="portfolio-link"
             data-bs-toggle="modal"
-            href="#portfolioModal6"
+            href="#portfolioModal"
+            (click)="openModal(i)"
           >
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+            <img
+              class="img-fluid"
+              src="{{ portfolio.portada }}"
+              alt="img portfolio"
+            />
           </a>
           <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Window</div>
+            <div class="portfolio-caption-heading">
+              {{ portfolio.title | translate }}
+            </div>
             <div class="portfolio-caption-subheading text-muted">
-              Photography
+              {{ portfolio.descrip | translate }}
             </div>
           </div>
         </div>
@@ -144,7 +45,7 @@
 
 <div
   class="portfolio-modal modal fade"
-  id="portfolioModal6"
+  id="portfolioModal"
   tabindex="-1"
   role="dialog"
   aria-hidden="true"
@@ -156,15 +57,15 @@
       </div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-md-12">
             <div class="modal-body">
               <!-- Project details-->
-              <h2 class="text-uppercase">Project Name</h2>
+              <h2>Project Name</h2>
               <p class="item-intro text-muted">
                 Lorem ipsum dolor sit amet consectetur.
               </p>
               <img
-                class="img-fluid d-block mx-auto"
+                class="img-responsive mx-auto"
                 src="assets/img/portfolio/6.jpg"
                 alt="..."
               />
