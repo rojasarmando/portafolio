@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import dataPortfolio from 'src/assets/data/portfolio.json';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,56 +16,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   initPortfolio(): void {
-    this.portfolios = [
-      {
-        title: 'Tienda Limon',
-        descrip: 'Ecommerce realizado con el stack MEAN',
-        url: 'https://www.youtube.com/watch?v=BgfcToAjfdc',
-        portada: 'assets/img/portfolio/1.jpg',
-        preview: [
-          {
-            url: 'assets/img/portfolio/1.jpg',
-            type: 'img'
-          },
-          {
-            url: 'https://www.youtube.com/embed/BgfcToAjfdc',
-            type: 'video-youtbe'
-          }
-        ]
-      },
-      {
-        title: 'Tienda Limon',
-        descrip: 'Ecommerce realizado con el stack MEAN',
-        url: 'https://www.youtube.com/watch?v=BgfcToAjfdc',
-        portada: 'assets/img/portfolio/1.jpg',
-        preview: [
-          {
-            url: 'assets/img/portfolio/1.jpg',
-            type: 'img'
-          },
-          {
-            url: 'https://www.youtube.com/embed/BgfcToAjfdc',
-            type: 'video-youtbe'
-          }
-        ]
-      },
-      {
-        title: 'Tienda Limon',
-        descrip: 'Ecommerce realizado con el stack MEAN',
-        url: 'https://www.youtube.com/watch?v=BgfcToAjfdc',
-        portada: 'assets/img/portfolio/1.jpg',
-        preview: [
-          {
-            url: 'assets/img/portfolio/1.jpg',
-            type: 'img'
-          },
-          {
-            url: 'https://www.youtube.com/embed/BgfcToAjfdc',
-            type: 'video-youtbe'
-          }
-        ]
-      }
-    ];
+    this.portfolios = dataPortfolio;
   }
 
   public openModal(id: number) {
