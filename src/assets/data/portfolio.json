@@ -1,49 +1,24 @@
 [
   {
-    "title": "Tienda Limon",
-    "descrip": "Ecommerce realizado con el stack MEAN",
+    "title": "Lanza App",
+    "descrip": "Constructor web realizado en Ionic 5 y Nodejs.",
+    "descrip_large": "Constructor web realizado en Ionic 5 y Nodejs. Participe en la segunda fase del desarrollo, el cual consistia en la guia para el usuario y una galeria de imagenes a traves de la api de shutterstock y pixabay",
     "url": "https://www.youtube.com/watch?v=BgfcToAjfdc",
-    "portada": "assets/img/portfolio/1.jpg",
+    "portada": "assets/img/portfolio/2.jpg",
     "preview": [
       {
         "url": "assets/img/portfolio/1.jpg",
+        "type": "img",
+        "title": "Pagina principal",
+        "descrip": "Es una PWA"
+      },
+      {
+        "url": "assets/img/portfolio/2.jpg",
         "type": "img"
       },
       {
-        "url": "https://www.youtube.com/embed/BgfcToAjfdc",
-        "type": "video-youtbe"
-      }
-    ]
-  },
-  {
-    "title": "Tienda Limon",
-    "descrip": "Ecommerce realizado con el stack MEAN",
-    "url": "https://www.youtube.com/watch?v=BgfcToAjfdc",
-    "portada": "assets/img/portfolio/1.jpg",
-    "preview": [
-      {
-        "url": "assets/img/portfolio/1.jpg",
+        "url": "assets/img/portfolio/3.jpg",
         "type": "img"
-      },
-      {
-        "url": "https://www.youtube.com/embed/BgfcToAjfdc",
-        "type": "video-youtbe"
-      }
-    ]
-  },
-  {
-    "title": "Tienda Limon",
-    "descrip": "Ecommerce realizado con el stack MEAN",
-    "url": "https://www.youtube.com/watch?v=BgfcToAjfdc",
-    "portada": "assets/img/portfolio/1.jpg",
-    "preview": [
-      {
-        "url": "assets/img/portfolio/1.jpg",
-        "type": "img"
-      },
-      {
-        "url": "https://www.youtube.com/embed/BgfcToAjfdc",
-        "type": "video-youtbe"
       }
     ]
   }

@@ -21,7 +21,5 @@ export class PortfolioComponent implements OnInit {
 
   public openModal(id: number) {
     this.dataModal = this.portfolios[id];
-
-    console.log(this.dataModal);
   }
 }
