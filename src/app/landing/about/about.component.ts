@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit {
         full_time: true
       },
       {
-        img: 'assets/img/about/789.jpg',
+        img: 'assets/img/about/789.png',
         init: '06/2020',
         end: '09/2020',
         company: '789.mx',
