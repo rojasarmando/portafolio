@@ -15,6 +15,7 @@ import { WorkComponent } from './work/work.component';
 import { SkillsComponent } from './skills/skills.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     LandingRoutingModule,
     NgParticlesModule,
     TranslateModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    ReactiveFormsModule
   ]
 })
 export class LandingModule {}
