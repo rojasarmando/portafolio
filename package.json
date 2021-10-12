@@ -28,6 +28,7 @@
     "ngx-typed-js": "^2.1.0",
     "ngx-wow": "^2.0.1",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.1.7",
     "tslib": "^2.0.0",
     "tsparticles": "^1.35.1",
     "wowjs": "^1.1.3",

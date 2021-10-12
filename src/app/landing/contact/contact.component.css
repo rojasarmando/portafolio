@@ -1,0 +1,7 @@
+.invalid-feedback {
+  display: inline-block !important;
+}
+
+.active-error {
+  box-shadow: 1px 3px 13px 3px red !important;
+}

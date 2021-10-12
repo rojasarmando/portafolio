@@ -80,5 +80,18 @@
   },
   "cv": {
     "download_cv": "Descargar CV"
+  },
+  "contact": {
+    "errors": {
+      "required": "Este campo es requerido",
+      "maxlength": "El limite de caracteres es de ",
+      "minlength": "Cantidad minima de caracteres es de ",
+      "email": "Correo no valido",
+      "pattern_phone": "Numero de telefono no valido"
+    },
+    "name": "Nombre y Apellido",
+    "email": "Correo",
+    "message": "Un mensaje...",
+    "phone": "Numero de telefono"
   }
 }

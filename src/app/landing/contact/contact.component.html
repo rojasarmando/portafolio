@@ -1,109 +1,114 @@
 <section class="page-section" id="contact">
   <div class="container">
     <div class="text-center">
-      <h2 class="section-heading text-uppercase">Contact Us</h2>
-      <h3 class="section-subheading text-muted">
-        Lorem ipsum dolor sit amet consectetur.
-      </h3>
+      <h2 class="section-heading">{{ 'navbar.contact' | translate }}</h2>
     </div>
-    <!-- * * * * * * * * * * * * * * *-->
-    <!-- * * SB Forms Contact Form * *-->
-    <!-- * * * * * * * * * * * * * * *-->
-    <!-- This form is pre-integrated with SB Forms.-->
-    <!-- To make this form functional, sign up at-->
-    <!-- https://startbootstrap.com/solution/contact-forms-->
-    <!-- to get an API token!-->
-    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+    <form id="contactForm" [formGroup]="formContact" (ngSubmit)="submit()">
       <div class="row align-items-stretch mb-5">
         <div class="col-md-6">
           <div class="form-group">
-            <!-- Name input-->
+            <div *ngIf="checkError(name)" class="invalid-feedback">
+              <span class="badge bg-danger" *ngIf="name.errors?.required">
+                {{ 'contact.errors.required' | translate }}
+              </span>
+              <span class="badge bg-danger" *ngIf="name.errors?.maxlength">
+                {{ 'contact.errors.maxlength' | translate }} 100
+              </span>
+              <span class="badge bg-danger" *ngIf="name.errors?.minlength">
+                {{ 'contact.errors.minlength' | translate }} 3
+              </span>
+            </div>
             <input
               class="form-control"
               id="name"
               type="text"
-              placeholder="Your Name *"
-              data-sb-validations="required"
+              placeholder="{{ 'contact.name' | translate }}"
+              formControlName="name"
+              maxlength="101"
+              [ngClass]="{
+                'active-error': validate(name)
+              }"
             />
-            <div class="invalid-feedback" data-sb-feedback="name:required">
-              A name is required.
-            </div>
           </div>
           <div class="form-group">
-            <!-- Email address input-->
+            <div class="invalid-feedback" *ngIf="checkError(email)">
+              <span *ngIf="email.errors.required" class="badge bg-danger">
+                {{ 'contact.errors.required' | translate }}
+              </span>
+              <span *ngIf="email.errors.maxlength" class="badge bg-danger">
+                {{ 'contact.errors.maxlength' | translate }} 100
+              </span>
+              <span *ngIf="email.errors.email" class="badge bg-danger">
+                {{ 'contact.errors.email' | translate }}
+              </span>
+            </div>
             <input
               class="form-control"
               id="email"
               type="email"
-              placeholder="Your Email *"
-              data-sb-validations="required,email"
+              formControlName="email"
+              placeholder="{{ 'contact.email' | translate }}"
+              maxlength="101"
+              [ngClass]="{
+                'active-error': validateEmail(email)
+              }"
             />
-            <div class="invalid-feedback" data-sb-feedback="email:required">
-              An email is required.
-            </div>
-            <div class="invalid-feedback" data-sb-feedback="email:email">
-              Email is not valid.
-            </div>
           </div>
           <div class="form-group mb-md-0">
-            <!-- Phone number input-->
+            <div *ngIf="checkError(phone)" class="invalid-feedback">
+              <span class="badge bg-danger" *ngIf="phone.errors?.maxlength">
+                {{ 'contact.errors.maxlength' | translate }} 16
+              </span>
+              <span class="badge bg-danger" *ngIf="phone.errors?.minlength">
+                {{ 'contact.errors.minlength' | translate }} 7
+              </span>
+              <span class="badge bg-danger" *ngIf="phone.errors?.pattern">
+                {{ 'contact.errors.pattern_phone' | translate }}
+              </span>
+            </div>
             <input
               class="form-control"
               id="phone"
               type="tel"
-              placeholder="Your Phone *"
-              data-sb-validations="required"
+              placeholder="{{ 'contact.phone' | translate }}"
+              formControlName="phone"
+              maxlength="17"
+              [ngClass]="{
+                'active-error': validatePhone(phone)
+              }"
             />
-            <div class="invalid-feedback" data-sb-feedback="phone:required">
-              A phone number is required.
-            </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group form-group-textarea mb-md-0">
-            <!-- Message input-->
+            <div *ngIf="checkError(message)" class="invalid-feedback">
+              <span class="badge bg-danger" *ngIf="message.errors?.required">
+                {{ 'contact.errors.required' | translate }}
+              </span>
+              <span class="badge bg-danger" *ngIf="message.errors?.maxlength">
+                {{ 'contact.errors.maxlength' | translate }} 255
+              </span>
+              <span class="badge bg-danger" *ngIf="message.errors?.minlength">
+                {{ 'contact.errors.minlength' | translate }} 10
+              </span>
+            </div>
             <textarea
               class="form-control"
               id="message"
-              placeholder="Your Message *"
-              data-sb-validations="required"
+              placeholder="{{ 'contact.message' | translate }}"
+              maxlength="255"
+              formControlName="message"
+              [ngClass]="{
+                'active-error': validate(message)
+              }"
+              (keyup)="setCountMessage($event)"
             ></textarea>
-            <div class="invalid-feedback" data-sb-feedback="message:required">
-              A message is required.
+            <div class="invalid-feedback">
+              <span class="badge bg-success"> {{ countMessage }} / 255 </span>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Submit success message-->
-      <!---->
-      <!-- This is what your users will see when the form-->
-      <!-- has successfully submitted-->
-      <div class="d-none" id="submitSuccessMessage">
-        <div class="text-center text-white mb-3">
-          <div class="fw-bolder">Form submission successful!</div>
-          To activate this form, sign up at
-          <br />
-          <a href="https://startbootstrap.com/solution/contact-forms"
-            >https://startbootstrap.com/solution/contact-forms</a
-          >
-        </div>
-      </div>
-      <!-- Submit error message-->
-      <!---->
-      <!-- This is what your users will see when there is-->
-      <!-- an error submitting the form-->
-      <div class="d-none" id="submitErrorMessage">
-        <div class="text-center text-danger mb-3">Error sending message!</div>
-      </div>
-      <!-- Submit Button-->
-      <div class="text-center">
-        <button
-          class="btn btn-primary btn-xl text-uppercase disabled"
-          id="submitButton"
-          type="submit"
-        >
-          Send Message
-        </button>
       </div>
     </form>
   </div>
