@@ -91,9 +91,9 @@
     },
     "name": "Nombre y apellido",
     "email": "Correo electrónico",
-    "mensaje": "Mensaje",
-    "teléfono": "Número de teléfono",
+    "message": "Mensaje",
+    "phone": "Número de teléfono",
     "error_send_email": "Error al enviar el mensaje",
-    "message_sent ": "Mensaje Enviado!"
+    "message_sent": "Mensaje Enviado"
   }
 }
