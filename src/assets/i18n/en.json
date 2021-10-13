@@ -95,6 +95,7 @@
     "message": "A message",
     "phone": "Phone number",
     "error_send_email": "Error while sending message",
-    "message_sent": "Message sent!"
+    "message_sent": "Message sent!",
+    "send_message": "Send Message"
   }
 }
