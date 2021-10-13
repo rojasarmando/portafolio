@@ -105,10 +105,13 @@
               (keyup)="setCountMessage($event)"
             ></textarea>
             <div class="invalid-feedback">
-              <span class="badge bg-success"> {{ countMessage }} / 255 </span>
+              <span class="badge bg-primary"> {{ countMessage }} / 255 </span>
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn-xl">Send Message</button>
       </div>
     </form>
   </div>

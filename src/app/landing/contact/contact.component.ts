@@ -5,6 +5,9 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { AlertMessageService } from 'src/app/service/alert-message.service';
+import { FormSpreeService } from 'src/app/services/form-spree.service';
+import { LangService } from 'src/app/services/lang.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +17,12 @@ import {
 export class ContactComponent implements OnInit {
   formContact: FormGroup;
   countMessage: number = 0;
-  constructor(private _fb: FormBuilder) {}
+  constructor(
+    private _fb: FormBuilder,
+    private _formSpreeService: FormSpreeService,
+    private _translateService: LangService,
+    private _alertMessageService: AlertMessageService
+  ) {}
 
   ngOnInit(): void {
     this._initForm();
@@ -24,7 +32,11 @@ export class ContactComponent implements OnInit {
     this.formContact = this._fb.group({
       name: [
         '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(10)]
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(100)
+        ]
       ],
       phone: [
         '',
@@ -101,7 +113,28 @@ export class ContactComponent implements OnInit {
     this.countMessage = event.target.value.length;
   }
 
+  private markAllAsTouched() {
+    const controls = this.formContact.controls;
+    Object.values(controls).forEach((control) => control.markAsTouched());
+  }
+
+  private sendMessage() {
+    this._formSpreeService.sendMessage(this.formContact.value).subscribe(
+      (rsp) => {
+        this._alertMessageService.success(
+          this._translateService.getTranslate('contact.message_sent')
+        );
+        this.formContact.reset();
+      },
+      (err) => {
+        this._alertMessageService.error(
+          this._translateService.getTranslate('contact.error_send_email')
+        );
+      }
+    );
+  }
+
   submit(): void {
-    alert();
+    this.formContact.valid ? this.sendMessage() : this.markAllAsTouched();
   }
 }
