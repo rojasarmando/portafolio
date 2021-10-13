@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LangService {
   private activeLanguage = 'es';
@@ -10,8 +10,12 @@ export class LangService {
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang(this.activeLanguage);
   }
-  public toggleTranslate() {
+  toggleTranslate() {
     this.activeLanguage = this.activeLanguage == 'es' ? 'en' : 'es';
     this.translate.use(this.activeLanguage);
+  }
+
+  getTranslate(key: string) {
+    return this.translate.instant(key);
   }
 }
