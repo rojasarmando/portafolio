@@ -6,7 +6,7 @@
 
     <form id="contactForm" [formGroup]="formContact" (ngSubmit)="submit()">
       <div class="row align-items-stretch mb-5">
-        <div class="col-md-6">
+        <div class="col-md-6 wow bounceInUp">
           <div class="form-group">
             <div *ngIf="checkError(name)" class="invalid-feedback">
               <span class="badge bg-danger" *ngIf="name.errors?.required">
@@ -80,7 +80,7 @@
             />
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 wow bounceInUp">
           <div class="form-group form-group-textarea mb-md-0">
             <div *ngIf="checkError(message)" class="invalid-feedback">
               <span class="badge bg-danger" *ngIf="message.errors?.required">
@@ -111,7 +111,9 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-xl">Send Message</button>
+        <button class="btn btn-primary btn-xl">
+          {{ 'contact.send_message' | translate }}
+        </button>
       </div>
     </form>
   </div>
