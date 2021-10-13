@@ -83,15 +83,17 @@
   },
   "contact": {
     "errors": {
-      "required": "Este campo es requerido",
-      "maxlength": "El limite de caracteres es de ",
-      "minlength": "Cantidad minima de caracteres es de ",
-      "email": "Correo no valido",
-      "pattern_phone": "Numero de telefono no valido"
+      "required": "Este campo es obligatorio",
+      "maxlength": "El límite de caracteres es ",
+      "minlength": "El número mínimo de caracteres es ",
+      "email": "Correo no válido",
+      "pattern_phone": "Número de teléfono no válido"
     },
-    "name": "Nombre y Apellido",
-    "email": "Correo",
-    "message": "Un mensaje...",
-    "phone": "Numero de telefono"
+    "name": "Nombre y apellido",
+    "email": "Correo electrónico",
+    "mensaje": "Mensaje",
+    "teléfono": "Número de teléfono",
+    "error_send_email": "Error al enviar el mensaje",
+    "message_sent ": "Mensaje Enviado!"
   }
 }
