@@ -81,5 +81,20 @@
   },
   "cv": {
     "download_cv": "Download CV"
+  },
+  "contact": {
+    "errors": {
+      "required": "This field is required",
+      "maxlength": "The character limit is ",
+      "minlength": "Minimum number of characters is ",
+      "email": "Invalid email",
+      "pattern_phone": "Invalid phone number"
+    },
+    "name": "First name and Last name",
+    "email": "Email",
+    "message": "A message",
+    "phone": "Phone number",
+    "error_send_email": "Error while sending message",
+    "message_sent ": "Message sent!"
   }
 }
