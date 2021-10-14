@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillInterface } from './skills.interface';
+import dataSkill from 'src/assets/data/skills.json';
 
 @Component({
   selector: 'app-skills',
@@ -13,47 +14,7 @@ export class SkillsComponent implements OnInit {
     this.initSkills();
   }
   private initSkills() {
-    const arrayTitleSkills: Array<string> = [
-      'PHP',
-      'laravel',
-      'angular',
-      'ionic',
-      'nodejs',
-      'vue',
-      'HTML',
-      'CSS',
-      'responsive',
-      'jquery',
-      'mongodb',
-      'mySQL',
-      'postgresql',
-      'python',
-      'oracle',
-      'Ruby on Rails',
-      'java',
-      'git',
-      'github',
-      'gitlab',
-      'bitbucket',
-      'postman',
-      'docker',
-      'bitrise',
-      'jira',
-      'trello',
-      'slack',
-      'Api Rest',
-      'microservice',
-      'moodle',
-      'ospos',
-      'apache2',
-      'ubuntu',
-      'centOs',
-      'digitalocean',
-      'intellij',
-      'vscode',
-      'phpstorm',
-      'netbeans'
-    ];
+    const arrayTitleSkills: Array<string> = dataSkill;
     this.skills = [];
 
     arrayTitleSkills.forEach((titleSkill) =>
