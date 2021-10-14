@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertMessageService } from 'src/app/service/alert-message.service';
 import { FormSpreeService } from 'src/app/services/form-spree.service';
 import { LangService } from 'src/app/services/lang.service';
@@ -21,7 +22,8 @@ export class ContactComponent implements OnInit {
     private _fb: FormBuilder,
     private _formSpreeService: FormSpreeService,
     private _translateService: LangService,
-    private _alertMessageService: AlertMessageService
+    private _alertMessageService: AlertMessageService,
+    private _spinnerService: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -119,17 +121,20 @@ export class ContactComponent implements OnInit {
   }
 
   private sendMessage() {
+    this._spinnerService.show();
     this._formSpreeService.sendMessage(this.formContact.value).subscribe(
       (rsp) => {
         this._alertMessageService.success(
           this._translateService.getTranslate('contact.message_sent')
         );
         this.formContact.reset();
+        this._spinnerService.hide();
       },
       (err) => {
         this._alertMessageService.error(
           this._translateService.getTranslate('contact.error_send_email')
         );
+        this._spinnerService.hide();
       }
     );
   }
