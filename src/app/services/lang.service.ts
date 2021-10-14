@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LangService {
-  private activeLanguage = 'es';
+  private activeLanguage = environment.LANG;
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang(this.activeLanguage);
