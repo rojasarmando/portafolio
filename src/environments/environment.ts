@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   URI_FORMSPREE: 'https://formspree.io/f',
-  TEMPLATE_EMAIL_ID: 'xrgrdvjj'
+  TEMPLATE_EMAIL_ID: 'xrgrdvjj',
+  LANG: 'en'
 };
 
 /*
