@@ -1,7 +1,9 @@
 <section class="page-section" id="contact">
   <div class="container">
     <div class="text-center">
-      <h2 class="section-heading">{{ 'navbar.contact' | translate }}</h2>
+      <h2 class="section-heading wow bounceIn mt-5 mb-5">
+        {{ 'navbar.contact' | translate }}
+      </h2>
     </div>
 
     <form id="contactForm" [formGroup]="formContact" (ngSubmit)="submit()">
@@ -111,7 +113,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-xl">
+        <button class="btn btn-primary btn-xl mt-5 mb-5">
           {{ 'contact.send_message' | translate }}
         </button>
       </div>
