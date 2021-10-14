@@ -21,12 +21,11 @@
 ## Sections 📚
 
 ✔️ About me\
-✔️ Experience\
-✔️ Projects \
+✔️ Skills\
+✔️ My CV \
 ✔️ Skills \
-✔️ Education\
-✔️ Contact Info\
-✔️ Resume
+✔️ Portfolio\
+✔️ Contact me\
 
 ## Development server 📦
 
