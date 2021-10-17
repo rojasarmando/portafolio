@@ -79,6 +79,32 @@
     "info_digitalocean": "Configuration of domains, droplets and application deployment",
     "microservice": "Microservice"
   },
+  "portfolio": {
+    "survey": {
+      "descrip": "Survey in Vue and Laravel.",
+      "descrip_large": "Web application in Vue and Angular for survey."
+    },
+    "portfolio": {
+      "descrip": "Portfolio in Angular.",
+      "descrip_large": "My portfolio in Angular, boostrap 5, type.js, wow.js, full responsive and is in English and Spanish."
+    },
+    "builder": {
+      "descrip": "Web builder in Ionic.",
+      "descrip_large": "Web builder in Ionic, it's a PWA."
+    },
+    "lanzaapp": {
+      "descrip": "Landing Page in Angular.",
+      "descrip_large": "Landing page for LanzaApp web builder, in Angular and bootstrap 5."
+    },
+    "nerdcom": {
+      "descrip": "Website made in php.",
+      "descrip_large": "My first freelance work, where I improved the hamburger menu, adjusted the responsive for medium screens and mobile devices, and removed a lot of embedded css."
+    },
+    "webadmin": {
+      "descrip": "Web application made in php.",
+      "descrip_large": "Perform service hours reporting, improve user registration and user list."
+    }
+  },
   "cv": {
     "download_cv": "Download CV"
   },

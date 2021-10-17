@@ -81,6 +81,32 @@
   "cv": {
     "download_cv": "Descargar CV"
   },
+  "portfolio": {
+    "survey": {
+      "descrip": "Encuesta en Vue y Laravel.",
+      "descrip_large": "Aplicacion web en Vue y Angular para encuesta."
+    },
+    "portafolio": {
+      "descrip": "Portafolio en angular.",
+      "descrip_large": "Mi portafolio en Angular, boostrap 5, type.js, wow.js, full responsive y esta en ingles y español."
+    },
+    "builder": {
+      "descrip": "Constructor web en Ionic.",
+      "descrip_large": "Constructor web en Ionic, es una PWA."
+    },
+    "lanzaapp": {
+      "descrip": "Landing Page en Angular.",
+      "descrip_large": "Landing page para LanzaApp constructor web, en Angular y bootstrap 5."
+    },
+    "nerdcom": {
+      "descrip": "Sitio web realizado en php.",
+      "descrip_large": "Mi primer trabajo freelance, donde mejore el menu de hamburguesa, ajuste el responsive para pantallas medianas y dispositivos moviles, y retira una gran cantidad de css embebido"
+    },
+    "webadmin": {
+      "descrip": "Aplicacion web realizado en php.",
+      "descrip_large": "Realice un reporte de horas de servicio, mejore el registro de usuarios y la lista de usuarios"
+    }
+  },
   "contact": {
     "errors": {
       "required": "Este campo es obligatorio",

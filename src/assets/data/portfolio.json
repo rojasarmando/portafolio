@@ -1,24 +1,97 @@
 [
   {
-    "title": "Lanza App",
-    "descrip": "Constructor web realizado en Ionic 5 y Nodejs.",
-    "descrip_large": "Constructor web realizado en Ionic 5 y Nodejs. Participe en la segunda fase del desarrollo, el cual consistia en la guia para el usuario y una galeria de imagenes a traves de la api de shutterstock y pixabay",
-    "url": "https://www.youtube.com/watch?v=BgfcToAjfdc",
-    "portada": "assets/img/portfolio/2.jpg",
+    "title": "Portafolio ⚡️",
+    "descrip": "portfolio.portafolio.descrip",
+    "descrip_large": "portfolio.portafolio.descrip_large",
+    "url": "https://github.com/rojasarmando/portafolio",
+    "portada": "https://i.ibb.co/99HmmqJ/img1.png",
     "preview": [
       {
-        "url": "assets/img/portfolio/1.jpg",
-        "type": "img",
-        "title": "Pagina principal",
-        "descrip": "Es una PWA"
+        "url": "https://i.ibb.co/99HmmqJ/img1.png"
       },
       {
-        "url": "assets/img/portfolio/2.jpg",
-        "type": "img"
+        "url": "https://i.ibb.co/ZdL79FT/img2.png"
       },
       {
-        "url": "assets/img/portfolio/3.jpg",
-        "type": "img"
+        "url": "https://i.ibb.co/fGFTxM7/img3.png"
+      }
+    ]
+  },
+  {
+    "title": "LanzaApp ⚡️",
+    "descrip": "portfolio.lanzaapp.descrip",
+    "descrip_large": "portfolio.lanzaapp.descrip_large",
+    "url": "https://github.com/rojasarmando/web_admin",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/landing-page/master/img/img1.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/landing-page/master/img/img1.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/landing-page/master/img/img2.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/landing-page/master/img/img3.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/landing-page/master/img/img.gif"
+      }
+    ]
+  },
+  {
+    "title": "Web Builder ⚡️",
+    "descrip": "portfolio.builder.descrip",
+    "descrip_large": "portfolio.builder.descrip_large",
+    "url": "https://github.com/rojasarmando/web_admin",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/web-builder/master/img/img1.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/web-builder/master/img/img1.png"
+      }
+    ]
+  },
+  {
+    "title": "Survey ⚡️",
+    "descrip": "portfolio.survey.descrip",
+    "descrip_large": "portfolio.survey.descrip_large",
+    "url": "https://github.com/rojasarmando/survey",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/survey/master/public/img/img1.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/survey/master/public/img/img1.png"
+      }
+    ]
+  },
+  {
+    "title": "Web Manager ⚡️",
+    "descrip": "portfolio.webadmin.descrip",
+    "descrip_large": "portfolio.webadmin.descrip_large",
+    "url": "https://github.com/rojasarmando/web_admin",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/web_admin/master/image/img.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/web_admin/master/image/img.png"
+      }
+    ]
+  },
+  {
+    "title": "NerdCom ⚡️",
+    "descrip": "portfolio.nerdcom.descrip",
+    "descrip_large": "portfolio.nerdcom.descrip_large",
+    "url": "https://github.com/rojasarmando/NerdCom",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/NerdCom/master/images/img1.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/NerdCom/master/images/img1.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/NerdCom/master/images/img2.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/NerdCom/master/images/img3.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/NerdCom/master/images/img4.png"
       }
     ]
   }

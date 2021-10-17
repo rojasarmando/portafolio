@@ -16,10 +16,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this._spinnerService.show();
-
-    setTimeout(() => {
-      this._spinnerService.hide();
-    }, 2000);
+    this._spinnerService.hide();
   }
 }
