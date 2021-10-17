@@ -27,7 +27,7 @@ export class CVComponent implements OnInit {
       modes: {
         bubble: {
           distance: 100,
-          duration: 6,
+          duration: 2,
           opacity: 0.5,
           size: 40
         },
