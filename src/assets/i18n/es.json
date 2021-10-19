@@ -94,6 +94,14 @@
       "descrip": "Constructor web en Ionic.",
       "descrip_large": "Constructor web en Ionic, es una PWA."
     },
+    "list": {
+      "descrip": "Listado de Usuarios en Angular y Nodejs.",
+      "descrip_large": "Listado de Usuarios en Angular y Nodejs con Express, Typescript, Angular Material."
+    },
+    "chat": {
+      "descrip": "Chat en tiempo Real con Nodejs y Javascript",
+      "descrip_large": "Chat en tiempo Real utilizando socket.io con Nodejs y Javascript."
+    },
     "lanzaapp": {
       "descrip": "Landing Page en Angular.",
       "descrip_large": "Landing page para LanzaApp constructor web, en Angular y bootstrap 5."

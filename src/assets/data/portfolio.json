@@ -39,6 +39,33 @@
     ]
   },
   {
+    "title": "Users List ⚡️",
+    "descrip": "portfolio.list.descrip",
+    "descrip_large": "portfolio.list.descrip_large",
+    "url": "https://github.com/rojasarmando/web_admin",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/users-list/master/img/img2.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/users-list/master/img/img2.png"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/users-list/master/img/img1.png"
+      }
+    ]
+  },
+  {
+    "title": "Chat Socket.io ⚡️",
+    "descrip": "portfolio.chat.descrip",
+    "descrip_large": "portfolio.chat.descrip_large",
+    "url": "https://github.com/rojasarmando/web_admin",
+    "portada": "https://raw.githubusercontent.com/rojasarmando/Chat-Socket.io/master/public/chat.png",
+    "preview": [
+      {
+        "url": "https://raw.githubusercontent.com/rojasarmando/Chat-Socket.io/master/public/chat.png"
+      }
+    ]
+  },
+  {
     "title": "Web Builder ⚡️",
     "descrip": "portfolio.builder.descrip",
     "descrip_large": "portfolio.builder.descrip_large",
