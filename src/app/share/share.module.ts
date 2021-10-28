@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ShareRoutingModule } from './share-routing.module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    ShareRoutingModule
-  ]
+  imports: [CommonModule, ShareRoutingModule]
 })
-export class ShareModule { }
+export class ShareModule {}
