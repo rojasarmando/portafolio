@@ -8,10 +8,10 @@
 
   <ngx-typed-js
     [strings]="[
-      'header.i_am' ,
-      'header.i_am_2' ,
-      'header.work_exp' ,
-      'header.work_exp_2' 
+      'header.i_am' | translate ,
+      'header.i_am_2'  | translate ,
+      'header.work_exp'  | translate ,
+      'header.work_exp_2'  | translate 
     ]"
     [loop]="true"
     [backSpeed]="70"
@@ -28,6 +28,6 @@
     }"
     (mouseover)="removeAnimation()"
     (click)="toggleLanguage()"
-    >{{ 'header.btn_translate'  }}</a
+    >{{ 'header.btn_translate' | translate }}</a
   >
 </header>

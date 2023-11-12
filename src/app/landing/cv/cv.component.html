@@ -13,15 +13,15 @@
         (mouseover)="removeAnimation()"
         (click)="addAnimation()"
       >
-        {{ 'cv.download_cv'  }}
+        {{ 'cv.download_cv' | translate }}
       </a>
     </div>
-    <!-- <ng-particles
+    <ng-particles
       [id]="id"
       [options]="particlesOptions"
       (particlesLoaded)="particlesLoaded($event)"
       (particlesInit)="particlesInit($event)"
     >
     </ng-particles>
-  --></div>
+  </div>
 </div>

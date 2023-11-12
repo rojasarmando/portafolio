@@ -40,21 +40,27 @@
             <h6>{{ workExperience.init }} - {{ workExperience.end }}</h6>
           </div>
           <div class="timeline-body">
-            <h6>{{ 'about.way_of_working'  }}:</h6>
+            <h6>{{ 'about.way_of_working'  | translate  }}:</h6>
             <h6 class="text-muted">
               <span *ngIf="workExperience.remote; else elseRemote">
-                {{ 'about.remote'  }}
+                {{ 'about.remote' | translate  }}
               </span>
               <ng-template #elseRemote>
-                {{ 'about.on_site'  }}
+                {{ 'about.on_site' | translate  }}
               </ng-template>
               -
-              <span *ngIf="workExperience.full_time; else elsePartTime">
-                {{ 'about.full_time'  }}
-              </span>
-              <ng-template #elsePartTime>
-                {{ 'about.part_time'  }}
-              </ng-template>
+              @if (workExperience.full_time) {
+                <span>
+                  {{ 'about.full_time'  | translate  }}
+                </span>
+              }
+              @else{
+                <span>
+                  {{ 'about.part_time' | translate   }}
+                </span>
+                
+              }
+
             </h6>
           </div>
         </div>
