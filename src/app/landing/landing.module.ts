@@ -15,8 +15,16 @@ import { SkillsComponent } from './skills/skills.component';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LangService } from '../services/lang.service';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -30,13 +38,25 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     SkillsComponent
   ],
+  providers:[
+    HttpClientModule,
+    LangService
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
     LandingRoutingModule,
     NgParticlesModule,
     NgxTypedJsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
+    
     
   ]
 })
