@@ -76,12 +76,32 @@
 [![Product Name Screen Shot][product-screenshot](https://rojasarmando.com)
 
 The project consists in the creation of a full stack development portfolio, where I will show my skills and projects done in this field. The main objective is to effectively present my experience, knowledge and ability to develop complete web applications, both on the server and client side.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 ### Built With
 
 
 [![Angular][Angular.io]][Angular-url]
+
+[![Bootstrap][Bootstrap]][Bootstrap-url]
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+
+
+
+``` npm install ```
+
+
+
 
 
 ``` ng generate environments ```
@@ -134,7 +154,9 @@ The project consists in the creation of a full stack development portfolio, wher
 [Svelte-url]: https://svelte.dev/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
+[Bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
