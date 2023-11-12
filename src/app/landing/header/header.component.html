@@ -1,17 +1,17 @@
 <header class="masthead">
   <div class="masthead-subheading wow slideInRight">
-    {{ 'header.welcome' | translate }}
+    {{ 'header.welcome'  }}
   </div>
   <div class="masthead-heading wow slideInLeft">
-    {{ 'header.my_name' | translate }} Armando Rojas
+    {{ 'header.my_name'  }} Armando Rojas
   </div>
 
   <ngx-typed-js
     [strings]="[
-      'header.i_am' | translate,
-      'header.i_am_2' | translate,
-      'header.work_exp' | translate,
-      'header.work_exp_2' | translate
+      'header.i_am' ,
+      'header.i_am_2' ,
+      'header.work_exp' ,
+      'header.work_exp_2' 
     ]"
     [loop]="true"
     [backSpeed]="70"
@@ -28,6 +28,6 @@
     }"
     (mouseover)="removeAnimation()"
     (click)="toggleLanguage()"
-    >{{ 'header.btn_translate' | translate }}</a
+    >{{ 'header.btn_translate'  }}</a
   >
 </header>

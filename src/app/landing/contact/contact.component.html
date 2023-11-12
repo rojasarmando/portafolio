@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading wow bounceIn mt-5 mb-5">
-        {{ 'navbar.contact' | translate }}
+        {{ 'navbar.contact'  }}
       </h2>
     </div>
 
@@ -12,20 +12,20 @@
           <div class="form-group">
             <div *ngIf="checkError(name)" class="invalid-feedback">
               <span class="badge bg-danger" *ngIf="name.errors?.['required']">
-                {{ 'contact.errors.required' | translate }}
+                {{ 'contact.errors.required'  }}
               </span>
               <span class="badge bg-danger" *ngIf="name.errors?.['maxlength']">
-                {{ 'contact.errors.maxlength' | translate }} 100
+                {{ 'contact.errors.maxlength'  }} 100
               </span>
               <span class="badge bg-danger" *ngIf="name.errors?.['minlength']">
-                {{ 'contact.errors.minlength' | translate }} 3
+                {{ 'contact.errors.minlength'  }} 3
               </span>
             </div>
             <input
               class="form-control"
               id="name"
               type="text"
-              placeholder="{{ 'contact.name' | translate }}"
+              placeholder="{{ 'contact.name'  }}"
               formControlName="name"
               maxlength="101"
               [ngClass]="{
@@ -36,13 +36,13 @@
           <div class="form-group">
             <!--div class="invalid-feedback" *ngIf="checkError(email)">
               <span *ngIf="email.errors.required" class="badge bg-danger">
-                {{ 'contact.errors.required' | translate }}
+                {{ 'contact.errors.required'  }}
               </span>
               <span *ngIf="email.errors.maxlength" class="badge bg-danger">
-                {{ 'contact.errors.maxlength' | translate }} 100
+                {{ 'contact.errors.maxlength'  }} 100
               </span>
               <span *ngIf="email.errors.email" class="badge bg-danger">
-                {{ 'contact.errors.email' | translate }}
+                {{ 'contact.errors.email'  }}
               </span>
             </div -->
             <input
@@ -50,7 +50,7 @@
               id="email"
               type="email"
               formControlName="email"
-              placeholder="{{ 'contact.email' | translate }}"
+              placeholder="{{ 'contact.email'  }}"
               maxlength="101"
               [ngClass]="{
                 'active-error': validateEmail(email)
@@ -60,20 +60,20 @@
           <div class="form-group mb-md-0">
             <!--div *ngIf="checkError(phone)" class="invalid-feedback">
               <span class="badge bg-danger" *ngIf="phone.errors?.maxlength">
-                {{ 'contact.errors.maxlength' | translate }} 16
+                {{ 'contact.errors.maxlength'  }} 16
               </span>
               <span class="badge bg-danger" *ngIf="phone.errors?.minlength">
-                {{ 'contact.errors.minlength' | translate }} 7
+                {{ 'contact.errors.minlength'  }} 7
               </span>
               <span class="badge bg-danger" *ngIf="phone.errors?.pattern">
-                {{ 'contact.errors.pattern_phone' | translate }}
+                {{ 'contact.errors.pattern_phone'  }}
               </span>
             </div -->
             <input
               class="form-control"
               id="phone"
               type="tel"
-              placeholder="{{ 'contact.phone' | translate }}"
+              placeholder="{{ 'contact.phone'  }}"
               formControlName="phone"
               maxlength="17"
               [ngClass]="{
@@ -86,19 +86,19 @@
           <div class="form-group form-group-textarea mb-md-0">
             <div *ngIf="checkError(message)" class="invalid-feedback">
               <span class="badge bg-danger" *ngIf="message.errors?.['required']">
-                {{ 'contact.errors.required' | translate }}
+                {{ 'contact.errors.required'  }}
               </span>
               <span class="badge bg-danger" *ngIf="message.errors?.['maxlength']">
-                {{ 'contact.errors.maxlength' | translate }} 255
+                {{ 'contact.errors.maxlength'  }} 255
               </span>
               <span class="badge bg-danger" *ngIf="message.errors?.['minlength']">
-                {{ 'contact.errors.minlength' | translate }} 10
+                {{ 'contact.errors.minlength'  }} 10
               </span>
             </div>
             <textarea
               class="form-control"
               id="message"
-              placeholder="{{ 'contact.message' | translate }}"
+              placeholder="{{ 'contact.message'  }}"
               maxlength="255"
               formControlName="message"
               [ngClass]="{
@@ -114,7 +114,7 @@
       </div>
       <div class="text-center">
         <button class="btn btn-primary btn-xl mt-5 mb-5">
-          {{ 'contact.send_message' | translate }}
+          {{ 'contact.send_message'  }}
         </button>
       </div>
     </form>

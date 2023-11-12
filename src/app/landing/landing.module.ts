@@ -12,9 +12,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +32,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     LandingRoutingModule,
     NgParticlesModule,
-    TranslateModule,
     NgxTypedJsModule,
     ReactiveFormsModule
+    
   ]
 })
 export class LandingModule {}

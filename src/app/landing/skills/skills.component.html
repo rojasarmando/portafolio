@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading wow bounceIn">
-        {{ 'navbar.skills' | translate }}
+        {{ 'navbar.skills'  }}
       </h2>
     </div>
     <div class="row text-center">
@@ -13,14 +13,14 @@
         <span class="fa-stack fa-4x">
           <img
             src="{{ skill.img }}"
-            alt="img {{ skill.title | translate }}"
+            alt="img {{ skill.title  }}"
             class="skill-icon"
           />
         </span>
-        <h4 class="my-3">{{ skill.title | translate }}</h4>
+        <h4 class="my-3">{{ skill.title  }}</h4>
         @if (skill.description) {
           <h6 *ngIf="" class="text-mute">
-            {{ skill.description | translate }}
+            {{ skill.description  }}
           </h6>
 
         }

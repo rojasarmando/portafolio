@@ -2,12 +2,12 @@
   <div class="container">
     <div class="text-center">
       <h2 class="mt-5 section-heading wow bounceIn" data-wow-delay="0s">
-        {{ 'navbar.about' | translate }}
+        {{ 'navbar.about'  }}
       </h2>
       <h3 class="section-subheading text-muted text-justify mt-4">
-        {{ 'about.message' | translate }}
-        {{ 'about.message2' | translate }}
-        {{ 'about.message3' | translate }}
+        {{ 'about.message'  }}
+        {{ 'about.message2'  }}
+        {{ 'about.message3'  }}
       </h3>
     </div>
     <ul class="timeline">
@@ -34,26 +34,26 @@
         <div class="timeline-panel">
           <div class="timeline-heading">
             <h4 class="subheading">
-              {{ workExperience.job_title | translate }}
+              {{ workExperience.job_title  }}
             </h4>
             <h6>{{ workExperience.company }}, {{ workExperience.country }}</h6>
             <h6>{{ workExperience.init }} - {{ workExperience.end }}</h6>
           </div>
           <div class="timeline-body">
-            <h6>{{ 'about.way_of_working' | translate }}:</h6>
+            <h6>{{ 'about.way_of_working'  }}:</h6>
             <h6 class="text-muted">
               <span *ngIf="workExperience.remote; else elseRemote">
-                {{ 'about.remote' | translate }}
+                {{ 'about.remote'  }}
               </span>
               <ng-template #elseRemote>
-                {{ 'about.on_site' | translate }}
+                {{ 'about.on_site'  }}
               </ng-template>
               -
               <span *ngIf="workExperience.full_time; else elsePartTime">
-                {{ 'about.full_time' | translate }}
+                {{ 'about.full_time'  }}
               </span>
               <ng-template #elsePartTime>
-                {{ 'about.part_time' | translate }}
+                {{ 'about.part_time'  }}
               </ng-template>
             </h6>
           </div>
