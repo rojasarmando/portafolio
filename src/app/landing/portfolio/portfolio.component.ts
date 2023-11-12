@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import dataPortfolio from 'src/assets/data/portfolio.json';
+import dataPortfolio from '../../../assets/data/portfolio.json';
 
 @Component({
   selector: 'app-portfolio',

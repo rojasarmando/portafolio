@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from 'src/environments/environment';
+import { inject } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LangService {
   private activeLanguage = environment.LANG;
+  private translate: TranslateService;
 
-  constructor(private translate: TranslateService) {
+  constructor() {
+
+    this.translate = inject(TranslateService);
+
     this.translate.setDefaultLang(this.activeLanguage);
   }
   toggleTranslate() {
@@ -17,6 +22,7 @@ export class LangService {
   }
 
   getTranslate(key: string) {
+    //return key;
     return this.translate.instant(key);
   }
 }

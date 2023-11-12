@@ -6,9 +6,9 @@ import {
   Validators
 } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { AlertMessageService } from 'src/app/service/alert-message.service';
-import { FormSpreeService } from 'src/app/services/form-spree.service';
-import { LangService } from 'src/app/services/lang.service';
+import { AlertMessageService } from '../../services/alert-message.service';
+import { FormSpreeService } from '../../services/form-spree.service';
+import { LangService } from '../../services/lang.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +16,7 @@ import { LangService } from 'src/app/services/lang.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  formContact: FormGroup;
+  formContact: FormGroup =  this._fb.group({});
   countMessage: number = 0;
   constructor(
     private _fb: FormBuilder,
@@ -24,7 +24,9 @@ export class ContactComponent implements OnInit {
     private _translateService: LangService,
     private _alertMessageService: AlertMessageService,
     private _spinnerService: NgxSpinnerService
-  ) {}
+  ) {
+   
+  }
 
   ngOnInit(): void {
     this._initForm();
@@ -86,28 +88,28 @@ export class ContactComponent implements OnInit {
   validate(element: FormControl) {
     return (
       this.checkError(element) &&
-      (element.errors?.required ||
-        element.errors?.maxlengt ||
-        element.errors?.minlengt)
+      (element.errors?.['required'] ||
+        element.errors?.['maxlengt'] ||
+        element.errors?.['minlengt'])
     );
   }
 
   validateEmail(element: FormControl) {
     return (
       this.checkError(element) &&
-      (element.errors?.required ||
-        element.errors?.maxlengt ||
-        element.errors?.email)
+      (element.errors?.['required'] ||
+        element.errors?.['maxlengt'] ||
+        element.errors?.['email'])
     );
   }
 
   validatePhone(element: FormControl) {
     return (
       this.checkError(element) &&
-      (element.errors?.pattern ||
-        element.errors?.maxlengt ||
-        element.errors?.required ||
-        element.errors?.minlength)
+      (element.errors?.['pattern'] ||
+        element.errors?.['maxlengt'] ||
+        element.errors?.['required'] ||
+        element.errors?.['minlength'])
     );
   }
 
