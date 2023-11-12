@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillInterface } from './skills.interface';
-import dataSkill from 'src/assets/data/skills.json';
+import dataSkill from '../../../assets/data/skills.json';
 
 @Component({
   selector: 'app-skills',
@@ -8,7 +8,7 @@ import dataSkill from 'src/assets/data/skills.json';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  public skills: Array<SkillInterface>;
+  public skills: Array<SkillInterface> = [];
   constructor() {}
   ngOnInit(): void {
     this.initSkills();
@@ -23,7 +23,7 @@ export class SkillsComponent implements OnInit {
   }
 
   private setSkill(titleSkill: string): SkillInterface {
-    let title: string =
+    let title: any =
       titleSkill.charAt(0).toUpperCase() + titleSkill.slice(1);
     const index: string = titleSkill.toLowerCase().split(' ').join('_');
 
@@ -33,7 +33,7 @@ export class SkillsComponent implements OnInit {
       Microservice: 'skills.microservice'
     };
 
-    if (exceptions[title]) title = exceptions[title];
+    //if (exceptions[title]) title = exceptions[title];
 
     return {
       title,

@@ -6,10 +6,10 @@
       </h2>
     </div>
     <div class="row text-center">
+
+      @for (skill of skills; track $index) {
       <div
-        class="col-md-4 mt-3 mb-5 wow bounceInUp"
-        *ngFor="let skill of skills"
-      >
+        class="col-md-4 mt-3 mb-5 wow bounceInUp" >
         <span class="fa-stack fa-4x">
           <img
             src="{{ skill.img }}"
@@ -18,10 +18,15 @@
           />
         </span>
         <h4 class="my-3">{{ skill.title | translate }}</h4>
-        <h6 *ngIf="skill.description" class="text-mute">
-          {{ skill.description | translate }}
-        </h6>
+        @if (skill.description) {
+          <h6 *ngIf="" class="text-mute">
+            {{ skill.description | translate }}
+          </h6>
+
+        }
+       
       </div>
+      }
     </div>
   </div>
 </section>
