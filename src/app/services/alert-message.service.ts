@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class AlertMessageService {
+
   constructor() {}
 
   success(message: string) {

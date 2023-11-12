@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { workExperienceTimelineInterface } from './about.interface';
-import dataAbout from 'src/assets/data/about.json';
+import dataAbout from '../../../assets/data/about.json';
 
 @Component({
   selector: 'app-about',
@@ -8,7 +8,7 @@ import dataAbout from 'src/assets/data/about.json';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  public workExperienceTimeline: Array<workExperienceTimelineInterface>;
+  public workExperienceTimeline: Array<workExperienceTimelineInterface> = dataAbout;
   constructor() {
     this.initWorkExperienceTimeline();
   }

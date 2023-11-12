@@ -50,3 +50,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## License 📄
 
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+
+
+``` ng generate environments ```

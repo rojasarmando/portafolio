@@ -12,9 +12,20 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LangService } from '../services/lang.service';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { FormSpreeService } from '../services/form-spree.service';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,13 +39,27 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     SkillsComponent
   ],
+  providers:[
+    HttpClientModule,
+    LangService,
+    FormSpreeService
+  ],
   imports: [
     CommonModule,
+    HttpClientModule,
     LandingRoutingModule,
     NgParticlesModule,
-    TranslateModule,
     NgxTypedJsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
+    
+    
   ]
 })
 export class LandingModule {}
