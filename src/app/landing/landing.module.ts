@@ -21,6 +21,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { FormSpreeService } from '../services/form-spree.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers:[
     HttpClientModule,
-    LangService
+    LangService,
+    FormSpreeService
   ],
   imports: [
     CommonModule,

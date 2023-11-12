@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading wow bounceIn">
-        {{ 'navbar.skills'  }}
+        {{ 'navbar.skills' | translate }}
       </h2>
     </div>
     <div class="row text-center">
@@ -20,7 +20,7 @@
         <h4 class="my-3">{{ skill.title  }}</h4>
         @if (skill.description) {
           <h6 *ngIf="" class="text-mute">
-            {{ skill.description  }}
+            {{ skill.description | translate  }}
           </h6>
 
         }
