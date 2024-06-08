@@ -13,8 +13,6 @@
   "mySQL",
   "postgresql",
   "python",
-  "oracle",
-  "Ruby on Rails",
   "java",
   "git",
   "github",
@@ -36,6 +34,5 @@
   "digitalocean",
   "intellij",
   "vscode",
-  "phpstorm",
-  "netbeans"
+  "nginx"
 ]
