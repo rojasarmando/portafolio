@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PostsList from '@/components/PostsList.astro'
+import { getCollection } from 'astro:content'
+import { type CollectionEntry } from 'astro:content'
+import type { GetStaticPathsOptions, Page } from 'astro'
+import { sortPostsByDateDesc } from '@/utils/post-utils'
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await getCollection('posts')).sort(sortPostsByDateDesc)
+
+  return paginate(posts, { pageSize: 3 })
+}
+
+const { page } = Astro.props as { page: Page<CollectionEntry<'posts'>> }
+---
+
+<Layout title="Blog">
+  <PostsList page={page} posts={page.data} />
+</Layout>

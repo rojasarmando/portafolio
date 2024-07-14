@@ -1,0 +1,273 @@
+---
+import { Image } from 'astro:assets'
+import logoForLight from '@/images/astro-logo-for-light-mode.svg'
+import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
+
+const navigation = [
+  { href: '/#projects', title: 'Projects', newTab: false },
+  { href: '/#about', title: 'About', newTab: false },
+  { href: '/#contact', title: 'Contact', newTab: false },
+  { href: '/tags', title: 'Tags', newTab: false },
+  { href: '/blog', title: 'Blog', newTab: false },
+]
+
+const pathname = Astro.url.pathname.split('/')[1]
+---
+
+<header
+  class="fixed bg-white dark:bg-slate-900 dark:text-gray-100 top-0 left-0 w-full z-40 border-t-[14px] border-indigo-600"
+>
+  <nav
+    class="container mx-auto flex flex-wrap items-center justify-between py-6 px-4 xl:px-0"
+  >
+    <div class="h-12">
+      <a href="/">
+        <Image
+          src={logoForLight}
+          alt="logo"
+          id="logoForLight"
+          class="w-auto h-12 hidden"
+        />
+        <Image
+          src={logoForDark}
+          alt="logo"
+          id="logoForDark"
+          class="w-auto h-12 hidden"
+        />
+      </a>
+    </div>
+
+    <div class="block lg:hidden">
+      <button id="hamburgerMenu">
+        <svg
+          id="hamburgerIcon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+    <ul
+      id="mobileNav"
+      class="hidden uppercase tracking-wide font-bold w-full flex-grow lg:space-x-8 space-y-6 lg:space-y-0 lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
+    >
+      <li>
+        <a
+          href="#"
+          class="hover:text-gray-500 dark:hover:text-gray-300"
+          id="themeToggle"
+        >
+          <svg
+            id="sunIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="hidden w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            ></path>
+          </svg>
+          <svg
+            id="moonIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="hidden w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            ></path>
+          </svg>
+        </a>
+      </li>
+
+      {
+        navigation.map(nav => (
+          <li>
+            {!nav.newTab && (
+              <a
+                href={nav.href}
+                class:list={[
+                  'hover:text-gray-500 menuItem dark:hover:text-gray-300',
+                  {
+                    'underline underline-offset-4 decoration-wavy':
+                      (pathname && nav.href.includes(pathname)) ||
+                      (pathname === 'posts' && nav.href === '/blog'),
+                  },
+                ]}
+              >
+                {nav.title}
+              </a>
+            )}
+
+            {nav.newTab && (
+              <a
+                href={nav.href}
+                class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {nav.title}
+              </a>
+            )}
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="https://github.com/drehimself/astro-portfolio-starter"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gray-500 dark:hover:text-gray-300"
+        >
+          <svg
+            class="w-6 h-6 mt-1"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M10 0c1.814 0 3.487.435 5.02 1.306a9.827 9.827 0 0 1 3.639 3.542A9.33 9.33 0 0 1 20 9.734c0 2.121-.636 4.03-1.908 5.723a9.783 9.783 0 0 1-4.928 3.518c-.234.042-.408.012-.52-.09a.49.49 0 0 1-.17-.38l.006-.969c.005-.621.007-1.19.007-1.705 0-.82-.226-1.42-.677-1.8.495-.05.94-.126 1.335-.228a5.4 5.4 0 0 0 1.223-.494 3.62 3.62 0 0 0 1.055-.843c.282-.334.512-.777.69-1.33.178-.554.267-1.19.267-1.909a3.7 3.7 0 0 0-1.028-2.61c.32-.77.286-1.631-.105-2.586-.243-.076-.594-.03-1.054.14-.46.168-.86.354-1.198.557l-.495.304a9.478 9.478 0 0 0-2.5-.33c-.86 0-1.693.11-2.5.33a11.6 11.6 0 0 0-.553-.342c-.23-.135-.593-.298-1.088-.488-.494-.19-.863-.247-1.106-.171-.391.955-.426 1.816-.105 2.585A3.7 3.7 0 0 0 3.62 9.227c0 .719.089 1.352.267 1.902.178.549.406.993.683 1.33.278.339.627.622 1.048.85a5.4 5.4 0 0 0 1.224.494c.395.102.84.178 1.335.228-.338.305-.551.74-.638 1.306a2.631 2.631 0 0 1-.586.19 3.782 3.782 0 0 1-.742.063c-.287 0-.57-.09-.853-.272a2.256 2.256 0 0 1-.723-.792 2.068 2.068 0 0 0-.631-.66c-.256-.168-.471-.27-.645-.304l-.26-.038c-.182 0-.308.02-.378.057-.07.038-.09.087-.065.146.026.06.065.118.117.178.053.059.109.11.17.152l.09.063c.192.085.38.245.567.482.187.236.324.452.41.646l.13.292c.113.32.304.58.574.78.269.198.56.325.872.38.312.054.614.084.905.088.29.004.532-.01.723-.044l.299-.05c0 .32.002.694.007 1.12l.006.692a.49.49 0 0 1-.17.38c-.112.101-.286.13-.52.089a9.783 9.783 0 0 1-4.928-3.518C.636 13.763 0 11.855 0 9.734a9.33 9.33 0 0 1 1.341-4.886 9.827 9.827 0 0 1 3.64-3.542C6.512.436 8.185 0 10 0zM3.79 13.98c.025-.058-.005-.11-.092-.151-.087-.026-.143-.017-.17.025-.025.06.005.11.092.152.078.05.134.042.17-.025zm.403.432c.06-.043.052-.11-.026-.203-.087-.076-.157-.089-.209-.038-.06.042-.052.11.026.203.087.084.157.097.209.038zm.39.57c.078-.06.078-.14 0-.24-.07-.11-.143-.136-.221-.077-.078.042-.078.118 0 .228.078.11.152.14.221.089zm.547.532c.07-.067.052-.148-.052-.24-.104-.102-.19-.115-.26-.039-.078.068-.061.148.052.241.104.102.19.114.26.038zm.742.317c.026-.093-.03-.16-.169-.203-.13-.033-.213-.004-.247.09-.035.092.021.155.169.19.13.05.213.025.247-.077zm.82.064c0-.11-.073-.157-.22-.14-.14 0-.209.047-.209.14 0 .11.074.156.221.139.14 0 .209-.046.209-.14zm.756-.127c-.017-.093-.096-.131-.234-.114-.14.025-.2.088-.183.19.018.101.096.135.235.101.139-.034.2-.093.182-.177z"
+              fill-rule="nonzero"></path></svg
+          >
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const moonIcon = document.querySelector('#moonIcon') as Element
+    const sunIcon = document.querySelector('#sunIcon') as Element
+    const logoForLight = document.querySelector('#logoForLight') as Element
+    const logoForDark = document.querySelector('#logoForDark') as Element
+
+    const themeToggle = document.querySelector('#themeToggle') as Element
+    const mobileNav = document.querySelector('#mobileNav') as Element
+    const hamburgerMenu = document.querySelector('#hamburgerMenu') as Element
+
+    themeToggle.addEventListener('click', handleToggleTheme)
+
+    hamburgerMenu.addEventListener('click', handleToggleMobileNav)
+
+    document.addEventListener('keydown', handleEscapeKeyPress)
+
+    mobileNav.addEventListener('click', handleMobileNavClick as EventListener)
+
+    document.addEventListener('click', handleClickOutside)
+
+    function handleClickOutside(event: MouseEvent) {
+      const isClickInside = mobileNav.contains(event.target as Node)
+
+      if (!isClickInside) {
+        if (!hamburgerMenu.contains(event.target as Node)) {
+          mobileNav.classList.add('hidden')
+        }
+      }
+    }
+
+    function handleMobileNavClick(event: MouseEvent) {
+      const { target } = event
+
+      if (target instanceof HTMLElement) {
+        if (target.tagName === 'A' || target.classList.contains('menuItem')) {
+          mobileNav.classList.add('hidden')
+        }
+      }
+    }
+
+    function handleEscapeKeyPress(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        mobileNav.classList.add('hidden')
+      }
+    }
+
+    function handleToggleMobileNav() {
+      mobileNav.classList.toggle('hidden')
+    }
+
+    function handleToggleTheme(event: Event) {
+      event.preventDefault()
+
+      document.documentElement.classList.toggle('dark')
+
+      const isDark = document.documentElement.classList.contains('dark')
+
+      localStorage.setItem('theme', isDark ? 'dark' : 'light')
+
+      if (isDark) {
+        logoForDark.classList.remove('hidden')
+        logoForLight.classList.add('hidden')
+        moonIcon.classList.add('hidden')
+        sunIcon.classList.remove('hidden')
+      } else {
+        logoForDark.classList.add('hidden')
+        logoForLight.classList.remove('hidden')
+        moonIcon.classList.remove('hidden')
+        sunIcon.classList.add('hidden')
+      }
+
+      mobileNav.classList.add('hidden')
+    }
+  })
+</script>
+
+<script>
+  // For view transitions to work without FOUC
+  // https://docs.astro.build/en/tutorials/add-view-transitions/#update-scripts
+  document.addEventListener('astro:after-swap', () => {
+    const moonIcon = document.querySelector('#moonIcon') as Element
+    const sunIcon = document.querySelector('#sunIcon') as Element
+    const logoForLight = document.querySelector('#logoForLight') as Element
+    const logoForDark = document.querySelector('#logoForDark') as Element
+
+    const theme = getTheme()
+    setInitialTheme(theme)
+
+    function getTheme() {
+      if (
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('theme')
+      ) {
+        return localStorage.getItem('theme') || ''
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+      }
+      return 'light'
+    }
+
+    function setInitialTheme(theme: string) {
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+        logoForLight.classList.remove('hidden')
+        moonIcon.classList.remove('hidden')
+      } else {
+        document.documentElement.classList.add('dark')
+        logoForDark.classList.remove('hidden')
+        sunIcon.classList.remove('hidden')
+      }
+
+      window.localStorage.setItem('theme', theme)
+    }
+  })
+</script>
