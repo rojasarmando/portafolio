@@ -5,7 +5,6 @@
       "position": "Semi Senior Developer",
       "start_date": "July 2023",
       "end_date": "May 2024",
-      "duration": "11 months",
       "location": "Barquisimeto, Lara State, Venezuela",
       "responsibilities": [
         "Integration of mobile payment.",
@@ -22,7 +21,6 @@
       "position": "Developer Analyst",
       "start_date": "February 2023",
       "end_date": "July 2023",
-      "duration": "6 months",
       "location": "Acarigua, Portuguesa State, Venezuela",
       "responsibilities": [
         "Development of functionalities and modules in Odoo.",
@@ -41,7 +39,6 @@
       "position": "Senior Technical Developer",
       "start_date": "November 2021",
       "end_date": "February 2023",
-      "duration": "1 year 4 months",
       "location": "Araure, Portuguesa State, Venezuela",
       "responsibilities": [
         "Development of RLS1100 scale integration with UnicentaOPOS.",
@@ -60,7 +57,6 @@
       "position": "Tech Leader",
       "start_date": "June 2021",
       "end_date": "September 2021",
-      "duration": "4 months",
       "location": "Panama",
       "responsibilities": [
         "Tech Leader for the Gestionar project.",
@@ -74,7 +70,6 @@
       "position": "Semi Senior Backend Developer",
       "start_date": "March 2021",
       "end_date": "June 2021",
-      "duration": "4 months",
       "location": "Panama",
       "responsibilities": [
         "Development of API for Rutas Panama, using Postmark service for email sending, Firebase Cloud Messaging for notifications, Jobs, and Queue with Redis.",
@@ -86,7 +81,6 @@
       "position": "Semi Senior Full Stack Developer",
       "start_date": "November 2020",
       "end_date": "March 2021",
-      "duration": "5 months",
       "location": "Chile",
       "responsibilities": [
         "Development of employee attendance system using geolocation, with an admin panel backend in Node.js with TypeScript and Express framework, frontend in Angular, and mobile application in Ionic. API documentation using Postman."
@@ -97,7 +91,6 @@
       "position": "Semi Senior Full Stack Developer",
       "start_date": "October 2020",
       "end_date": "December 2020",
-      "duration": "3 months",
       "location": "Venezuela",
       "responsibilities": [
         "Modifications to Kudiska landing page (Angular) https://www.kudiska.com",
@@ -109,7 +102,6 @@
       "position": "Web Developer",
       "start_date": "June 2020",
       "end_date": "September 2020",
-      "duration": "4 months",
       "location": "Mexico",
       "responsibilities": [
         "Full Stack Web Developer."
@@ -120,7 +112,6 @@
       "position": "Senior Programmer Analyst",
       "start_date": "November 2018",
       "end_date": "February 2020",
-      "duration": "1 year 4 months",
       "location": "Acarigua, Venezuela",
       "responsibilities": [
         "Creation of insurance renewal module.",
@@ -137,8 +128,7 @@
       "company": "Consorcio Oleaginoso Portuguesa, S.A. COPOSA",
       "position": "Junior Systems Analyst",
       "start_date": "July 2018",
-      "end_date": "November 2018",
-      "duration": "5 months"
+      "end_date": "November 2018"
     }
   ]
 }
