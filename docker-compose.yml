@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  astro-app:
+    build:
+      context: .
+      dockerfile: Dockerfile  
+    network_mode: "host"
+    container_name: portafolio-rojasarmando
+    volumes:
+      - /home/rojasarmando/source/rojasarmando/portafolio:/app
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true

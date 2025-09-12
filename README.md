@@ -1,55 +1,47 @@
-# Portafolio ⚡️
+# Astro Starter Kit: Minimal
 
-> https://rojasarmando.com
+```sh
+npm create astro@latest -- --template minimal
+```
 
-![GitHub stars](https://img.shields.io/github/stars/rojasarmando/portafolio)
-![GitHub forks](https://img.shields.io/github/forks/rojasarmando/portafolio)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/rojasarmando/portafolio/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-blue)](http://rojasarmando.tk/)
-[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/rojasarmando/)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
-## Features 📋
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- Angular 12
-- Bootstrap 5
-- Typing animation using `typed.js`
-- Scroll animation using `wow.js`
-- Particles animation using `particles.js`
-- Fully Responsive
+## 🚀 Project Structure
 
-## Sections 📚
+Inside of your Astro project, you'll see the following folders and files:
 
-✔️ About me\
-✔️ Skills\
-✔️ My CV \
-✔️ Skills \
-✔️ Portfolio\
-✔️ Contact me\
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## Development server 📦
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-### Build
+Any static assets, like images, can be placed in the `public/` directory.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 🧞 Commands
 
-### Running unit tests
+All commands are run from the root of the project, from a terminal:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-### Running end-to-end tests
+## 👀 Want to learn more?
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
-
-
-``` ng generate environments ```
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
