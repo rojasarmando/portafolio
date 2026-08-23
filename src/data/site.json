@@ -3,10 +3,6 @@
   "email": "armando.develop@gmail.com",
   "linkedin": "https://linkedin.com/in/rojasarmando",
   "github": "https://github.com/rojasarmando",
-  "video": {
-    "id": "zRduTPdv_jE",
-    "thumbnail": "https://i.ytimg.com/vi/zRduTPdv_jE/maxresdefault.jpg"
-  },
   "nav": [
     { "id": "about", "key": "about" },
     { "id": "experience", "key": "experience" },

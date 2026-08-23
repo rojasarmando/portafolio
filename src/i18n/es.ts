@@ -28,8 +28,7 @@ export const es = {
       deployments: 'Despliegues',
       level: 'Nivel Técnico'
     },
-    videoTitle: 'Armando Rojas - Perfil Profesional',
-    videoCta: 'Reproducir video de presentación',
+    showcaseLabel: 'Perfil de terminal de Armando Rojas',
     certLabel: 'Certificación Experto',
     certValue: 'Odoo v18 Funcional y Técnico'
   },

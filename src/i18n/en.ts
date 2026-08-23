@@ -28,8 +28,7 @@ export const en = {
       deployments: 'Deployments',
       level: 'Tech Level'
     },
-    videoTitle: 'Armando Rojas - Professional Profile',
-    videoCta: 'Play showcase video',
+    showcaseLabel: 'Terminal profile of Armando Rojas',
     certLabel: 'Expert Certification',
     certValue: 'Odoo v18 Functional & Tech'
   },
