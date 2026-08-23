@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+@theme {
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-background-dark: #0f172a;
+  --color-background-card: #1e293b;
+  --color-accent-blue: #3b82f6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background-dark font-display text-slate-300 antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background-color: rgb(15 23 42 / 0.9);
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgb(37 99 235 / 0.15) 0%,
+    rgb(15 23 42 / 1) 100%
+  );
+}
+
+.tech-card {
+  @apply p-6 rounded-xl bg-background-card border border-slate-700/50 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}

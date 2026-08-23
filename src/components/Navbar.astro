@@ -1,0 +1,155 @@
+---
+import site from '../data/site.json';
+import { langPath, otherLang, t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const switchPath = langPath(otherLang(lang));
+---
+
+<header
+  class="glass-nav fixed inset-x-0 top-0 z-50 border-b border-slate-800"
+>
+  <div class="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6">
+    <div class="flex items-center gap-3">
+      <a
+        href="#about"
+        class="flex items-center gap-2 rounded-md bg-primary px-2.5 py-1 font-mono text-sm font-bold text-white transition-colors hover:bg-primary-dark"
+        aria-label={site.name}
+      >
+        <span>/&gt;</span>
+      </a>
+      <h2 class="hidden text-lg font-bold tracking-tight text-white md:block">
+        {site.name}
+      </h2>
+    </div>
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
+      {
+        site.nav.map((item) => (
+          <a
+            class="text-sm font-semibold text-slate-400 transition-colors hover:text-primary"
+            href={`#${item.id}`}
+          >
+            {dict.nav[item.key as keyof typeof dict.nav]}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-4">
+      <a
+        data-lang-switch={switchPath}
+        href={switchPath}
+        lang={otherLang(lang)}
+        class="hidden rounded-lg border border-slate-700 px-3 py-2 text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors hover:border-primary/50 hover:text-primary sm:block"
+      >
+        {otherLang(lang)}
+      </a>
+      <a
+        href="#contact"
+        class="hidden rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-dark md:block"
+      >
+        {dict.nav.contact}
+      </a>
+      <button
+        id="menu-toggle"
+        type="button"
+        class="rounded-lg border border-slate-700 p-2 text-slate-400 transition-colors hover:border-primary/50 hover:text-primary md:hidden"
+        aria-label={dict.nav.menuOpen}
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-label-open={dict.nav.menuOpen}
+        data-label-close={dict.nav.menuClose}
+      >
+        <svg id="menu-icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-md md:hidden">
+    <nav class="mx-auto flex max-w-[1280px] flex-col px-6 py-4" aria-label="Mobile">
+      {
+        site.nav.map((item) => (
+          <a
+            data-menu-link
+            class="border-b border-slate-800/60 py-3 text-sm font-semibold text-slate-300 transition-colors last:border-b-0 hover:text-primary"
+            href={`#${item.id}`}
+          >
+            {dict.nav[item.key as keyof typeof dict.nav]}
+          </a>
+        ))
+      }
+      <div class="mt-4 flex items-center gap-3">
+        <a
+          data-menu-link
+          data-lang-switch={switchPath}
+          href={switchPath}
+          lang={otherLang(lang)}
+          class="rounded-lg border border-slate-700 px-3 py-2 text-xs font-bold uppercase tracking-widest text-slate-400 transition-colors hover:border-primary/50 hover:text-primary"
+        >
+          {otherLang(lang)}
+        </a>
+        <a
+          data-menu-link
+          href="#contact"
+          class="flex-1 rounded-lg bg-primary px-5 py-2 text-center text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-dark"
+        >
+          {dict.nav.contact}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const syncHash = () => {
+    document
+      .querySelectorAll<HTMLAnchorElement>('[data-lang-switch]')
+      .forEach((el) => {
+        el.setAttribute(
+          'href',
+          `${el.dataset.langSwitch}${window.location.hash}`
+        );
+      });
+  };
+  const initMenu = () => {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    if (!toggle || !menu || !iconOpen || !iconClose) return;
+    const setOpen = (open: boolean) => {
+      menu.classList.toggle('hidden', !open);
+      iconOpen.classList.toggle('hidden', open);
+      iconClose.classList.toggle('hidden', !open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute(
+        'aria-label',
+        open ? toggle.dataset.labelClose ?? '' : toggle.dataset.labelOpen ?? ''
+      );
+    };
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true')
+    );
+    menu.querySelectorAll('[data-menu-link]').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  };
+  const init = () => {
+    syncHash();
+    initMenu();
+    window.addEventListener('hashchange', syncHash);
+  };
+  init();
+  document.addEventListener('astro:after-swap', init);
+</script>

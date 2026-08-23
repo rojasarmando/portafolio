@@ -1,0 +1,154 @@
+---
+import Icon from './Icon.astro';
+import site from '../data/site.json';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const embedUrl = `https://www.youtube.com/embed/${site.video.id}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&color=white`;
+---
+
+<section class="relative hero-gradient py-16 lg:py-24" id="about">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <div class="grid items-center gap-12 lg:grid-cols-12">
+      <div class="flex flex-col gap-8 lg:col-span-6">
+        <div
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-primary"
+          data-reveal
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+            ></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"
+            ></span>
+          </span>
+          {dict.hero.badge}
+        </div>
+        <div class="flex flex-col gap-4" data-reveal>
+          <h1
+            class="text-5xl font-extrabold leading-[1.1] tracking-tight text-white md:text-6xl"
+          >
+            {dict.hero.titleName}
+            <span class="block text-primary">{dict.hero.titleRole}</span>
+          </h1>
+          <p class="max-w-xl text-xl leading-relaxed text-slate-400">
+            {dict.hero.subtitlePrefix}<span
+              class="font-semibold text-white underline decoration-primary/50 decoration-4"
+              >{dict.hero.subtitleHighlight}</span
+            >{dict.hero.subtitleSuffix}
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4" data-reveal>
+          <a
+            class="flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primary-dark"
+            href="#showcase"
+          >
+            {dict.hero.watchShowcase}
+            <Icon name="play" class="size-5" />
+          </a>
+          <a
+            class="rounded-xl border border-slate-700 bg-slate-800 px-8 py-4 text-base font-bold text-white transition-all hover:bg-slate-700"
+            href={site.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {dict.hero.linkedin}
+          </a>
+        </div>
+        <div
+          class="mt-4 flex items-center gap-10 border-t border-slate-800 pt-8"
+          data-reveal
+        >
+          {
+            site.stats.map((stat) => (
+              <div class="flex flex-col">
+                <span
+                  class={`text-3xl font-extrabold ${stat.accent ? 'text-primary' : 'text-white'}`}
+                >
+                  {stat.value}
+                </span>
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">
+                  {dict.hero.stats[stat.key as keyof typeof dict.hero.stats]}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="relative" data-reveal>
+          <div class="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-2xl"
+          ></div>
+          <div
+            class="video-wrapper relative z-10 border-4 border-slate-800 bg-black"
+            id="showcase"
+          >
+            <button
+              id="video-facade"
+              type="button"
+              class="group absolute inset-0 h-full w-full cursor-pointer"
+              data-embed={embedUrl}
+              data-title={dict.hero.videoTitle}
+              aria-label={dict.hero.videoCta}
+            >
+              <img
+                src={site.video.thumbnail}
+                alt=""
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span
+                class="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/10"
+              >
+                <span
+                  class="flex size-16 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/40 transition-transform group-hover:scale-110"
+                >
+                  <Icon name="play" class="size-8" />
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            class="absolute -bottom-6 -right-6 z-20 hidden items-center gap-4 rounded-xl border border-slate-700 bg-background-card p-4 shadow-2xl md:flex"
+          >
+            <div class="rounded-lg bg-primary/20 p-2">
+              <Icon name="verified" class="size-6 text-primary" />
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase text-slate-500">
+                {dict.hero.certLabel}
+              </p>
+              <p class="text-sm font-bold text-white">{dict.hero.certValue}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const initVideoFacade = () => {
+    const facade = document.getElementById(
+      'video-facade'
+    ) as HTMLButtonElement | null;
+    if (!facade || facade.dataset.bound === 'true') return;
+    facade.dataset.bound = 'true';
+    facade.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = facade.dataset.embed ?? '';
+      iframe.title = facade.dataset.title ?? '';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  };
+  initVideoFacade();
+  document.addEventListener('astro:page-load', initVideoFacade);
+</script>

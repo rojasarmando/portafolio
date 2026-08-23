@@ -1,0 +1,52 @@
+---
+import site from '../data/site.json';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const socials = [
+  { label: 'GitHub', href: site.github },
+  { label: 'LinkedIn', href: site.linkedin }
+];
+---
+
+<footer class="border-t border-slate-800 bg-background-dark py-16">
+  <div
+    class="mx-auto grid max-w-[1280px] items-center gap-12 px-6 md:grid-cols-3"
+  >
+    <div class="flex flex-col gap-4 text-center md:text-left">
+      <h3 class="text-xl font-bold text-white">{site.name}</h3>
+      <p class="text-sm leading-relaxed text-slate-500">
+        {dict.footer.tagline}
+      </p>
+    </div>
+    <div class="flex justify-center gap-8">
+      {
+        socials.map((social) => (
+          <a
+            class="text-slate-400 transition-colors hover:text-primary"
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="font-mono text-sm font-bold uppercase tracking-widest">
+              {social.label}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex justify-center md:justify-end">
+      <div
+        class="rounded-lg border border-slate-700 bg-slate-800/50 px-4 py-2 font-mono text-xs font-bold text-slate-500"
+      >
+        {dict.footer.statusLabel}
+        <span class="text-primary">{dict.footer.statusValue}</span>
+      </div>
+    </div>
+  </div>
+</footer>

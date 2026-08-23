@@ -1,0 +1,62 @@
+{
+  "name": "Armando Rojas",
+  "email": "armando.develop@gmail.com",
+  "linkedin": "https://linkedin.com/in/rojasarmando",
+  "github": "https://github.com/rojasarmando",
+  "video": {
+    "id": "zRduTPdv_jE",
+    "thumbnail": "https://i.ytimg.com/vi/zRduTPdv_jE/maxresdefault.jpg"
+  },
+  "nav": [
+    { "id": "about", "key": "about" },
+    { "id": "experience", "key": "experience" },
+    { "id": "skills", "key": "skills" },
+    { "id": "projects", "key": "projects" }
+  ],
+  "stats": [
+    { "value": "6+", "key": "years" },
+    { "value": "30+", "key": "deployments" },
+    { "value": "Senior", "key": "level", "accent": true }
+  ],
+  "ecosystem": [
+    {
+      "id": "core",
+      "icon": "terminal",
+      "tags": ["Python", "FastAPI", "Go", "Node.js"]
+    },
+    {
+      "id": "erp",
+      "icon": "building",
+      "tags": ["Odoo (V14-V18)", "ERPNext", "Architecture"]
+    },
+    {
+      "id": "cloud",
+      "icon": "cloud",
+      "tags": ["PostgreSQL", "Docker", "CI/CD"]
+    },
+    {
+      "id": "ai",
+      "icon": "brain",
+      "tags": ["Computer Vision", "AI Agents", "n8n"]
+    }
+  ],
+  "trajectory": [
+    { "company": "AVANTEC.DS", "current": true },
+    { "company": "INGEINT CA", "current": false },
+    { "company": "Frontuari", "current": false }
+  ],
+  "builds": [
+    {
+      "image": "/images/projects/digital-signature.png",
+      "tags": ["Python", "Security"]
+    },
+    {
+      "image": "/images/projects/erp-accounting-sync.png",
+      "tags": ["Odoo", "API"]
+    },
+    {
+      "image": "/images/projects/digital-signature.png",
+      "tags": ["AI", "NLP"]
+    }
+  ]
+}

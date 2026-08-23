@@ -1,0 +1,66 @@
+---
+import site from '../data/site.json';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<section class="bg-slate-900/50 py-24" id="projects">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <div class="mb-16 flex flex-col items-center gap-4 text-center" data-reveal>
+      <span
+        class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-primary"
+      >
+        {dict.builds.eyebrow}
+      </span>
+      <h2 class="text-4xl font-extrabold tracking-tight text-white">
+        {dict.builds.title}
+      </h2>
+      <p class="mt-2 max-w-2xl text-lg text-slate-500">
+        {dict.builds.subtitle}
+      </p>
+    </div>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        site.builds.map((build, index) => {
+          const item = dict.builds.items[index];
+          return (
+            <div
+              class="group overflow-hidden rounded-2xl border border-slate-700/50 bg-background-card transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10"
+              data-reveal
+            >
+              <div class="h-56 overflow-hidden bg-cover bg-center">
+                <img
+                  src={build.image}
+                  alt={item.title}
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-8">
+                <h3 class="text-xl font-bold text-white transition-colors group-hover:text-primary">
+                  {item.title}
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-400">
+                  {item.description}
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  {build.tags.map((tag) => (
+                    <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase text-primary">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import Icon from './Icon.astro';
+import site from '../data/site.json';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+---
+
+<section class="py-24" id="contact">
+  <div class="mx-auto max-w-[900px] px-6 text-center">
+    <div
+      class="mb-8 inline-block rounded-2xl border border-primary/20 bg-primary/10 p-4"
+      data-reveal
+    >
+      <Icon name="atSign" class="size-10 text-primary" />
+    </div>
+    <h2
+      class="mb-6 text-4xl font-extrabold tracking-tight text-white md:text-5xl"
+      data-reveal
+    >
+      {dict.cta.title}
+    </h2>
+    <p class="mb-12 text-xl leading-relaxed text-slate-500" data-reveal>
+      {dict.cta.availability}
+    </p>
+    <div
+      class="flex flex-col items-center justify-center gap-6 md:flex-row"
+      data-reveal
+    >
+      <a
+        class="flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-10 py-5 text-lg font-bold text-white shadow-xl shadow-primary/30 transition-all hover:-translate-y-1 md:w-auto"
+        href={`mailto:${site.email}`}
+      >
+        {dict.cta.getInTouch}
+      </a>
+      <a
+        class="flex w-full items-center justify-center gap-3 rounded-2xl bg-slate-800 px-10 py-5 text-lg font-bold text-white transition-all hover:bg-slate-700 md:w-auto"
+        href={site.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {dict.cta.linkedinProfile}
+      </a>
+    </div>
+  </div>
+</section>
