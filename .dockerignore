@@ -1,0 +1,10 @@
+.git
+.astro
+dist
+node_modules
+docs
+Dockerfile
+docker-compose.yml
+.dockerignore
+*.md
+LICENSE
