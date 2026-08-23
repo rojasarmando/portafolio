@@ -1,55 +1,75 @@
-# Portafolio ⚡️
+# Portfolio — Armando Rojas
 
 > https://rojasarmando.com
 
 ![GitHub stars](https://img.shields.io/github/stars/rojasarmando/portafolio)
 ![GitHub forks](https://img.shields.io/github/forks/rojasarmando/portafolio)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/rojasarmando/portafolio/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-blue)](http://rojasarmando.tk/)
+[![Website](https://img.shields.io/badge/website-up-blue)](https://rojasarmando.com)
 [![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/rojasarmando/)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-## Features 📋
+Personal portfolio site: bilingual (EN/ES) with a dark "System Architect" design, built with Astro 5 and Tailwind CSS 4. Fully static output with zero framework JavaScript.
 
-- Angular 12
-- Bootstrap 5
-- Typing animation using `typed.js`
-- Scroll animation using `wow.js`
-- Particles animation using `particles.js`
-- Fully Responsive
+## Features
 
-## Sections 📚
+- Astro 5 — static output
+- Tailwind CSS 4
+- Bilingual EN/ES with locale routing (`/` English, `/es/` Spanish)
+- Self-hosted fonts (Manrope, JetBrains Mono)
+- SEO ready: Open Graph, Twitter cards, sitemap
+- View transitions, reduced-motion aware animations
+- Fully responsive with mobile navigation
 
-✔️ About me\
-✔️ Skills\
-✔️ My CV \
-✔️ Skills \
-✔️ Portfolio\
-✔️ Contact me\
+## Requirements
 
-## Development server 📦
+- Node.js ≥ 20 (developed with Node 24 via nvm)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-### Build
+```bash
+npm install
+npm run dev
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Open http://localhost:4321
 
-### Running unit tests
+## Scripts
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Build the static site to `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run check` | Type-check `.astro` files |
 
-### Running end-to-end tests
+## Structure
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+src/
+├── components/   # Navbar, Hero, Ecosystem, Trajectory, Projects, Cta, Footer
+├── data/         # site.json (links, stats, tags, video)
+├── i18n/         # en.ts, es.ts dictionaries + utils
+├── layouts/      # BaseLayout (SEO), Page
+├── pages/        # index.astro (EN), es/index.astro (ES)
+└── styles/       # global.css (Tailwind v4 theme)
+public/
+├── images/       # local project images
+└── cv/           # downloadable CV
+```
 
-### Further help
+## Deployment
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`npm run build` produces a fully static `dist/` served at [rojasarmando.com](https://rojasarmando.com).
 
-## License 📄
+## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+MIT — see [LICENSE](./LICENSE).
 
+**Armando Rojas** — Systems Engineer
 
-``` ng generate environments ```
+- GitHub: [rojasarmando](https://github.com/rojasarmando)
+- LinkedIn: [rojasarmando](https://www.linkedin.com/in/rojasarmando)
+- Email: [armando.develop@gmail.com](mailto:armando.develop@gmail.com)
+
+**Other languages:** [Español](docs/README.es.md) · [Français](docs/README.fr.md) · [Português](docs/README.pt.md) · [中文](docs/README.zh.md)
