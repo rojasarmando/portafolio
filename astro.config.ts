@@ -6,8 +6,8 @@ export default defineConfig({
   site: 'https://rojasarmando.com',
   integrations: [sitemap()],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
     routing: { prefixDefaultLocale: false }
   },
   vite: {

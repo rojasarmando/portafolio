@@ -3,7 +3,7 @@ import { es } from './es';
 
 export type Lang = 'en' | 'es';
 export const languages = ['en', 'es'] as const;
-export const defaultLang: Lang = 'en';
+export const defaultLang: Lang = 'es';
 export type Dictionary = typeof en;
 
 export function t(lang: Lang): Dictionary {
@@ -15,5 +15,5 @@ export function otherLang(lang: Lang): Lang {
 }
 
 export function langPath(lang: Lang): string {
-  return lang === 'en' ? '/' : '/es/';
+  return lang === 'es' ? '/' : '/en/';
 }
