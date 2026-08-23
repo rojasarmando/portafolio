@@ -15,7 +15,7 @@
 
 - Astro 5 — 静态输出
 - Tailwind CSS 4
-- 英文/西班牙文双语，按语言路由（`/` 英文，`/es/` 西班牙文）
+- 英文/西班牙文双语，按语言路由（`/` 西班牙文，`/en/` 英文）
 - 自托管字体（Manrope、JetBrains Mono）
 - SEO 就绪：Open Graph、Twitter 卡片、sitemap
 - 视图过渡，动画遵循 `prefers-reduced-motion`
@@ -51,7 +51,7 @@ src/
 ├── data/         # site.json（链接、统计数据、标签、视频）
 ├── i18n/         # en.ts、es.ts 词典 + utils
 ├── layouts/      # BaseLayout（SEO）、Page
-├── pages/        # index.astro（英文）、es/index.astro（西班牙文）
+├── pages/        # index.astro（西班牙文）、en/index.astro（英文）
 └── styles/       # global.css（Tailwind v4 主题）
 public/
 ├── images/       # 项目本地图片
@@ -61,6 +61,14 @@ public/
 ## 部署
 
 `npm run build` 生成完全静态的 `dist/`，部署于 [rojasarmando.com](https://rojasarmando.com)。
+
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+使用 nginx 在 http://localhost:8080 提供生产构建。
 
 ## 许可证
 

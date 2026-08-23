@@ -15,7 +15,7 @@ Personal portfolio site: bilingual (EN/ES) with a dark "System Architect" design
 
 - Astro 5 — static output
 - Tailwind CSS 4
-- Bilingual EN/ES with locale routing (`/` English, `/es/` Spanish)
+- Bilingual EN/ES with locale routing (`/` Spanish, `/en/` English)
 - Self-hosted fonts (Manrope, JetBrains Mono)
 - SEO ready: Open Graph, Twitter cards, sitemap
 - View transitions, reduced-motion aware animations
@@ -51,7 +51,7 @@ src/
 ├── data/         # site.json (links, stats, tags, video)
 ├── i18n/         # en.ts, es.ts dictionaries + utils
 ├── layouts/      # BaseLayout (SEO), Page
-├── pages/        # index.astro (EN), es/index.astro (ES)
+├── pages/        # index.astro (ES), en/index.astro (EN)
 └── styles/       # global.css (Tailwind v4 theme)
 public/
 ├── images/       # local project images
@@ -61,6 +61,14 @@ public/
 ## Deployment
 
 `npm run build` produces a fully static `dist/` served at [rojasarmando.com](https://rojasarmando.com).
+
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+Serves the production build with nginx at http://localhost:8080.
 
 ## License
 

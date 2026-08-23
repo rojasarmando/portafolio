@@ -15,7 +15,7 @@ Site de portfólio pessoal: bilíngue (EN/ES) com um design escuro de "Arquiteto
 
 - Astro 5 — saída estática
 - Tailwind CSS 4
-- Bilíngue EN/ES com rotas por idioma (`/` inglês, `/es/` espanhol)
+- Bilíngue EN/ES com rotas por idioma (`/` espanhol, `/en/` inglês)
 - Fontes auto-hospedadas (Manrope, JetBrains Mono)
 - SEO pronto: Open Graph, Twitter cards, sitemap
 - Transições de view, animações que respeitam `prefers-reduced-motion`
@@ -51,7 +51,7 @@ src/
 ├── data/         # site.json (links, estatísticas, tags, vídeo)
 ├── i18n/         # dicionários en.ts, es.ts + utils
 ├── layouts/      # BaseLayout (SEO), Page
-├── pages/        # index.astro (EN), es/index.astro (ES)
+├── pages/        # index.astro (ES), en/index.astro (EN)
 └── styles/       # global.css (tema Tailwind v4)
 public/
 ├── images/       # imagens locais dos projetos
@@ -61,6 +61,14 @@ public/
 ## Implantação
 
 `npm run build` produz um `dist/` totalmente estático servido em [rojasarmando.com](https://rojasarmando.com).
+
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+Serve a build de produção com nginx em http://localhost:8080.
 
 ## Licença
 
