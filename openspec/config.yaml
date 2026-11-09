@@ -1,0 +1,53 @@
+project: portafolio
+
+stack:
+  framework: astro
+  framework_version: ^5.12.0
+  language: typescript
+  typescript_config: astro/tsconfigs/strict
+  styling: tailwindcss ^4.1.0
+  vite: ^6.4.1
+  adapters: []
+  output_mode: static
+  i18n:
+    default_locale: es
+    locales: [es, en]
+  container: docker + nginx
+  node_version: 24-alpine
+
+artifact_store: hybrid
+
+delivery_strategy: ask-on-risk
+review_budget_lines: 400
+chain_strategy: collect-on-forecast
+
+strict_tdd: false
+
+testing:
+  runner: none
+  framework: none
+  e2e: none
+  linter: none
+  formatter: none
+  type_checker: astro-check
+  commands:
+    type_check: npm run check
+    build: npm run build
+    dev: npm run dev
+    preview: npm run preview
+  notes: >-
+    No unit test runner, linter, or formatter is configured. The site is a
+    pure static Astro build with no business logic worth unit testing.
+    Verification relies on `astro check` (type checking), `astro build`
+    (static compile), and the docker healthcheck in docker-compose.yml.
+    strict_tdd is disabled because no test runner exists; enabling it would
+    block every change.
+
+registry:
+  skill_registry: .atl/skill-registry.md
+
+scripts:
+  dev: astro dev
+  build: astro build
+  preview: astro preview
+  check: astro check

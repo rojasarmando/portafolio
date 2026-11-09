@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import Badge from './Badge.astro';
 import site from '../data/site.json';
 import { t, type Lang } from '../i18n/utils';
 
@@ -9,6 +10,14 @@ interface Props {
 
 const { lang } = Astro.props;
 const dict = t(lang);
+
+const statusLabel = (status: string): string => {
+  if (status === 'verified') return dict.hero.evidence.verified;
+  if (status === 'learning') return dict.hero.evidence.learning;
+  if (status === 'anonymized') return 'case';
+  if (status === 'archived') return 'archived';
+  return dict.hero.evidence.partial;
+};
 ---
 
 <section class="relative hero-gradient py-16 lg:py-24" id="about">
@@ -77,6 +86,28 @@ const dict = t(lang);
               </div>
             ))
           }
+        </div>
+        <div
+          class="mt-6 flex flex-col gap-3 border-t border-slate-800 pt-6"
+          data-reveal
+        >
+          <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            {dict.hero.evidence.label}
+          </span>
+          <div class="flex flex-wrap items-center gap-3">
+            {site.evidenceStack.map((stack) => (
+              <a
+                href="#skills"
+                class="inline-flex items-center gap-2"
+                aria-label={`${stack.id} — ${statusLabel(stack.status)}`}
+              >
+                <Badge status={stack.status} size="sm" label={stack.id} />
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
+                  {statusLabel(stack.status)}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       <div class="lg:col-span-6">

@@ -4,55 +4,215 @@
   "linkedin": "https://linkedin.com/in/rojasarmando",
   "github": "https://github.com/rojasarmando",
   "nav": [
-    { "id": "about", "key": "about" },
-    { "id": "experience", "key": "experience" },
-    { "id": "skills", "key": "skills" },
-    { "id": "projects", "key": "projects" }
+    { "id": "about", "key": "about", "href": "#about" },
+    { "id": "experience", "key": "experience", "href": "#experience" },
+    { "id": "skills", "key": "skills", "href": "#skills" },
+    { "id": "projects", "key": "projects", "href": "#projects" },
+    { "id": "blog", "key": "blog", "href": "/blog/" }
   ],
   "stats": [
     { "value": "6+", "key": "years" },
     { "value": "30+", "key": "deployments" },
     { "value": "Senior", "key": "level", "accent": true }
   ],
-  "ecosystem": [
+  "evidenceStack": [
     {
       "id": "core",
       "icon": "terminal",
-      "tags": ["Python", "FastAPI", "Go", "Node.js"]
+      "accent": "primary",
+      "years": "6+",
+      "status": "verified",
+      "descriptionKey": "core",
+      "labelKey": "core",
+      "repos": [
+        {
+          "label": "bot-router",
+          "href": "https://github.com/rojasarmando/bot-router",
+          "status": "verified"
+        },
+        {
+          "label": "Internal REST API platform",
+          "href": "https://github.com/rojasarmando",
+          "status": "verified"
+        }
+      ]
     },
     {
       "id": "erp",
       "icon": "building",
-      "tags": ["Odoo (V14-V18)", "ERPNext", "Architecture"]
+      "accent": "emerald",
+      "years": "6+",
+      "status": "verified",
+      "descriptionKey": "erp",
+      "labelKey": "erp",
+      "repos": [
+        {
+          "label": "Fiscal compliance modules",
+          "href": "https://github.com/rojasarmando",
+          "status": "verified"
+        }
+      ]
     },
     {
       "id": "cloud",
       "icon": "cloud",
-      "tags": ["PostgreSQL", "Docker", "CI/CD"]
+      "accent": "primary",
+      "years": "5+",
+      "status": "verified",
+      "descriptionKey": "cloud",
+      "labelKey": "cloud",
+      "repos": [
+        {
+          "label": "Docker stacks",
+          "href": "https://github.com/rojasarmando",
+          "status": "verified"
+        }
+      ]
     },
     {
       "id": "ai",
       "icon": "brain",
-      "tags": ["Computer Vision", "AI Agents", "n8n"]
+      "accent": "amber",
+      "years": "2+",
+      "status": "learning",
+      "descriptionKey": "ai",
+      "labelKey": "ai",
+      "repos": [
+        {
+          "label": "AI agent experiments",
+          "href": "https://github.com/rojasarmando",
+          "status": "learning"
+        }
+      ]
     }
   ],
   "trajectory": [
-    { "company": "AVANTEC.DS", "current": true },
-    { "company": "INGEINT CA", "current": false },
-    { "company": "Frontuari", "current": false }
+    {
+      "company": "AVANTEC.DS",
+      "role": "Technical Leader",
+      "current": true,
+      "startDate": "2022-03",
+      "scope": "Lead the backend practice for Odoo + Python enterprise work. Direct a team of mid and senior engineers across three concurrent client engagements.",
+      "keyOutcomes": [
+        "Migrated two large retail clients from Odoo V14 to V18 with zero data loss",
+        "Cut integration sync latency from hours to minutes across 50k+ invoices",
+        "Mentored 4 mid-level engineers into senior roles"
+      ],
+      "stack": ["Python", "Odoo V14-V18", "PostgreSQL", "Docker", "FastAPI"]
+    },
+    {
+      "company": "INGEINT CA",
+      "role": "Semi Senior Developer",
+      "startDate": "2019-06",
+      "endDate": "2022-02",
+      "scope": "Owned ERP migration strategies and localized fiscal modules. Optimized database queries for large-scale retail environments.",
+      "keyOutcomes": [
+        "Owned the Costa Rica fiscal compliance module end-to-end",
+        "Reduced average report generation time by 60% through query tuning"
+      ],
+      "stack": ["Odoo V14-V16", "PostgreSQL", "Python"]
+    },
+    {
+      "company": "Frontuari",
+      "role": "Senior Technical Developer",
+      "startDate": "2018-01",
+      "endDate": "2019-05",
+      "scope": "Backend implementation of custom business logic and third-party API integrations, ensuring data consistency across platforms.",
+      "keyOutcomes": [
+        "Shipped the bidirectional Odoo ↔ QuickBooks sync in production",
+        "Authored the internal API gateway used by every internal team"
+      ],
+      "stack": ["Python", "FastAPI", "REST APIs"]
+    }
   ],
-  "builds": [
+  "showcase": [
     {
-      "image": "/images/projects/digital-signature.png",
-      "tags": ["Python", "Security"]
+      "id": "odoo-retail-fiscalization",
+      "titleKey": "odooRetailFiscalization",
+      "descriptionKey": "odooRetailFiscalization",
+      "status": "anonymized",
+      "type": "anonymized",
+      "order": 1,
+      "tags": ["Odoo V16", "Python", "PostgreSQL", "Fiscal Compliance"],
+      "contentSlug": "odoo-retail-fiscalization",
+      "links": [
+        {
+          "label": "Read case study",
+          "href": "/projects/odoo-retail-fiscalization/",
+          "kind": "post"
+        }
+      ]
     },
     {
-      "image": "/images/projects/erp-accounting-sync.png",
-      "tags": ["Odoo", "API"]
+      "id": "odoo-migration-v14-v18",
+      "titleKey": "odooMigration",
+      "descriptionKey": "odooMigration",
+      "status": "anonymized",
+      "type": "anonymized",
+      "order": 2,
+      "tags": ["Odoo", "Migration", "PostgreSQL"],
+      "contentSlug": "odoo-migration-v14-v18",
+      "links": [
+        {
+          "label": "Read case study",
+          "href": "/projects/odoo-migration-v14-v18/",
+          "kind": "post"
+        }
+      ]
     },
     {
+      "id": "bot-router",
+      "titleKey": "botRouter",
+      "descriptionKey": "botRouter",
+      "status": "verified",
+      "type": "public",
+      "order": 10,
+      "tags": ["Python", "API", "Bots"],
+      "links": [
+        {
+          "label": "Open repo",
+          "href": "https://github.com/rojasarmando/bot-router",
+          "kind": "repo"
+        }
+      ]
+    },
+    {
+      "id": "this-portafolio",
+      "titleKey": "thisPortafolio",
+      "descriptionKey": "thisPortafolio",
+      "status": "verified",
+      "type": "live-demo",
+      "order": 20,
+      "tags": ["Astro", "TypeScript", "Tailwind v4"],
       "image": "/images/projects/digital-signature.png",
-      "tags": ["AI", "NLP"]
+      "links": [
+        {
+          "label": "Open live demo",
+          "href": "https://rojasarmando.com",
+          "kind": "demo"
+        },
+        {
+          "label": "Read case study",
+          "href": "/projects/this-portafolio/",
+          "kind": "post"
+        }
+      ]
+    },
+    {
+      "id": "go-api-service",
+      "titleKey": "goApiService",
+      "descriptionKey": "goApiService",
+      "status": "learning",
+      "type": "learning-roadmap",
+      "order": 99,
+      "tags": ["Go", "REST", "Roadmap"],
+      "links": [
+        {
+          "label": "See learning roadmap",
+          "href": "/projects/go-api-service/",
+          "kind": "post"
+        }
+      ]
     }
   ]
 }

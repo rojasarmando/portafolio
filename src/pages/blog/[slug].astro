@@ -1,0 +1,61 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import { t, type Lang } from '../../i18n/utils';
+import Icon from '../../components/Icon.astro';
+import Badge from '../../components/Badge.astro';
+
+const lang: Lang = 'es';
+const dict = t(lang);
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((p) => p.data.lang === 'es');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props as Props;
+const { Content } = await post.render();
+
+const dateLabel = post.data.publishedOn.toISOString().slice(0, 10);
+---
+
+<Page lang={lang} title={`${post.data.title} — Armando Rojas`} description={post.data.excerpt}>
+  <article class="mx-auto max-w-[800px] px-6 py-16">
+    <a
+      href="/blog/"
+      class="mb-8 inline-flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-white"
+    >
+      <Icon name="arrowLeft" class="size-4" />
+      {dict.blog.backToBlog}
+    </a>
+    <header class="mb-12 border-b border-slate-800 pb-12" data-reveal>
+      <div class="mb-3 flex items-center gap-3 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+        <span>{dict.blog.publishedOn} {dateLabel}</span>
+        {post.data.status && <Badge status={post.data.status} size="sm" />}
+      </div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 text-xl leading-relaxed text-slate-400">{post.data.excerpt}</p>
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="mt-5 flex flex-wrap gap-2">
+          {post.data.tags.map((tag: string) => (
+            <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase text-primary">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="prose prose-invert max-w-none text-slate-300" data-reveal>
+      <Content />
+    </div>
+  </article>
+</Page>

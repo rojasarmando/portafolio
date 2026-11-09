@@ -11,24 +11,38 @@ import { t, type Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  /** When true, omit the global homepage sections (Hero/Ecosystem/...). * Used for detail pages like /projects/[slug]. */
+  bare?: boolean;
 }
 
-const { lang } = Astro.props;
+const { lang, title, description, ogImage, bare = false } = Astro.props;
 const dict = t(lang);
+const pageTitle = title ?? dict.meta.title;
+const pageDescription = description ?? dict.meta.description;
 ---
 
 <BaseLayout
   lang={lang}
-  title={dict.meta.title}
-  description={dict.meta.description}
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImage}
 >
   <Navbar lang={lang} />
-  <main class="pt-16">
-    <Hero lang={lang} />
-    <Ecosystem lang={lang} />
-    <Trajectory lang={lang} />
-    <Projects lang={lang} />
-    <Cta lang={lang} />
+  <main class:list={[bare ? 'pt-16' : 'pt-16']}>
+    {bare ? (
+      <slot />
+    ) : (
+      <>
+        <Hero lang={lang} />
+        <Ecosystem lang={lang} />
+        <Trajectory lang={lang} />
+        <Projects lang={lang} />
+        <Cta lang={lang} />
+      </>
+    )}
   </main>
   <Footer lang={lang} />
 </BaseLayout>

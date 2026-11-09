@@ -1,3 +1,5 @@
+import type { EvidenceStackId } from '../types/site';
+
 export const es = {
   meta: {
     title: 'Armando Rojas — Arquitecto de Sistemas',
@@ -9,6 +11,7 @@ export const es = {
     experience: 'Experiencia',
     skills: 'Conocimientos',
     projects: 'Proyectos',
+    blog: 'Blog y Casos',
     contact: 'Contáctame',
     menuOpen: 'Abrir menú',
     menuClose: 'Cerrar menú'
@@ -30,61 +33,131 @@ export const es = {
     },
     showcaseLabel: 'Perfil de terminal de Armando Rojas',
     certLabel: 'Certificación Experto',
-    certValue: 'Odoo v18 Funcional y Técnico'
+    certValue: 'Odoo v18 Funcional y Técnico',
+    evidence: {
+      label: 'Stack con evidencia',
+      verified: 'verificado',
+      learning: 'aprendiendo',
+      partial: 'parcial',
+      separator: '·'
+    }
   },
-  ecosystem: {
+  evidenceStack: {
     eyebrow: 'Stack',
-    title: 'Ecosistema Técnico',
+    title: 'Stack con Evidencia',
+    subtitle:
+      'Lo que ya está en producción frente a lo que todavía estoy aprendiendo. Honestidad por encima de decoración.',
     cards: {
       core: 'Backend Principal',
       erp: 'Soluciones ERP',
       cloud: 'Nube e Infraestructura',
       ai: 'Automatización con IA'
+    },
+    years: 'años'
+  },
+  showcase: {
+    eyebrow: 'Portafolio',
+    title: 'Trabajo Destacado',
+    subtitle:
+      'Repos públicos, casos de estudio anonimizados y lo próximo en mi roadmap. Cada entrada tiene una insignia de estado para que sepas qué está listo en producción y qué sigue en movimiento.',
+    viewCase: 'Leer caso de estudio',
+    viewRepo: 'Abrir repositorio',
+    viewDemo: 'Abrir demo en vivo',
+    viewRoadmap: 'Ver roadmap de aprendizaje',
+    placeholder: 'Contenido del caso de estudio próximamente',
+    briefView: 'Vista breve — caso de estudio completo pendiente',
+    prev: 'Anterior',
+    next: 'Siguiente',
+    metrics: 'Métricas clave',
+    decision: 'Decisión técnica',
+    tradeoff: 'Tradeoff',
+    outcome: 'Resultado medido',
+    problem: 'Problema',
+    cards: {
+      odooRetailFiscalization: {
+        title: 'Sincronización Fiscal Retail en Odoo',
+        description:
+          'Sincronización fiscal de facturas en tiempo real para una cadena retail de 50 tiendas, reemplazando un batch nocturno por propagación en menos de un minuto.'
+      },
+      odooMigration: {
+        title: 'Migración Odoo V14 → V18',
+        description:
+          'Migración completa de una base de datos productiva de 60 GB a través de cuatro versiones mayores de Odoo con cero downtime.'
+      },
+      botRouter: {
+        title: 'bot-router',
+        description:
+          'Un servicio Python pequeño que distribuye un único webhook entrante a múltiples plataformas de bots con reintentos y backoff.'
+      },
+      thisPortafolio: {
+        title: 'Este Portafolio',
+        description:
+          'El sitio que estás leyendo ahora — Astro 5, TypeScript estricto, Tailwind v4, content collections, bilingüe.'
+      },
+      goApiService: {
+        title: 'Servicio API en Go (roadmap)',
+        description:
+          'Próximo foco: reescribir un endpoint REST de alto tráfico en Go para comparar latencia end-to-end frente a la línea base en Python.'
+      }
     }
   },
   trajectory: {
     title: 'Trayectoria Profesional',
     currentBadge: 'LIDERANDO ACTUALMENTE',
+    scopeLabel: 'Alcance',
+    outcomesLabel: 'Resultados clave',
+    stackLabel: 'Stack',
     items: [
       {
         role: 'Líder Técnico',
+        scope:
+          'Orquestar la estrategia de backend para aplicaciones empresariales de alta disponibilidad. Dirigir un equipo de desarrolladores entregando soluciones escalables basadas en Odoo y Python.',
         description:
-          'Orquesto la estrategia de backend para aplicaciones empresariales de alta disponibilidad. Dirijo un equipo de desarrolladores para entregar soluciones escalables basadas en Odoo y Python.'
+          'Orquestar la estrategia de backend para aplicaciones empresariales de alta disponibilidad. Dirigir un equipo de desarrolladores entregando soluciones escalables basadas en Odoo y Python.',
+        outcomes: [
+          'Migré dos clientes retail grandes de Odoo V14 a V18 sin pérdida de datos',
+          'Reduje la latencia de sincronización de horas a minutos en más de 50k facturas',
+          'Lideré la mentoría de 4 ingenieros semi senior hacia roles senior'
+        ],
+        stack: ['Python', 'Odoo', 'PostgreSQL', 'Docker']
       },
       {
         role: 'Desarrollador Semi Senior',
+        scope:
+          'Enfocado en estrategias de migración ERP y módulos fiscales localizados. Optimización de consultas de base de datos para entornos retail de gran escala.',
         description:
-          'Enfocado en estrategias de migración ERP y el desarrollo de módulos fiscales localizados. Optimicé consultas de base de datos para entornos minoristas de gran escala.'
+          'Enfocado en estrategias de migración ERP y módulos fiscales localizados. Optimización de consultas de base de datos para entornos retail de gran escala.',
+        outcomes: [
+          'Lideré de extremo a extremo el módulo de cumplimiento fiscal de Costa Rica',
+          'Reduje el tiempo medio de generación de reportes en un 60% ajustando consultas'
+        ],
+        stack: ['Odoo V14-V16', 'PostgreSQL', 'Python']
       },
       {
         role: 'Desarrollador Técnico Senior',
+        scope:
+          'Implementación de backend con lógica de negocio personalizada e integraciones con API de terceros, garantizando consistencia de datos entre plataformas.',
         description:
-          'Implementación de backend con lógica de negocio personalizada e integraciones con API de terceros, garantizando una consistencia de datos robusta entre plataformas.'
+          'Implementación de backend con lógica de negocio personalizada e integraciones con API de terceros, garantizando consistencia de datos entre plataformas.',
+        outcomes: [
+          'Llevé a producción la sincronización bidireccional Odoo ↔ QuickBooks',
+          'Diseñé el API gateway interno usado por todos los equipos'
+        ],
+        stack: ['Python', 'FastAPI', 'APIs REST']
       }
     ]
   },
-  builds: {
-    eyebrow: 'Portafolio',
-    title: 'Proyectos Destacados',
+  // Deprecated aliases removed in WU-10.
+  blog: {
+    eyebrow: 'Escritura',
+    title: 'Blog y Casos de Estudio',
     subtitle:
-      'Soluciones de ingeniería escalables para problemas de negocio complejos.',
-    items: [
-      {
-        title: 'Microservicio de Firma Digital',
-        description:
-          'Gestión de certificados X509 para firma digital de alta seguridad en el ecosistema fiscal de Costa Rica.'
-      },
-      {
-        title: 'Sincronización Contable ERP',
-        description:
-          'Puente de sincronización bidireccional entre Odoo y QuickBooks para reportes financieros automatizados.'
-      },
-      {
-        title: 'Asistente Inteligente con IA',
-        description:
-          'Despliegue de LLMs para la automatización del servicio al cliente empresarial mediante protocolos de mensajería.'
-      }
-    ]
+      'Escritos técnicos anonimizados sobre trabajo real en producción — qué elegí, por qué y qué cambiaría la próxima vez.',
+    readMore: 'Leer más',
+    publishedOn: 'Publicado el',
+    minutes: 'min de lectura',
+    noPosts: 'Aún no hay publicaciones — vuelve pronto.',
+    backToBlog: 'Volver a todas las publicaciones'
   },
   cta: {
     title: 'Construyamos algo robusto',
@@ -99,5 +172,7 @@ export const es = {
     statusValue: 'ACTIVO_ESTABLE'
   }
 };
+
+export type EvidenceStackCards = Record<EvidenceStackId, string>;
 
 export default es;

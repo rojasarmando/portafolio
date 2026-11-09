@@ -7,13 +7,14 @@ interface Props {
   lang: Lang;
   title: string;
   description: string;
+  ogImage?: string;
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, ogImage: ogImageProp } = Astro.props;
 
 const site = Astro.site ?? new URL('https://rojasarmando.com');
 const canonical = new URL(Astro.url.pathname, site);
-const ogImage = new URL('/images/projects/digital-signature.png', site);
+const ogImage = new URL(ogImageProp ?? '/images/projects/digital-signature.png', site);
 ---
 
 <!doctype html>

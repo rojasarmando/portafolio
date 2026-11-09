@@ -1,0 +1,110 @@
+---
+import Badge from './Badge.astro';
+import type { ShowcaseEntry, ShowcaseLink } from '../types/site';
+import type { CollectionEntry } from 'astro:content';
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  entry: ShowcaseEntry;
+  content?: CollectionEntry<'projects'> | null;
+  prev?: { entry: ShowcaseEntry; label: string };
+  next?: { entry: ShowcaseEntry; label: string };
+  lang: Lang;
+}
+
+const { entry, content, prev, next, lang } = Astro.props as Props;
+const dict = lang === 'es' ? es : en;
+const cardCopy = dict.showcase.cards[entry.titleKey as keyof typeof dict.showcase.cards];
+
+type ContentFactory = (...args: unknown[]) => unknown;
+let ContentComponent: ContentFactory | null = null;
+if (content) {
+  const rendered = await content.render();
+  ContentComponent = rendered.Content as unknown as ContentFactory;
+}
+const hasContent = ContentComponent != null;
+
+const LINK_KEY_BY_KIND: Record<ShowcaseLink['kind'], 'viewRepo' | 'viewDemo' | 'viewCase'> = {
+  repo: 'viewRepo',
+  demo: 'viewDemo',
+  post: 'viewCase'
+};
+---
+
+<article class="mx-auto max-w-[960px] px-6 py-16">
+  <header class="mb-12 flex flex-col gap-6 border-b border-slate-800 pb-12" data-reveal>
+    <div class="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-primary">
+      <span>{entry.type.replace(/-/g, ' ')}</span>
+      <span aria-hidden="true">·</span>
+      <Badge status={entry.status} />
+    </div>
+    <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+      {cardCopy?.title ?? entry.titleKey}
+    </h1>
+    <p class="max-w-3xl text-xl leading-relaxed text-slate-400">
+      {cardCopy?.description ?? entry.descriptionKey}
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {entry.tags.map((tag) => (
+        <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase text-primary">
+          {tag}
+        </span>
+      ))}
+    </div>
+    {entry.links && entry.links.length > 0 && (
+      <div class="flex flex-wrap gap-3">
+        {entry.links.map((link) => (
+          <a
+            href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"
+          >
+            {dict.showcase[LINK_KEY_BY_KIND[link.kind]]}
+          </a>
+        ))}
+      </div>
+    )}
+  </header>
+
+  {hasContent && ContentComponent ? (
+    <div class="prose prose-invert max-w-none text-slate-300" data-reveal>
+      <ContentComponent />
+    </div>
+  ) : (
+    <div class="rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 p-12 text-center" data-reveal>
+      <p class="text-slate-400">{dict.showcase.briefView}</p>
+    </div>
+  )}
+
+  <nav class="mt-16 grid gap-6 border-t border-slate-800 pt-12 md:grid-cols-2" aria-label="Project navigation">
+    {prev ? (
+      <a
+        href={`/projects/${prev.entry.id}/`}
+        class="group flex flex-col gap-2 rounded-2xl border border-slate-700/50 bg-background-card p-6 transition-all hover:border-primary/40"
+      >
+        <span class="font-mono text-[10px] uppercase tracking-widest text-slate-500">
+          ← {prev.label}
+        </span>
+        <span class="text-lg font-bold text-white group-hover:text-primary">
+          {prev.entry.titleKey}
+        </span>
+      </a>
+    ) : <span></span>}
+    {next ? (
+      <a
+        href={`/projects/${next.entry.id}/`}
+        class="group flex flex-col gap-2 rounded-2xl border border-slate-700/50 bg-background-card p-6 text-right transition-all hover:border-primary/40"
+      >
+        <span class="font-mono text-[10px] uppercase tracking-widest text-slate-500">
+          {next.label} →
+        </span>
+        <span class="text-lg font-bold text-white group-hover:text-primary">
+          {next.entry.titleKey}
+        </span>
+      </a>
+    ) : <span></span>}
+  </nav>
+</article>

@@ -1,0 +1,64 @@
+---
+import Badge from './Badge.astro';
+import Icon from './Icon.astro';
+import type { EvidenceStackItem } from '../types/site';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  item: EvidenceStackItem;
+  lang: Lang;
+}
+
+const { item, lang } = Astro.props;
+
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+
+const dict = lang === 'es' ? es : en;
+const cardLabel = dict.evidenceStack.cards[item.id];
+
+const accentBg: Record<EvidenceStackItem['accent'], string> = {
+  primary: 'bg-primary/10 text-primary',
+  emerald: 'bg-emerald-500/10 text-emerald-400',
+  amber: 'bg-amber-500/10 text-amber-400',
+  slate: 'bg-slate-500/10 text-slate-300'
+};
+---
+
+<article
+  class:list={[
+    'tech-card flex h-full flex-col gap-5 rounded-2xl border border-slate-700/50 bg-background-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10',
+    item.status === 'archived' && 'opacity-70'
+  ]}
+  data-reveal
+  data-evidence-id={item.id}
+>
+  <div class="flex items-center justify-between">
+    <div class:list={['flex items-center gap-3 rounded-xl p-3', accentBg[item.accent]]}>
+      <Icon name={item.icon} class="size-6" />
+    </div>
+    <Badge status={item.status} size="sm" />
+  </div>
+  <div>
+    <h3 class="text-lg font-bold text-white">{cardLabel}</h3>
+    <p class="mt-1 font-mono text-[11px] uppercase tracking-widest text-slate-500">
+      {item.years} {dict.evidenceStack.years}
+    </p>
+  </div>
+  <ul class="flex flex-col gap-2 text-sm">
+    {item.repos.map((repo) => (
+      <li class="flex items-center justify-between gap-2">
+        <a
+          href={repo.href}
+          target={repo.href.startsWith('http') ? '_blank' : undefined}
+          rel={repo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          class="flex items-center gap-2 text-slate-300 transition-colors hover:text-primary"
+        >
+          <span class="size-1.5 rounded-full bg-primary" aria-hidden="true"></span>
+          <span>{repo.label}</span>
+        </a>
+        <Badge status={repo.status} size="sm" />
+      </li>
+    ))}
+  </ul>
+</article>

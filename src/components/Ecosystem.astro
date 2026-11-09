@@ -1,7 +1,8 @@
 ---
-import Icon from './Icon.astro';
 import site from '../data/site.json';
 import { t, type Lang } from '../i18n/utils';
+import EvidenceStackCard from './EvidenceStackCard.astro';
+import type { EvidenceStackItem } from '../types/site';
 
 interface Props {
   lang: Lang;
@@ -9,6 +10,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const dict = t(lang);
+const items = site.evidenceStack as EvidenceStackItem[];
 ---
 
 <section class="bg-slate-900/50 py-24" id="skills">
@@ -17,38 +19,18 @@ const dict = t(lang);
       <span
         class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-primary"
       >
-        {dict.ecosystem.eyebrow}
+        {dict.evidenceStack.eyebrow}
       </span>
       <h2 class="text-4xl font-extrabold tracking-tight text-white">
-        {dict.ecosystem.title}
+        {dict.evidenceStack.title}
       </h2>
+      <p class="mt-2 max-w-2xl text-lg text-slate-500">
+        {dict.evidenceStack.subtitle}
+      </p>
       <div class="h-1.5 w-16 rounded-full bg-primary"></div>
     </div>
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {
-        site.ecosystem.map((card) => (
-          <div class="tech-card" data-reveal>
-            <div class="mb-5 flex items-center gap-3">
-              <div class="rounded-lg bg-primary/10 p-2">
-                <Icon
-                  name={card.icon as 'terminal' | 'building' | 'cloud' | 'brain'}
-                  class="size-6 text-primary"
-                />
-              </div>
-              <h3 class="text-lg font-bold text-white">
-                {dict.ecosystem.cards[card.id as keyof typeof dict.ecosystem.cards]}
-              </h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              {card.tags.map((tag) => (
-                <span class="rounded-md border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-bold text-slate-300">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))
-      }
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {items.map((item) => <EvidenceStackCard item={item} lang={lang} />)}
     </div>
   </div>
 </section>

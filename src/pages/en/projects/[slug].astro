@@ -1,0 +1,78 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Page from '../../../layouts/Page.astro';
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+import type { ShowcaseEntry } from '../../../types/site';
+import { en } from '../../../i18n/en';
+import type { Lang } from '../../../i18n/utils';
+
+interface PathProps {
+  entry: ShowcaseEntry;
+  content: CollectionEntry<'projects'> | null;
+  prev?: { entry: ShowcaseEntry; label: string };
+  next?: { entry: ShowcaseEntry; label: string };
+}
+
+const lang: Lang = 'en';
+
+export async function getStaticPaths() {
+  const allEntries = (await import('../../../data/site.json')).default.showcase as ShowcaseEntry[];
+  const sorted = allEntries
+    .slice()
+    .sort((a, b) => {
+      if (a.type === b.type) return a.order - b.order;
+      const aIsRoadmap = a.type === 'learning-roadmap' ? 1 : 0;
+      const bIsRoadmap = b.type === 'learning-roadmap' ? 1 : 0;
+      return aIsRoadmap - bIsRoadmap;
+    });
+
+  const contentEntries = await getCollection('projects');
+  const contentById = new Map<string, CollectionEntry<'projects'>>(
+    contentEntries.map((entry) => [entry.id.replace(/\.md$/, ''), entry])
+  );
+
+  const dict = en;
+  const paths: Array<{
+    params: { slug: string };
+    props: PathProps;
+  }> = [];
+
+  for (let i = 0; i < sorted.length; i++) {
+    const entry = sorted[i];
+    const content = contentById.get(entry.contentSlug ?? entry.id) ?? null;
+    const prevEntry = sorted[i - 1];
+    const nextEntry = sorted[i + 1];
+    paths.push({
+      params: { slug: entry.id },
+      props: {
+        entry,
+        content,
+        prev: prevEntry
+          ? { entry: prevEntry, label: dict.showcase.prev }
+          : undefined,
+        next: nextEntry
+          ? { entry: nextEntry, label: dict.showcase.next }
+          : undefined
+      }
+    });
+  }
+  return paths;
+}
+
+const { entry, content, prev, next } = Astro.props as PathProps;
+const dict = en;
+const cardCopy = dict.showcase.cards[entry.titleKey as keyof typeof dict.showcase.cards];
+const pageTitle = `${cardCopy?.title ?? entry.titleKey} — Armando Rojas`;
+const pageDescription = cardCopy?.description ?? entry.descriptionKey;
+const imageForOg = entry.image ?? '/images/projects/digital-signature.png';
+---
+
+<Page
+  lang={lang}
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={imageForOg}
+  bare
+>
+  <ProjectDetail entry={entry} content={content} prev={prev} next={next} lang={lang} />
+</Page>

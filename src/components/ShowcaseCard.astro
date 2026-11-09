@@ -1,0 +1,99 @@
+---
+import Badge from './Badge.astro';
+import Icon from './Icon.astro';
+import type { ShowcaseEntry, ShowcaseLink } from '../types/site';
+import { SHOWCASE_ORDER } from '../types/site';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  entry: ShowcaseEntry;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+
+interface LinkAction {
+  label: string;
+  href: string;
+}
+
+const LINK_KEY_BY_KIND: Record<ShowcaseLink['kind'], 'viewRepo' | 'viewDemo' | 'viewCase'> = {
+  repo: 'viewRepo',
+  demo: 'viewDemo',
+  post: 'viewCase'
+};
+
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+
+const dict = lang === 'es' ? es : en;
+const cardCopy = dict.showcase.cards[entry.titleKey as keyof typeof dict.showcase.cards];
+const orderWeight = SHOWCASE_ORDER[entry.type];
+
+// Stable secondary actions per card type (TypeScript-narrowed via the helper map above).
+const actions: LinkAction[] = (entry.links ?? []).map((link) => ({
+  label: dict.showcase[LINK_KEY_BY_KIND[link.kind]] as string,
+  href: link.href
+}));
+---
+
+<article
+  class:list={[
+    'group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/50 bg-background-card transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10',
+    entry.status === 'archived' && 'opacity-70'
+  ]}
+  data-showcase-type={entry.type}
+  data-showcase-order={orderWeight * 1000 + entry.order}
+  data-reveal
+>
+  <div class="relative h-44 overflow-hidden border-b border-slate-800 bg-slate-900">
+    {entry.image ? (
+      <img
+        src={entry.image}
+        alt={cardCopy?.title ?? entry.titleKey}
+        loading="lazy"
+        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    ) : (
+      <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 font-mono text-xs uppercase tracking-widest text-slate-500">
+        {entry.id}
+      </div>
+    )}
+    <div class="absolute right-3 top-3">
+      <Badge status={entry.status} size="sm" />
+    </div>
+  </div>
+  <div class="flex flex-1 flex-col p-6">
+    <div class="mb-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-primary">
+      <span>{entry.type.replace(/-/g, ' ')}</span>
+    </div>
+    <h3 class="text-xl font-bold text-white transition-colors group-hover:text-primary">
+      <a href={actions[0]?.href ?? '#'} class="after:absolute after:inset-0">
+        {cardCopy?.title ?? entry.titleKey}
+      </a>
+    </h3>
+    <p class="mt-3 text-sm leading-relaxed text-slate-400">
+      {cardCopy?.description ?? entry.descriptionKey}
+    </p>
+    <div class="mt-5 flex flex-wrap gap-2">
+      {entry.tags.map((tag) => (
+        <span class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase text-primary">
+          {tag}
+        </span>
+      ))}
+    </div>
+    {actions.length > 0 && (
+      <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-800 pt-4 text-xs font-bold uppercase tracking-wider text-slate-300">
+        <Icon name="verified" class="size-3.5 text-primary" />
+        {actions.map((action) => (
+          <a
+            href={action.href}
+            class="relative z-10 text-primary transition-colors hover:text-white"
+          >
+            {action.label}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

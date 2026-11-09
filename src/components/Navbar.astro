@@ -54,14 +54,20 @@ const switchPath = langPath(otherLang(lang));
     </div>
     <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
       {
-        site.nav.map((item) => (
-          <a
-            class="text-sm font-semibold text-slate-400 transition-colors hover:text-primary"
-            href={`#${item.id}`}
-          >
-            {dict.nav[item.key as keyof typeof dict.nav]}
-          </a>
-        ))
+        site.nav.map((item) => {
+          const target = item.href ?? `#${item.id}`;
+          const isExternal = target.startsWith('http');
+          return (
+            <a
+              class="text-sm font-semibold text-slate-400 transition-colors hover:text-primary"
+              href={target}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'noopener noreferrer' : undefined}
+            >
+              {dict.nav[item.key as keyof typeof dict.nav]}
+            </a>
+          );
+        })
       }
     </nav>
     <div class="flex items-center gap-4">
@@ -101,15 +107,18 @@ const switchPath = langPath(otherLang(lang));
   <div id="mobile-menu" class="hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-md md:hidden">
     <nav class="mx-auto flex max-w-[1280px] flex-col px-6 py-4" aria-label="Mobile">
       {
-        site.nav.map((item) => (
-          <a
-            data-menu-link
-            class="border-b border-slate-800/60 py-3 text-sm font-semibold text-slate-300 transition-colors last:border-b-0 hover:text-primary"
-            href={`#${item.id}`}
-          >
-            {dict.nav[item.key as keyof typeof dict.nav]}
-          </a>
-        ))
+        site.nav.map((item) => {
+          const target = item.href ?? `#${item.id}`;
+          return (
+            <a
+              data-menu-link
+              class="border-b border-slate-800/60 py-3 text-sm font-semibold text-slate-300 transition-colors last:border-b-0 hover:text-primary"
+              href={target}
+            >
+              {dict.nav[item.key as keyof typeof dict.nav]}
+            </a>
+          );
+        })
       }
       <div class="mt-4 flex items-center gap-3">
         <a

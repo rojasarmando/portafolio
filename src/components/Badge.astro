@@ -1,0 +1,69 @@
+---
+import { STATUS_COLOR, STATUS_LABEL, type BadgeProps, type BadgeStatus } from '../types/site';
+import Icon from './Icon.astro';
+
+const { status, label, icon, size = 'sm', repoUrl } = Astro.props as BadgeProps;
+
+const visible = label ?? STATUS_LABEL[status];
+const color = STATUS_COLOR[status];
+
+const STATUS_ICON: Record<BadgeStatus, 'checkCircle' | 'lock' | 'graduationCap' | 'archive'> = {
+  verified: 'checkCircle',
+  anonymized: 'lock',
+  learning: 'graduationCap',
+  archived: 'archive'
+};
+
+const resolvedIcon = icon ?? STATUS_ICON[status];
+
+// Static Tailwind class strings — Tailwind v4 JIT cannot see string interpolation.
+const sizeClass =
+  size === 'md' ? 'text-xs px-3 py-1.5 gap-2' : 'text-[10px] px-2.5 py-1 gap-1.5';
+
+const dotClass: Record<typeof color, string> = {
+  'emerald-500': 'bg-emerald-500',
+  'slate-400': 'bg-slate-400',
+  'amber-400': 'bg-amber-400',
+  'zinc-500': 'bg-zinc-500'
+};
+const textClass: Record<typeof color, string> = {
+  'emerald-500': 'text-emerald-400',
+  'slate-400': 'text-slate-300',
+  'amber-400': 'text-amber-300',
+  'zinc-500': 'text-zinc-400'
+};
+const borderClass: Record<typeof color, string> = {
+  'emerald-500': 'border-emerald-500/30',
+  'slate-400': 'border-slate-500/30',
+  'amber-400': 'border-amber-500/30',
+  'zinc-500': 'border-zinc-500/30'
+};
+const bgClass: Record<typeof color, string> = {
+  'emerald-500': 'bg-emerald-500/10',
+  'slate-400': 'bg-slate-500/10',
+  'amber-400': 'bg-amber-500/10',
+  'zinc-500': 'bg-zinc-500/10'
+};
+---
+
+<span
+  class:list={[
+    'inline-flex items-center rounded-full border font-bold uppercase tracking-wider',
+    sizeClass,
+    textClass[color],
+    borderClass[color],
+    bgClass[color]
+  ]}
+  role="status"
+  aria-label={`Status: ${visible}`}
+  data-status={status}
+  data-repo-url={repoUrl ?? null}
+  title={repoUrl ? `${visible} — ${repoUrl}` : visible}
+>
+  <span
+    class:list={['inline-block size-1.5 rounded-full', dotClass[color]]}
+    aria-hidden="true"
+  ></span>
+  {resolvedIcon && <Icon name={resolvedIcon} class={size === 'md' ? 'size-3.5' : 'size-3'} />}
+  <span>{visible}</span>
+</span>
